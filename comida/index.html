@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<TItle>WANT MORE???</TItle>
+
+<button id="tocar" onclick="playVideo(); " type="button" style="border-color: black;background-color: black;color: white;">CLICK ME</button>
+
+<div style="display:flex;justify-content:center;align-items:center;height:100vh;" >
+  <video id="video" src="comidas.mp4" width="1280" height="768" loop style="visibility: hidden;"></video>
+</div>
+
+<audio id="audio" loop >
+  <source src="soulja_boy.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  var x = document.getElementById("video"); 
+  var y = document.getElementById("tocar");
+  var z = document.getElementById("audio");
+  
+  function playVideo() {
+    x.style.visibility="visible";
+    x.play();
+    z.play();
+    z.volume = 0.5;
+    y.style.visibility ="hidden";
+  } 
+
+</script>
+
+
+</html>

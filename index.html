@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RICADINHO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<!--
+ESTATICA - https://images-ext-2.discordapp.net/external/Kp6kDJ96-9Yn_HApdl2K-iV-SCdUgUsrV-Zvcoj0pcs/https/img1.picmix.com/output/stamp/normal/5/7/8/4/1814875_932a4.gif
+PRETO - https://media.discordapp.net/attachments/412661004527206401/1075092202012823632/image.png
+fundo pixeis - https://media.discordapp.net/attachments/412661004527206401/1075480414996672522/966315.png
+8bit chuva - https://media.discordapp.net/attachments/570659114162847746/1075930594829152287/rain.gif
+-->
+
+<style>
+    body {
+        background-image: url('https://media.discordapp.net/attachments/412661004527206401/1075480414996672522/966315.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+    }
+</style>
+
+<audio id="myAudio" loop >
+    <source src="dialtone.mp3" type="audio/mpeg">
+</audio>
+  
+<button id="tocar" onclick="playAudio(); " type="button" style="background-color:dodgerblue ;border-color: dodgerblue;color:darkblue; ">Play Audio</button>
+<button id="para" onclick="pauseAudio()" type="button" style="background-color: dodgerblue;border-color: dodgerblue;color: darkblue;">Pause Audio</button> 
+
+<script>
+  var x = document.getElementById("myAudio"); 
+  var y = document.getElementById("tocar");
+  var y2 = document.getElementById("para");
+  console.log(x);
+  console.log(y);
+  
+  function playAudio() {
+    x.play();
+    y.style.visibility = "hidden";
+    y2.style.visibility = "hidden";
+    console.log(x);
+    console.log(y);
+  } 
+  
+  function pauseAudio() { 
+    x.pause(); 
+    x.currentTime = 0;
+  } 
+</script>
+
+
+
+<!--<body>
+    <h1>boas <p></p>a<p></p>a<p></p>a<p></p>a<p></p>a </h1>
+</body>-->
+
+<!--<head>         DA REDIRECT PASSADOS \/ SEGUNDOS
+    <meta http-equiv="refresh" content="7; url='https://martetm.eu/'" />
+  </head>--> 
+<body>
+    <h1><a href="https://martetm.eu/">[hyperlink blocked]</a></h1>
+</body>
+
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<body>
+</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p>
+</body>
+
+
+
+<a id="referencia" href="http://localhost/RICADINHO/MrBrodinha"> 
+  <img  id="imagem" src="https://cdn.discordapp.com/attachments/570659114162847746/1075810503668019301/anuncio.png" alt="anuncio" class="center">
+</a>
+
+<script>
+  var x1 = Math.floor(Math.random() * 3);
+  var x2 = Math.floor(Math.random() * 100);
+  var r = document.getElementById("referencia");
+  var i = document.getElementById("imagem");
+
+  console.log(x1);
+  console.log(x2);
+
+  if(x2 == 1){
+    r.href = "http://localhost/RICADINHO/MVG";
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1076101805047549963/anuncio4.png";
+  }else if(x1==0){ //anuncio 1
+    r.href = "http://localhost/RICADINHO/MrBrodinha";
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1075810503668019301/anuncio.png"
+  }else if(x1==1){
+    r.href = "http://localhost/RICADINHO/comida";
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1075870572954783784/anuncio2.png"
+  }else if(x1==2){
+    r.href = "http://localhost/RICADINHO/LOVE";
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1075931709599645758/anuncio3.png"
+  }
+</script>
+
+</html>

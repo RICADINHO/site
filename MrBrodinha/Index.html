@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>SOMEONE</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<button id="toca" onclick="playAudio()" type="button" style="background-color: red;border-color: red;color: white">CLICK ME</button>
+
+<audio id="myAudio" loop >
+   <source src="Skrillex.mp3" type="audio/mpeg">
+</audio>
+
+<div style="display:flex;justify-content:center;align-items:center;height:100vh;" >
+   <video id="video" src="brodaFinal.mp4" width="1280" height="768" muted loop></video>
+</div>
+
+
+<script>
+ var x = document.getElementById("myAudio"); 
+ var y = document.getElementById("toca");
+ var z = document.getElementById("video");
+ 
+ function playAudio() { 
+   x.play(); 
+   z.play();
+   y.style.visibility = "hidden";
+   console.log(x);
+   console.log(z);
+ } 
+ 
+</script>
+
+<!--<video src="broda_corte.mp4" autoplay muted loop> </video>-->
+
+</html>
