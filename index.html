@@ -9,33 +9,39 @@
     <title>RICADINHO</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/570659114162847746/1077547748896817152/eu_real.jpg">
+    
 
   <style>
-    body {
-        background-image: url('https://media.discordapp.net/attachments/412661004527206401/1075480414996672522/966315.png');
+   /* body {
+        background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077549425993461770/vaporwave.gif');
         background-repeat: no-repeat;
         background-attachment: fixed; 
         background-size: 100% 100%;
-    }
-    img {
+    }*/
+    /*img {
       display: block;
       margin-left: auto;
       margin-right: auto;
-    }
+      position: absolute;
+      bottom: 0px;
+      right: 500px;
+    }*/
   </style>
 
 </head>
 
 
-<!--
+<!--                                                    BACKGROUNDS
 ESTATICA - https://images-ext-2.discordapp.net/external/Kp6kDJ96-9Yn_HApdl2K-iV-SCdUgUsrV-Zvcoj0pcs/https/img1.picmix.com/output/stamp/normal/5/7/8/4/1814875_932a4.gif
 PRETO - https://media.discordapp.net/attachments/412661004527206401/1075092202012823632/image.png
 fundo pixeis - https://media.discordapp.net/attachments/412661004527206401/1075480414996672522/966315.png
 8bit chuva - https://media.discordapp.net/attachments/570659114162847746/1075930594829152287/rain.gif
+gif wave 8bit - https://cdn.discordapp.com/attachments/570659114162847746/1077549425993461770/vaporwave.gif
+vaporwave espaço na esquerda - https://cdn.discordapp.com/attachments/570659114162847746/1077549372318949396/vaporwave2.jpg
 -->
 
 <audio id="myAudio" loop >
-    <source src="dialtone.mp3" type="audio/mpeg">
+  <source src="dialtone.mp3" type="audio/mpeg">
 </audio>
   
 <button id="tocar" onclick="playAudio(); " type="button" style="background-color:dodgerblue ;border-color: dodgerblue;color:darkblue; ">Play Audio</button>
@@ -63,28 +69,60 @@ fundo pixeis - https://media.discordapp.net/attachments/412661004527206401/10754
 </script>
 
 
-
-<!--<body>
-    <h1>boas <p></p>a<p></p>a<p></p>a<p></p>a<p></p>a </h1>
-</body>-->
-
-<!--<head>         DA REDIRECT PASSADOS \/ SEGUNDOS
-    <meta http-equiv="refresh" content="7; url='https://martetm.eu/'" />
-  </head>--> 
+<!--
+<head>         DA REDIRECT PASSADOS \/ SEGUNDOS
+  <meta http-equiv="refresh" content="7; url='https://martetm.eu/'" />
+</head>
+--> 
 <body>
     <h1><a href="https://martetm.eu/">[hyperlink blocked]</a></h1>
 </body>
 
 
+<body id="foto fundo" style="background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582578619514950/2-4.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;"></body>
 
-<body>
-</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p><p>⠀</p>
-</body>
+<script>
+var ola = document.getElementById("foto fundo");
+var data = new Date();
+var horas = data.getHours();
+console.log(horas);
+
+if(horas >= 2 && horas < 4){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582578619514950/2-4.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >= 4 && horas < 6){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582599100301352/4-6.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >= 6 && horas < 7){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582612513701919/6-7.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >= 7 && horas < 8){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582625880952842/7-8.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >= 8 && horas < 9){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582636991647825/8-9.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >=9 && horas < 10){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582655668887572/9-10.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >= 10 && horas <12){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642079351603200/10-12.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >=12 && horas < 13){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642098771243139/12-13.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >= 13 && horas < 16){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642113778458665/13-16.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >=16 && horas < 18){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642123949645925/16-17.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >=18 && horas <19){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642138621313024/17-19.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >= 19 && horas < 20){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642175757688913/19-20.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >=20 && horas <21){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642202781585438/20-21.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}else if(horas >=21 && horas < 2){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642214802477106/21-2.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+}
+</script>
 
 
 
-<a id="referencia" href="http://localhost/RICADINHO/MrBrodinha"> 
-  <img  id="imagem" src="https://cdn.discordapp.com/attachments/570659114162847746/1075810503668019301/anuncio.png" alt="anuncio" class="center">
+
+<a id="referencia" href="linkzao doidao"> 
+  <img style="position: absolute;bottom: 0px;right: 500px;" id="imagem" src="https://cdn.discordapp.com/attachments/570659114162847746/1075810503668019301/anuncio.png" alt="anuncio" class="center">
 </a>
 
 <script>
@@ -98,16 +136,16 @@ fundo pixeis - https://media.discordapp.net/attachments/412661004527206401/10754
 
   if(x2 == 1){
     r.href = "http://ricadinho.eu/MVG";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1076101805047549963/anuncio4.png";
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564832502513754/anuncio4X.png";
   }else if(x1==0){ //anuncio 1
     r.href = "http://ricadinho.eu/MrBrodinha";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1075870547684106320/anuncio.png"
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564758766657586/anuncioX.png"
   }else if(x1==1){
     r.href = "http://ricadinho.eu/comida";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1075870572954783784/anuncio2.png"
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564785081720862/anuncio2X.png"
   }else if(x1==2){
     r.href = "http://ricadinho.eu/LOVE";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1075931709599645758/anuncio3.png"
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564811388395611/anuncio3X.png"
   }
 </script>
 
