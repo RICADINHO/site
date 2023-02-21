@@ -43,9 +43,14 @@ vaporwave espaço na esquerda - https://cdn.discordapp.com/attachments/570659114
 <audio id="myAudio" loop >
   <source src="dialtone.mp3" type="audio/mpeg">
 </audio>
-  
+
+<!---- botoes originais
 <button id="tocar" onclick="playAudio(); " type="button" style="background-color:dodgerblue ;border-color: dodgerblue;color:darkblue; ">Play Audio</button>
 <button id="para" onclick="pauseAudio()" type="button" style="background-color: dodgerblue;border-color: dodgerblue;color: darkblue;">Pause Audio</button> 
+-->
+<button id="tocar" onclick="playAudio(); " type="button" style="background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);">Play Audio</button>
+<button id="para" onclick="pauseAudio()" type="button" style="background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);">Pause Audio</button> 
+
 
 <script>
   var x = document.getElementById("myAudio"); 
@@ -79,42 +84,75 @@ vaporwave espaço na esquerda - https://cdn.discordapp.com/attachments/570659114
 </body>
 
 
-<body id="foto fundo" style="background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582578619514950/2-4.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;"></body>
+<body id="foto_fundo" style="background-image: url('URL DA FOTO PA'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;"></body>
+
+
 
 <script>
-var ola = document.getElementById("foto fundo");
+var botao1 = document.getElementById("tocar");
+var botao2 = document.getElementById("para");
+var ola = document.getElementById("foto_fundo");
 var data = new Date();
 var horas = data.getHours();
-console.log(horas);
+console.log(horas>2);
+
 
 if(horas >= 2 && horas < 4){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582578619514950/2-4.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  botao1.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);";
+  botao2.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);";
 }else if(horas >= 4 && horas < 6){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582599100301352/4-6.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  botao1.style = "background-color: rrgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);";
+  botao2.style = "background-color: rgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);";
 }else if(horas >= 6 && horas < 7){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582612513701919/6-7.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  botao1.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);";
+  botao2.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);";
 }else if(horas >= 7 && horas < 8){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582625880952842/7-8.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  botao1.style = "background-color: rgba(24,35,127);border-color: rgba(24,35,127);color: rgba(255, 255, 255);";
+  botao2.style = "background-color: rgba(24,35,127);border-color: rgba(24,35,127);color: rgba(255, 255, 255);";
 }else if(horas >= 8 && horas < 9){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582636991647825/8-9.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  botao1.style = "background-color: rgba(31,45,229);border-color: rgba(31,45,229);color: darkblue;"
+  botao2.style = "background-color: rgba(31,45,229);border-color: rgba(31,45,229);color: darkblue;"
 }else if(horas >=9 && horas < 10){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582655668887572/9-10.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  botao1.style = "background-color: rgba(71,185,255);border-color: rgba(71,185,255);";
+  botao2.style = "background-color: rgba(71,185,255);border-color: rgba(71,185,255);";
 }else if(horas >= 10 && horas <12){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642079351603200/10-12.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  botao1.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
+  botao2.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
 }else if(horas >=12 && horas < 13){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642098771243139/12-13.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-}else if(horas >= 13 && horas < 16){
+  botao1.style = "background-color: rgba(115,224,255);border-color: rgba(115,224,255);";
+  botao2.style = "background-color: rgba(115,224,255);border-color: rgba(115,224,255);";
+}else if(horas >= 13 && horas < 15){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642113778458665/13-16.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-}else if(horas >=16 && horas < 18){
+  botao1.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
+  botao2.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
+}else if(horas >=15 && horas < 16){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642123949645925/16-17.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-}else if(horas >=18 && horas <19){
+  botao1.style = "background-color: rgba(73,116,229);border-color: rgba(73,116,229);color: rgb(48, 48, 48);";
+  botao2.style = "background-color: rgba(73,116,229);border-color: rgba(73,116,229);color: rgb(48, 48, 48);";
+}else if(horas >=16 && horas <17){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642138621313024/17-19.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-}else if(horas >= 19 && horas < 20){
+  botao1.style = "background-color: rgba(123,19,158);border-color: rgba(123,19,158);color: rgb(215, 215, 215);";
+  botao2.style = "background-color: rgba(123,19,158);border-color: rgba(123,19,158);color: rgb(215, 215, 215);";
+}else if(horas >= 17 && horas < 18){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642175757688913/19-20.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-}else if(horas >=20 && horas <21){
+  botao1.style = "background-color: rgba(136,0,158,255);border-color: rgba(136,0,158,255);color: rgb(215, 215, 215);";
+  botao2.style = "background-color: rgba(136,0,158,255);border-color: rgba(136,0,158,255);color: rgb(215, 215, 215);";
+}else if(horas >=18 && horas <19){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642202781585438/20-21.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-}else if(horas >=21 && horas < 2){
+  botao1.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgb(230, 230, 230);";
+  botao2.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgb(230, 230, 230);";
+}else if(horas >=19){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642214802477106/21-2.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  botao1.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);";
+  botao2.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);";
 }
 </script>
 
