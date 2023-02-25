@@ -96,8 +96,11 @@ var data = new Date();
 var horas = data.getHours();
 console.log(horas>2);
 
-
-if(horas >= 2 && horas < 4){
+if(horas >=0 && horas < 2){
+  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642214802477106/21-2.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  botao1.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);";
+  botao2.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);";
+}else if(horas >= 2 && horas < 4){
   ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582578619514950/2-4.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);";
   botao2.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);";
