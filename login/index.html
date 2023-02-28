@@ -1,8 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/570659114162847746/1077556960511148052/question_mark.png">
+<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/570659114162847746/1080228662479159507/escape.png">
 
-ainda n ta feito calma
+<style>
+body {
+        background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1080228226594508990/vaporwave2.gif');
+        /*background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;*/
+    }
+</style>
+
+<audio id="myAudio" loop >
+    <source src="vaporwave.mp3" type="audio/mpeg">
+</audio>
+
+<button id="ola" onclick="playAudio(); " type="button">ainda n ta feito espera</button>
+
+<script>
+    var x = document.getElementById("myAudio");
+    var y = document.getElementById("ola"); 
+    var c = 0;
+
+    function playAudio(){
+    if(c == 0){
+    x.play();
+    c = 1;
+    }else{
+    x.pause();
+    x.currentTime = 0;
+    c = 0;
+    }
+    }
+</script>
 
 </html>
