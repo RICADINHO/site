@@ -61,8 +61,11 @@ vaporwave espaço na esquerda - https://cdn.discordapp.com/attachments/570659114
   
   function playAudio() {
     x.play();
-    y.style.visibility = "hidden";
-    y2.style.visibility = "hidden";
+    //y.style.visibility = "hidden";
+    //y2.style.visibility = "hidden";
+    y.style.display = "none";
+    y2.style.display = "none";
+    //y2.style.display = "inline-block"; meter de volta
     console.log(x);
     console.log(y);
   } 
@@ -170,7 +173,7 @@ style="position: absolute;bottom: 0px;right: 500px;"
 
 <div>
 <a id="referencia" href="linkzao doidao"> 
-  <img style="position: absolute;bottom: 0px;right: 33%;" id="imagem" src="https://cdn.discordapp.com/attachments/570659114162847746/1075810503668019301/anuncio.png" alt="anuncio" class="center">
+  <img title="ok?" style="position: absolute;bottom: 0px;right: 33%;" id="imagem" src="https://cdn.discordapp.com/attachments/570659114162847746/1075810503668019301/anuncio.png" alt="anuncio" class="center">
 </a>
 </div>
 
@@ -186,18 +189,23 @@ style="position: absolute;bottom: 0px;right: 500px;"
   if(x2 == 1){
     r.href = "http://ricadinho.eu/MVG";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564832502513754/anuncio4X.png";
+    i.title = "[%$#£] YOU"
   }else if(x1==0){ //anuncio 1
     r.href = "http://ricadinho.eu/MrBrodinha";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564758766657586/anuncioX.png";
+    i.title = "CLICK ME";
   }else if(x1==1){
     r.href = "http://ricadinho.eu/comida";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564785081720862/anuncio2X.png"
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564785081720862/anuncio2X.png";
+    i.title = "EAT";
   }else if(x1==2){
     r.href = "http://ricadinho.eu/LOVE";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564811388395611/anuncio3X.png"
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564811388395611/anuncio3X.png";
+    i.title = "NEED LOVE??"
   }else if(x1==3){
     r.href = "https://martetm.eu/";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1078015039291789373/anuncio5.png";
+    i.title = "THE BEST ON THE MARKET";
   }
 </script>
 
