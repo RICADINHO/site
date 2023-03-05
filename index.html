@@ -52,7 +52,7 @@ function checkFirstVisit() {
   }
   else {
     // Not the first visit, so alert
-    var x = document.getElementById("myAudio");
+    var x = document.getElementById("sonoro");
     x.play();
     alert('You refreshed!');
   }
@@ -60,22 +60,31 @@ function checkFirstVisit() {
 </script>
 -->
 
-<audio id="myAudio" loop >
+<audio id="sonoro" loop >
   <source src="dialtone.mp3" type="audio/mpeg">
 </audio>
 
-<button id="tocar" onclick="playAudio()" type="button" style="background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);"><span style="font-size: 20px;">&#9658;<!--&#9742--></span></button>
+<button id="tocar" onmouseover="muda()" onmouseout="desmuda()" onclick="playAudio()" style="background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);font-size: 20px;"><span style="font-size: 20px;">&#9658;<!--&#9742--></span></button>
 <button id="para" onclick="pauseAudio()" type="button"  style="background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);" ><span style="font-size: 20px;">&#9724<!--&#8741;&#9646--></span></button>
 
 
-
 <script>
-  var x = document.getElementById("myAudio"); 
+  var x = document.getElementById("sonoro"); 
   var y = document.getElementById("tocar");
   var y2 = document.getElementById("para");
   console.log(x);
   console.log(y);
   
+  function desmuda(){
+    y.textContent = '►';
+    y.style.fontSize = '20px';
+  }
+
+  function muda(){
+    y.textContent = '☎';
+    y.style.fontSize = '18px';
+  }
+
   function playAudio() {
     x.play();
     //y.style.visibility = "hidden";
@@ -91,8 +100,18 @@ function checkFirstVisit() {
     /*x.pause(); 
     x.currentTime = 0;*/
     y2.textContent = "nop";
-    setTimeout(nop, 1000);
+    setTimeout(nop2, 500);
   } 
+
+  function nop2(){
+    y2.textContent = ";)";
+    setTimeout(nop1, 300);
+  }
+
+  function nop1(){
+    y2.textContent = "<3";
+    setTimeout(nop, 200);
+  }
 
   function nop(){
     y2.style.display = "none";
@@ -102,7 +121,7 @@ function checkFirstVisit() {
 
 
 <body>
-    <h1><a href="https://deltarune.com/sighting/">[hyperlink blocked]</a></h1>
+    <h1><a title="HAVE YOU SEEN [it]??" href="https://deltarune.com/sighting/">[hyperlink blocked]</a></h1>
 </body>
 
 <body id="foto_fundo" style="background-image: url('URL DA FOTO PA'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;"></body>
