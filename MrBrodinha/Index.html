@@ -25,16 +25,39 @@ console.log(a12);
 
 
 <script>
+ var r = Math.floor(Math.random() * 7);
  var x = document.getElementById("myAudio"); 
  var y = document.getElementById("toca");
  var z = document.getElementById("video");
- 
- function playAudio() { 
-   x.play(); 
+
+ function playAudio() {  
    z.play();
    y.style.display = "none";
    console.log(x);
    console.log(z);
+   console.log(r);
+   if(r == 0){
+      x.src = "funky.mp3";
+      x.play();
+   }else if(r == 1){
+      x.src = "amongus.mp3";
+      x.play();
+   }else if(r == 2){
+      x.src = "candyland_ER.mp3";
+      x.play();
+   }else if(r == 3){
+      x.src = "candyland.mp3";
+      x.play();
+   }else if(r == 4){
+      x.src = "groove.mp3";
+      x.play();
+   }else if(r == 5){
+      x.src = "omfg.mp3";
+      x.play();
+   }else if(r == 6){
+      x.src = "Symbolism.mp3";
+      x.play();
+   }
  } 
  
 </script>
