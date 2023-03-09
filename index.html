@@ -343,6 +343,7 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
 <script>
   var x1 = Math.floor(Math.random() * 4);
   var x2 = Math.floor(Math.random() * 100);
+  var x3 = Math.floor(Math.random() * 100);
   var r = document.getElementById("referencia");
   var i = document.getElementById("imagem");
 
@@ -354,9 +355,15 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081952565555630131/anuncio4V2.png";
     i.title = "[%$#£] YOU"
   }else if(x1==0){ //anuncio 1
+    if(x3 == 7){
+    r.href = "http://ricadinho.eu/MrBrodinha/Quim";
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564758766657586/anuncioX.png";
+    i.title = "CLICK ME";
+    }else{
     r.href = "http://ricadinho.eu/MrBrodinha";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564758766657586/anuncioX.png";
     i.title = "CLICK ME";
+    }
   }else if(x1==1){
     r.href = "http://ricadinho.eu/comida";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081952528897409074/anuncio2V2.png";

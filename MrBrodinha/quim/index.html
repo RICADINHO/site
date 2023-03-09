@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>SOMEONE</title>
+   <link rel="stylesheet" href="styles.css">
+   <link id="ok" rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/570659114162847746/1077555988925792316/mrbrodinha-removebg-preview.png">
+</head>
+
+<button id="toca" onclick="playAudio()" type="button" style="background-color: red;border-color: red;color: white">CLICK ME</button>
+
+<audio id="myAudio" loop >
+   <source src="Spooktune.mp3" type="audio/mpeg">
+</audio>
+
+
+<div style="display:flex;justify-content:center;align-items:center;height:100vh;visibility:hidden;" >
+   <video id="video" src="quim.mp4" width="1280" height="768" muted loop></video>
+</div>
+
+<script>
+ var r = Math.floor(Math.random() * 10);
+ var x = document.getElementById("myAudio"); 
+ var y = document.getElementById("toca");
+ var z = document.getElementById("video");
+
+function playAudio() {  
+    z.style.visibility = "visible";
+   z.play();//teste
+   y.style.display = "none";
+   x.play();
+} 
+</script>
+
+</html>
