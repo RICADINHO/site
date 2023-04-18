@@ -23,6 +23,9 @@
       bottom: 0px;
       right: 500px;
     }*/
+    a:active, a:visited, a:active, a:hover, a:link{
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -65,8 +68,8 @@ function checkFirstVisit() {
 </audio>
 
 <button id="tocar" onmouseover="muda()" onmouseout="desmuda()" onclick="playAudio()" style="background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);font-size: 20px;"><span style="font-size: 20px;">&#9658;<!--&#9742--></span></button>
-<button id="para" onclick="pauseAudio()" type="button"  style="background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);" ><span style="font-size: 20px;">&#9724<!--&#8741;&#9646--></span></button>
-
+<button id="para" onclick="pauseAudio()" type="button"  style="background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);" ><span style="font-size: 20px;">&#9724<!--&#8741;&#9646--></span></button> 
+<div id="login" style="float: right; font-size: 22px;border: 1px solid black"> <a href="http://ricadinho.eu/login/login"><span style="color: rgb(189, 0, 189)">L</span><span style="color: blue">o</span><span style="color: green;">g</span> <span style="color:yellow">i</span><span style="color: red">n</span></a></div>
 <!----
 <button onclick="windowClose()">ola??</button>
 
@@ -128,10 +131,24 @@ function checkFirstVisit() {
 </script>
 
 
-
 <body>
-    <h1><a title="HAVE YOU SEEN [it?]??" href="https://deltarune.com/sighting/">[hyperlink blocked]</a></h1>
+  <a href="https://ricadinho.eu/clips"></a>
+    <div id="aula">
+      <h1 id="texto_central_1"><a id="textoC" title="random clip" href="https://ricadinho.eu/clips">Take me to a random clip</a></h1>
+      <h1 id="texto_central_2" title="HAVE YOU SEEN [it?]???" style="display: none;text-decoration: none;"><a id="deltalink" href="https://deltarune.com/sighting/"><span id="spam1" style="color: #ffaec9">[hyperlink</span> <span style="color: #fff200;">blocked]</span></a></h1>
+    </div>
 </body>
+
+<script>
+  var numero_textoC = Math.floor(Math.random() * 10);
+  var texto_centro1 = document.getElementById("texto_central_1");
+  var texto_centro2 = document.getElementById("texto_central_2");
+
+  if(numero_textoC == 1){
+    texto_centro1.style.display = "none";
+    texto_centro2.style.display = "inline-block"; 
+  }
+</script>
 
 <body id="foto_fundo" style="background-image: url('URL DA FOTO PA'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;"></body>
 
@@ -251,7 +268,7 @@ if(times.nauticalDawn.getTime() <= tempo.getTime() && tempo.getTime() < times.da
   foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419107590316173/13-fim_da_noite_night_end.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rrgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);";
   botao2.style = "background-color: rgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);display: none";
-}else{
+}else{// ERRO
   foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1083362699704029245/pagina_de_erro.png');background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%";
   botao1.style = "background-color: black;border-color: black;color: white;";
   botao2.style = "background-color: black;border-color: black;color: white;display: none";
@@ -330,49 +347,54 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
 }
 </script>-->
 
-<a id="anuncio6" href="http://ricadinho.eu/login">
+<a id="anuncio6" href="http://ricadinho.eu/login/login">
   <img title ="LOSE YOURSELF ON THIS NEW REALITY" style="position: absolute;right: 0px;bottom: 100px;" src="https://cdn.discordapp.com/attachments/570659114162847746/1079827190121779371/anuncio6.png" alt="anuncio6">
 </a>
 
-<div>
 <a id="referencia" href="linkzao doidao"> 
   <img  width="auto" height="auto" title="ok?" style="position: absolute;bottom: 0px;right: 33%;" id="imagem" src="link da imagem" alt="anuncio" class="center">
 </a>
-</div>
 
 <script>
   var x1 = Math.floor(Math.random() * 4);
   var x2 = Math.floor(Math.random() * 100);
-  var x3 = Math.floor(Math.random() * 100);
+  var x3 = Math.floor(Math.random() * 10);
   var r = document.getElementById("referencia");
   var i = document.getElementById("imagem");
 
-  console.log(x1);
-  console.log(x2);
+  console.log("Numero rand dos 4 anuncios: "+x1);
+  console.log("Numero rand do anuncio escondido: "+x2);
+  console.log("Numero rand dos anuncios easter egg: "+x3);
 
-  if(x2 == 1){
+  if(x2 == 1){ // anuncio escondido
     r.href = "http://ricadinho.eu/MVG";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081952565555630131/anuncio4V2.png";
     i.title = "[%$#£] YOU"
   }else if(x1==0){ //anuncio 1
-    if(x3 == 7){
-    r.href = "http://ricadinho.eu/MrBrodinha/Quim";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564758766657586/anuncioX.png";
-    i.title = "CLICK ME";
-    }else{
+    if(x3 == 7){//anuncio 1 / QUIM
+    r.href = "http://ricadinho.eu/MrBrodinha/quim";
+    i.src = "https://media.discordapp.net/attachments/570659114162847746/1088078986522939503/anuncio1QUIM.png";
+    i.title = "QUIM ME";
+    }else{//anuncio 1 / broda
     r.href = "http://ricadinho.eu/MrBrodinha";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564758766657586/anuncioX.png";
     i.title = "CLICK ME";
     }
-  }else if(x1==1){
+  }else if(x1==1){ // anuncio 2 / comida
     r.href = "http://ricadinho.eu/comida";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081952528897409074/anuncio2V2.png";
     i.title = "EAT";
-  }else if(x1==2){
+  }else if(x1==2){ // anuncio 3
+    /*if(x3 == 2){//anuncio 3 / real
+    r.href = "http://ricadinho.eu/LOVE/real";
+    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081953193099014265/anuncio3V2.png";
+    i.title = "NEW MESSAGE!!!!♥️♥️♥️♥️♥️"
+    }else{//anuncio 3 / 404*/
     r.href = "http://ricadinho.eu/LOVE";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081953193099014265/anuncio3V2.png";
     i.title = "NEED LOVE??"
-  }else if(x1==3){
+   // }
+  }else if(x1==3){ //anuncio 4 / marte
     r.href = "https://martetm.eu/";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081952584937513121/anuncio5V2.png";
     i.title = "THE BEST ON THE MARKET";
