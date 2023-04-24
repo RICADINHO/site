@@ -3,19 +3,20 @@
 
 <TItle>WANT MORE???</TItle>
 <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/570659114162847746/1077556551298060349/hamburger3.jpg">
-
+<!----
 <button id="tocar" onclick="playVideo(); " type="button" style="border-color: black;background-color: black;color: white;">CLICK ME</button>
-
+style="visibility: hidden;"
+-->
 <div style="display:flex;justify-content:center;align-items:center;height:100vh;" >
-  <video id="video" src="comidas.mp4" width="1280" height="768" loop style="visibility: hidden;"></video>
+  <video id="video" src="comidas.mp4" width="1280" height="768" loop autoplay></video>
 </div>
 
-<audio id="audio" loop >
+<audio id="audio" loop autoplay>
   <source src="soulja_boy.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-  var x = document.getElementById("video"); 
+  /*var x = document.getElementById("video"); 
   var y = document.getElementById("tocar");
   var z = document.getElementById("audio");
   
@@ -25,8 +26,7 @@
     z.play();
     z.volume = 0.5;
     y.style.display ="none";
-  } 
-
+  } */
 </script>
 
 
