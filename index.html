@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RICADINHO</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/570659114162847746/1077547748896817152/eu_real.jpg">
+    <link rel="icon" type="image/x-icon" href="cenas_do_site/eu_real.jpg">
   <style>
    /* body {
         background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077549425993461770/vaporwave.gif');
@@ -154,7 +154,7 @@ function checkFirstVisit() {
   }
 </script>
 
-<body id="foto_fundo" style="background-image: url('URL DA FOTO PA'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;"></body>
+<body id="foto_fundo" style="background-image: url('URL_DA_FOTO_PA'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;"></body>
 
 <script src="https://www.unpkg.com/suncalc@1.9.0/suncalc.js"></script>
 
@@ -217,63 +217,63 @@ console.log("nightEnd: "+times2.nightEnd.getTime());
 console.log("---------ACABOU TEMPOS---------");
 
 if(times.nauticalDawn.getTime() <= tempo.getTime() && tempo.getTime() < times.dawn.getTime()){//NAUTICAL DAWN
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419107837788190/14-sem_sol_nautical_dusk_.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/14-sem_sol_(nautical_dawn).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);";
   botao2.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);display: none";
 }else if(times.dawn.getTime() <= tempo.getTime() && tempo.getTime() < times.sunrise.getTime()){//DAWN
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419065961852928/1-sol_a_nascer_bem_pequeno_dawn.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/1-sol_a_nascer_bem_pequeno_(dawn).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(24,35,127);border-color: rgba(24,35,127);color: rgba(255, 255, 255);";
   botao2.style = "background-color: rgba(24,35,127);border-color: rgba(24,35,127);color: rgba(255, 255, 255);display: none";
 }else if(times.sunrise.getTime() <= tempo.getTime() && tempo.getTime() < primeira_metade_antes_meioDia){//SUNRISE
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419066234486814/2-sol_a_nascer_sunrise.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/2-sol_a_nascer_(sunrise).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(31,45,229);border-color: rgba(31,45,229);color: darkblue;"
   botao2.style = "background-color: rgba(31,45,229);border-color: rgba(31,45,229);color: darkblue;display: none"
 }else if(primeira_metade_antes_meioDia <= tempo.getTime() && tempo.getTime() < segunda_metade_antes_meioDia){//PRIMERA METADE ENTRE SUNRISE E MEIO DIA
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419066570022923/3-sol_depois_de_nascer_primeira_metade_entre_2_e_5.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/3-sol_depois_de_nascer_(primeira_metade_entre_2_e_5).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(71,185,255);border-color: rgba(71,185,255);";
   botao2.style = "background-color: rgba(71,185,255);border-color: rgba(71,185,255);display: none";
 }else if(segunda_metade_antes_meioDia <= tempo.getTime() && tempo.getTime() < times.solarNoon.getTime()){//SEGUNDA METADE ENTRE SUNRISE E MEIO DIA
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419066909765754/4-sol_quase_meio_dia_segunda_metade_entre_2_e_5.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/4-sol_quase_meio_dia_(segunda_metade_entre_2_e_5).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
   botao2.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);display: none";
 }else if(times.solarNoon.getTime() <= tempo.getTime() && tempo.getTime() < PRIMEIRA_metade){//MEIO DIA
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419067220148224/5-meio_dia_solarNoon.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/5-meio_dia_(solarNoon).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(115,224,255);border-color: rgba(115,224,255);";
   botao2.style = "background-color: rgba(115,224,255);border-color: rgba(115,224,255);display: none";
 }else if(PRIMEIRA_metade <= tempo.getTime() && tempo.getTime() < SEGUNDA_metade){//1 METADE ENTRE MEIO DIA E SUNSET
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419067492769853/6-sol_depois_de_meio_dia_primeira_metade_entre_5_e_8.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/6-sol_depois_de_meio_dia_(primeira_metade_entre_5_e_8).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
   botao2.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);display: none";
 }else if(SEGUNDA_metade <= tempo.getTime() && tempo.getTime() < times.sunset.getTime()){//2 ETADE ENTRE MEIO DIA E SUNSET
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419104213901453/7-sol_perto_de_por_segunda_metade_entre_5_e_8.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/7-sol_perto_de_por_(segunda_metade_entre_5_e_8).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(73,116,229);border-color: rgba(73,116,229);color: rgb(48, 48, 48);";
   botao2.style = "background-color: rgba(73,116,229);border-color: rgba(73,116,229);color: rgb(48, 48, 48);display: none";
 }else if(times.sunset.getTime() <= tempo.getTime() && tempo.getTime() < times.dusk.getTime()){//SUNSET
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419102498431046/8-sol_a_por_sunset.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/8-sol_a_por_(sunset).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(123,19,158);border-color: rgba(123,19,158);color: rgb(215, 215, 215);";
   botao2.style = "background-color: rgba(123,19,158);border-color: rgba(123,19,158);color: rgb(215, 215, 215);display: none";
 }else if(times.dusk.getTime() <= tempo.getTime() && tempo.getTime() < times.nauticalDusk.getTime()){//DUSK
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419102838182028/9-sol_quase_a_por_dusk.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/9-sol_quase_a_por_(dusk).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(136,0,158,255);border-color: rgba(136,0,158,255);color: rgb(215, 215, 215);";
   botao2.style = "background-color: rgba(136,0,158,255);border-color: rgba(136,0,158,255);color: rgb(215, 215, 215);display: none";
 }else if(times.nauticalDusk.getTime() <= tempo.getTime() && tempo.getTime() < times.night.getTime()){//NAUTICALDUSK
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419107837788190/14-sem_sol_nautical_dusk_.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/14-sem_sol_(nautical_dawn).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);";
   botao2.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);display: none";
 }else if(times.night.getTime() <= tempo.getTime() && tempo.getTime() < teste_metade){//NIGHT
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419103563784192/11-inicio_da_noite_night.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/11-inicio_da_noite_(night).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);";
   botao2.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);display: none";
 }else if(teste_metade <= tempo.getTime() && tempo.getTime() < times2.nightEnd.getTime()){//MEIA NOITE
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419103848992778/12-meio_da_noite.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/12-meio_da_noite.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);";
   botao2.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);display: none";
 }else if(times2.nightEnd.getTime() <= tempo.getTime()){// && tempo.getTime() < times2.nauticalDawn.getTime()){//NIGHTEND
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1082419107590316173/13-fim_da_noite_night_end.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/13-fim_da_noite_(night end).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
   botao1.style = "background-color: rrgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);";
   botao2.style = "background-color: rgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);display: none";
 }else{// ERRO
-  foto_de_fundo.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1083362699704029245/pagina_de_erro.png');background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%";
+  foto_de_fundo.style = "background-image: url('cenas_do_site/pagina_de_erro.png');background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%";
   botao1.style = "background-color: black;border-color: black;color: white;";
   botao2.style = "background-color: black;border-color: black;color: white;display: none";
 }
@@ -352,11 +352,11 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
 </script>-->
 
 <a id="anuncio6" href="http://ricadinho.eu/login/login">
-  <img title ="LOSE YOURSELF ON THIS NEW REALITY" style="position: absolute;right: 0px;bottom: 100px;" src="https://cdn.discordapp.com/attachments/570659114162847746/1079827190121779371/anuncio6.png" alt="anuncio6">
+  <img title ="LOSE YOURSELF ON THIS NEW REALITY" style="position: absolute;right: 0px;bottom: 100px;" src="cenas_do_site/anuncios/anuncio6/anuncio6.png" alt="anuncio6">
 </a>
 
 <a id="referencia" href="linkzao doidao"> 
-  <img  width="auto" height="auto" title="ok?" style="position: absolute;bottom: 0px;right: 33%;" id="imagem" src="link da imagem" alt="anuncio" class="center">
+  <img  width="auto" height="auto" title="ok?" style="position: absolute;bottom: 0px;right: 33%;" id="imagem" src="cenas_do_site/anuncios/anuncio4/anuncio4V2.png" alt="anuncio" class="center">
 </a>
 
 <script>
@@ -372,21 +372,21 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
 
   if(x2 == 1){ // anuncio escondido
     r.href = "http://ricadinho.eu/MVG";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081952565555630131/anuncio4V2.png";
+    i.src = "cenas_do_site/anuncios/anuncio4/anuncio4V2.png";
     i.title = "[%$#£] YOU"
   }else if(x1==0){ //anuncio 1
     if(x3 == 7){//anuncio 1 / QUIM
     r.href = "http://ricadinho.eu/MrBrodinha/quim";
-    i.src = "https://media.discordapp.net/attachments/570659114162847746/1088078986522939503/anuncio1QUIM.png";
+    i.src = "cenas_do_site/anuncios/anuncio1/anuncio1QUIM.png";
     i.title = "QUIM ME";
     }else{//anuncio 1 / broda
     r.href = "http://ricadinho.eu/MrBrodinha";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1077564758766657586/anuncioX.png";
+    i.src = "cenas_do_site/anuncios/anuncio1/anuncioX.png";
     i.title = "CLICK ME";
     }
   }else if(x1==1){ // anuncio 2 / comida
     r.href = "http://ricadinho.eu/comida";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081952528897409074/anuncio2V2.png";
+    i.src = "cenas_do_site/anuncios/anuncio2/anuncio2V2.png";
     i.title = "EAT";
   }else if(x1==2){ // anuncio 3
     /*if(x3 == 2){//anuncio 3 / real
@@ -395,12 +395,12 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
     i.title = "NEW MESSAGE!!!!♥️♥️♥️♥️♥️"
     }else{//anuncio 3 / 404*/
     r.href = "http://ricadinho.eu/LOVE";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081953193099014265/anuncio3V2.png";
+    i.src = "cenas_do_site/anuncios/anuncio3/anuncio3V2.png";
     i.title = "NEED LOVE??"
    // }
   }else if(x1==3){ //anuncio 4 / marte
     r.href = "https://martetm.eu/";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081952584937513121/anuncio5V2.png";
+    i.src = "cenas_do_site/anuncios/anuncio5/anuncio5V2.png";
     i.title = "THE BEST ON THE MARKET";
   }
 </script>
