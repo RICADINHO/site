@@ -1,4 +1,8 @@
 # 1
+
+- meter fotos em vez de links de discord
+- organizar o cenas_do_site
+
 ## 2
 ### 3
 
