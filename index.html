@@ -138,8 +138,9 @@ function checkFirstVisit() {
 <body>
   <a href="http://ricadinho.eu/clips"></a>
     <div id="aula">
-      <h1 id="texto_central_1"><a id="textoC" title="random clip" href="http://ricadinho.eu/clips" style="color: black">RICADINHO.com</a></h1>
-      <h1 id="texto_central_2" title="HAVE YOU SEEN [it?]???" style="display: none;text-decoration: none;"><a id="deltalink" href="https://deltarune.com/sighting/"><span id="spam1" style="color: #ffaec9">[hyperlink</span> <span style="color: #fff200;">blocked]</span></a></h1>
+      <h1 id="texto_central_1"><a id="textoC" title="THE BEST WEBSITE IN THE WORLD" href="http://ricadinho.com/" style="color: black">RICADINHO.com</a></h1>
+      <h1 id="texto_central_2" title="THE SECOND BEST WEBSITE IN THE WORLD" style="display: none;text-decoration: none;"><a id="MVGlink" href="https://mvg.lol"><span style="color: goldenrod;">MVG.lol</span></a></h1>
+      <h1 id="texto_central_3" title="HAVE YOU SEEN [it?]???" style="display: none;text-decoration: none;"><a id="deltalink" href="https://deltarune.com/sighting/"><span id="spam1" style="color: #ffaec9">[hyperlink</span> <span style="color: #fff200;">blocked]</span></a></h1>
     </div>
 </body>
 
@@ -147,11 +148,15 @@ function checkFirstVisit() {
   var numero_textoC = Math.floor(Math.random() * 10);
   var texto_centro1 = document.getElementById("texto_central_1");
   var texto_centro2 = document.getElementById("texto_central_2");
+  var texto_centro3 = document.getElementById("texto_central_3");
   //texto_centro1.style.display = "none";
 
   if(numero_textoC == 1){
     texto_centro1.style.display = "none";
-    texto_centro2.style.display = "inline-block"; 
+    texto_centro3.style.display = "inline-block"; 
+  }else if(numero_textoC <=3){
+    texto_centro1.style.display = "none";
+    texto_centro2.style.display = "inline-block"
   }
 </script>
 
