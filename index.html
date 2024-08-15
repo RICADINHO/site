@@ -366,7 +366,7 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
 </a>
 
 <script>
-  var x1 = Math.floor(Math.random() * 4);
+  var x1 = Math.floor(Math.random() * 5);
   var x2 = Math.floor(Math.random() * 100);
   var x3 = Math.floor(Math.random() * 10);
   var r = document.getElementById("referencia");
@@ -377,7 +377,7 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
   console.log("Numero rand dos anuncios easter egg: "+x3);
 
   if(x2 == 1){ // anuncio escondido
-    r.href = "http://ricadinho.com/MVG";
+    r.href = "http://mvg.lol";
     i.src = "cenas_do_site/anuncios/anuncio4/anuncio4V2.png";
     i.title = "[%$#£] YOU"
   }else if(x1==0){ //anuncio 1
@@ -405,9 +405,13 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
     i.title = "NEED LOVE??"
    // }
   }else if(x1==3){ //anuncio 4 / marte
-    r.href = "https://martetm.eu/";
+    r.href = "https://martinho.pt/";
     i.src = "cenas_do_site/anuncios/anuncio5/anuncio5V2.png";
     i.title = "THE BEST ON THE MARKET";
+  }else if(x1==4){ // anuncio 5 / MVG
+    r.href = "https://mvg.lol";
+    i.src = "cenas_do_site/anuncios/anuncio7/anuncioMVG.png";
+    i.title = "MVG FTW";
   }
 </script>
 

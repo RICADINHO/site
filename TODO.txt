@@ -1,10 +1,14 @@
 # 1
 
-- meter fotos em vez de links de discord
 - organizar o cenas_do_site
+- meter a firebase a funcionar
 
 ## 2
+
+
 ### 3
+
+- meter o site em react??
 
 //--------\\
 ||Anuncios||
@@ -12,4 +16,3 @@
 
 - SIGN UP TO A NEW REALITY NOW!!!!! (/singup)
 - WANT TO LOG IN? NO? [%$#£] YOU! (/login)
-- LOVING THIS WEBSITE???\n TRY THIS ONE AS WELL!!!! (mvg.lol)
