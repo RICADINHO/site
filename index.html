@@ -73,7 +73,7 @@ function checkFirstVisit() {
 
 <button id="tocar" onmouseover="muda()" onmouseout="desmuda()" onclick="playAudio()" style="background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);font-size: 20px;"><span style="font-size: 20px;">&#9658;<!--&#9742--></span></button>
 <button id="para" onclick="pauseAudio()" type="button"  style="background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);" ><span style="font-size: 20px;">&#9724<!--&#8741;&#9646--></span></button> 
-<div id="login" style="float: right; font-size: 22px;border: 1px solid black"> <a href="http://ricadinho.com/login/login"><span style="color: rgb(189, 0, 189)">L</span><span style="color: blue">o</span><span style="color: green;">g</span> <span style="color:yellow">i</span><span style="color: red">n</span></a></div>
+<div id="login" style="float: right; font-size: 22px;"> <a href="http://ricadinho.com/login/login"><span style="color: rgb(189, 0, 189)">L</span><span style="color: blue">o</span><span style="color: green;">g</span> <span style="color:yellow">i</span><span style="color: red">n</span></a></div>
 <!----
 <button onclick="windowClose()">ola??</button>
 
@@ -358,19 +358,33 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
 </script>-->
 
 <a id="anuncio6" href="http://ricadinho.com/login/login">
-  <img title ="LOSE YOURSELF ON THIS NEW REALITY" style="position: absolute;right: 0px;bottom: 100px;" src="cenas_do_site/anuncios/anuncio6/anuncio6.png" alt="anuncio6">
+  <img title ="LOSE YOURSELF ON THIS NEW REALITY" style="position: absolute;right: 0px;bottom: 100px;" src="cenas_do_site/anuncios/anuncio6/anuncio6.png" alt="anuncio6" id="anuncioLado">
 </a>
 
 <a id="referencia" href="linkzao doidao"> 
-  <img  width="auto" height="auto" title="ok?" style="position: absolute;bottom: 0px;right: 33%;" id="imagem" src="cenas_do_site/anuncios/anuncio4/anuncio4V2.png" alt="anuncio" class="center">
+  <img  width="auto" height="auto" title="ok?" style="position: absolute;bottom: 0px;right: 33%;" id="anuncioBaixo" src="cenas_do_site/anuncios/anuncio4/anuncio4V2.png" alt="anuncio" class="center">
 </a>
 
 <script>
+
+var i = document.getElementById("anuncioBaixo");
+var anuncioL = document.getElementById("anuncioLado")
+
+  const isMobile = navigator.userAgentData.mobile;
+  console.log("É MOBILE??? " + isMobile)
+  
+  if(isMobile){
+    i.style.width = "70%";
+    i.style.right = "14%";
+    //anuncioL.style.height="40%"
+    anuncioL.style.display = "none"
+  }
+
+  // ------------------------------------------- ANUNCIOS ---------------------------
   var x1 = Math.floor(Math.random() * 6);
   var x2 = Math.floor(Math.random() * 100);
   var x3 = Math.floor(Math.random() * 10);
   var r = document.getElementById("referencia");
-  var i = document.getElementById("imagem");
 
   console.log("Numero rand dos 4 anuncios: "+x1);
   console.log("Numero rand do anuncio escondido: "+x2);
