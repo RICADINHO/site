@@ -6,7 +6,43 @@
   <link rel="icon" type="image/x-icon" href="bolo.png">
   <title>Yummy</title>
 </head>
-<body>
+<style>
+  body{
+   /*color: rgb(240,231,224);*/
+   background-color: rgb(222, 172, 138);
+  }
+  .squares {
+  display: flex;
+  justify-content: center;
+}
+.icon1,
+.icon2 {
+    width: 200px;
+    height: 200px;
+    background: #F5F8FA;
+}
+
+
+ .icon1 {
+        margin-right: 5%;
+        border-style: ridge;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    } 
+    .icon2 {
+        border-style: ridge;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+    mark{
+      background-color: white;
+    }
+</style>
+<!--
+-<body>
   Cookbook em construção --- Para questões enviar email para support@microsoft.com <br><br>
   Enquanto esperas aqui está a receita para as minhas panquecas ops: <br>
   <h1>Panquecas OPs do RICADINHO</h1>
@@ -27,3 +63,56 @@
   * Se n tiver isto meter 60g açucar normal e +/- 1 tsp de essencia de baunilha
 </body>
 </html>
+--->
+<body>
+  <center><h1>RICADINHO's COOKBOOK</h1></center><br>
+  <center><h3 style="font-weight: normal;">Fiz esta pagina para guardar todas as receitas que gostei/fiz e que não me quero esquecer (novas receitas todas as semanas!?!??!?!? wtf????)</h3></center>
+  <br><hr style="width: 50%;"><br>
+
+<BR><BR>
+  <div class="squares">
+    <div class="icon1" style="background-image: url('proteinas/broder.jpg');background-repeat: no-repeat;background-size: 100% 100%;">
+      <a href="proteinas/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark1')" onmouseout="muda2('mark1')"><p><mark id="mark1">PROTEINAS</mark></p></a>
+    </div>
+    <div onclick="audio()" class="icon1" style="background-image: url('hidratos/massa.png');background-repeat: no-repeat;background-size: 100% 100%;">
+       <a href="hidratos/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark2')" onmouseout="muda2('mark2')" onclick="audio()"><p><mark id="mark2">HIDRATOS</mark></p></a>
+   </div>
+   <div class="icon1" style="background-image: url('sobermesas/the_rock_is_cooking.png');background-repeat: no-repeat;background-size: 100% 100%;">
+    <a href="sobermesas/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark3')" onmouseout="muda2('mark3')"><p><mark id="mark3">SOBERMESAS</mark></p></a>
+    </div>
+ <div class="icon2" style="background-image: url('outros/icon.png');background-repeat: no-repeat;background-size: 100% 100%;">
+  <a href="outros/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark4')" onmouseout="muda2('mark4')"><p><mark id="mark4">OUTROS</mark></p></a>
+</div>
+</div>
+
+<br><br><br><hr style="width: 50%;"><br>
+
+<center><h4>Tags: 🫑 vegetariano, 🌱 vegan, ⏱ rapido de fazer, 🌶 picante, 🥘 favoritos</h4></center>
+<center><h4>Mediçoes: 1 tbsp = 15ml, 1 tsp = 5ml , 1 cup = 240ml</h4></center>
+</body>
+<audio id="okok">
+  <source src="massa_broda.oga" type="audio/mpeg">
+</audio>
+<script>
+  var a = document.getElementById("okok");
+  var mark1 = document.getElementById("mark1");
+  var href1 = document.getElementById("href1");
+
+  function muda(idmark){
+    var ok = document.getElementById(idmark);
+    if(idmark == "mark4"){
+      ok.style = "background-color: rgb(90,46,152);color: rgb(165,209,103)";
+    }else{
+      ok.style = "background-color: black;color: white";
+    }
+  }
+
+  function muda2(idmark){
+    var ok = document.getElementById(idmark);
+    ok.style = "background-color: white;color: black";
+  }
+
+  function audio(){
+    okok.play()
+  }
+</script>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <title>?????????????'</title>
+</head>
+
+
+
+
+<style>
+    body{
+        background-color: rgb(222, 172, 138);
+    }
+    .content{
+        display: none;
+    }
+    h2{
+        margin-left: 2%;
+    }
+    h3{
+        margin-left: 4%;
+    }
+    .espaco{
+        margin-left: 6%;
+    }
+</style>
+
+
+
+<body>
+    <h1 data-target=".content1">&#x2022; Sem categoria</h1>
+
+    <div class="content content1">
+      <p>
+
+        <!-- ------------------------------------- SEM SENTIDO -------------------------------------->
+        <h2 data-target=".content2000">- Sem sentido</h2>
+            <div class="content content2000">
+                
+                <h3 data-target=".content2001">+ Garlic confit 🌱</h3>
+                    <div class="content content2001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+
+                <h3 data-target=".content2002">+ Massa de Mochi 🌱⏱</h3>
+                    <div class="content content2002">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+            </div>
+        
+        <!-- ------------------------------------- MARINAR -------------------------------------->
+        <h2 data-target=".content3000">- Marinar</h2>
+            <div class="content content3000">
+                A meter ***
+            </div>
+
+        <!-- ------------------------------------- CENAS SIMPLES -------------------------------------->
+        <h2 data-target=".content4000">- Cenas simples</h2>
+            <div class="content content4000">
+                
+                <h3 data-target=".content4001">+ Courjete com esparguete 🫑⏱</h3>
+                    <div class="content content4001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+                <h3 data-target=".content4002">+ Migas 🫑⏱</h3>
+                    <div class="content content4002">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+                
+                <h3 data-target=".content4003">+ Mini feijoada 🌱⏱</h3>
+                    <div class="content content4003">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+            </div>
+        
+        <!-- ------------------------------------- PIZZAS -------------------------------------->
+        <h2 data-target=".content5000">- Pizzas</h2>
+            <div class="content content5000">
+                
+                <h3 data-target=".content5001">+ Calzone</h3>
+                    <div class="content content5001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+        
+        <!-- ------------------------------------- MOLHOS -------------------------------------->
+        <h2 data-target=".content6000">- Molhos</h2>
+            <div class="content content6000">
+                A meter +++
+            </div>
+
+      </p>
+    </div>
+</body>
+</html>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script>
+    $("h1").click(function() {
+      var target = $(this).data("target");
+      $(target).slideToggle("fast");
+  
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+
+    $("h2").click(function() {
+      var target = $(this).data("target");
+      $(target).slideToggle("fast");
+  
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+
+    $("h3").click(function() {
+      var target = $(this).data("target");
+      $(target).slideToggle("fast");
+  
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+</script>

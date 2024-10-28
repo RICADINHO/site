@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="massa.png">
+    <title>Massas</title>
+</head>
+
+
+
+
+<style>
+    body{
+        background-color: rgb(222, 172, 138);
+    }
+    .content{
+        display: none;
+    }
+    h2{
+        margin-left: 2%;
+    }
+    h3{
+        margin-left: 4%;
+    }
+    .espaco{
+        margin-left: 6%;
+    }
+</style>
+
+
+<body>
+    <!-- ------------------------------------- MASSAS -------------------------------------->
+    <!-- ------------------------------------- MASSAS -------------------------------------->
+    <!-- ------------------------------------- MASSAS -------------------------------------->
+    <h1 data-target=".content1">&#x2022; Massas</h1>
+
+    <div class="content content1">
+      <p>
+
+        <!-- ------------------------------------- QUALQUER MASSA -------------------------------------->
+        <h2 data-target=".content3">- Qualquer massa</h2>
+            <div class="content content3">
+
+                <h3 data-target=".content3001">+ Massa com molho de tomate cherry ⏱🫑</h3>
+                    <div class="content content3001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+                
+                <h3 data-target=".content3002">+ Creamy mushroom pasta bitch 🫑</h3>
+                    <div class="content content3002">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+        
+        <!-- ------------------------------------- ESPARGUETE -------------------------------------->
+        <h2 data-target=".content4">- Esparguete</h2>
+            <div class="content content4">
+
+                <h3 data-target=".content4001">+ Massa carbonara da rute&trade;</h3>
+                    <div class="content content4001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+                
+                <h3 data-target=".content4002">+ Cacio e pepe ⏱🫑</h3>
+                    <div class="content content4002">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+
+        
+        <!-- ------------------------------------- GNOCCHI -------------------------------------->
+        <h2 data-target=".content5">- Gnocchi</h2>
+            <div class="content content5">
+                
+                <h3 data-target=".content5001">+ Gnocchi com cogumelos e espinafres 🫑</h3>
+                    <div class="content content5001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+      </p>
+    </div>
+
+
+    <!-- ------------------------------------- ARROZ -------------------------------------->
+    <!-- ------------------------------------- ARROZ -------------------------------------->
+    <!-- ------------------------------------- ARROZ -------------------------------------->
+    <h1 data-target=".content10000">&#x2022; Arrozes</h1>
+
+    <div class="content content10000">
+      <p>
+
+        <!-- ------------------------------------- ARROZ QUALQUER -------------------------------------->
+        <h2 data-target=".content12000">- Arroz qualquer</h2>
+            <div class="content content12000">
+                
+                <h3 data-target=".content12001">+ Arroz frito 🫑</h3>
+                    <div class="content content12001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+
+        <!-- ------------------------------------- RISSOTO -------------------------------------->
+        <h2 data-target=".content13000">- Rissoto</h2>
+            <div class="content content13000">
+
+                <h3 data-target=".content13001">+ Creamy shrimp risotto bitch</h3>
+                    <div class="content content13001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+
+        <!-- ------------------------------------- ARROZ SUSHI -------------------------------------->
+        <h2 data-target=".content14000">- Arroz sushi</h2>
+            <div class="content content14000">
+                
+                <h3 data-target=".content14001">+ Onigiri</h3>
+                    <div class="content content14001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+      </p>
+      
+    </div>
+</body>
+</html>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script>
+    $("h1").click(function() {
+      var target = $(this).data("target");
+      $(target).slideToggle("fast");
+  
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+
+    $("h2").click(function() {
+      var target = $(this).data("target");
+      $(target).slideToggle("fast");
+  
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+
+    $("h3").click(function() {
+      var target = $(this).data("target");
+      $(target).slideToggle("fast");
+  
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+</script>

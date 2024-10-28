@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="the_rock_is_cooking.png">
+    <title>A minha secção favorita</title>
+</head>
+
+
+
+
+<style>
+    body{
+        background-color: rgb(222, 172, 138);
+    }
+    .content{
+        display: none;
+    }
+    h2{
+        margin-left: 2%;
+    }
+    h3{
+        margin-left: 4%;
+    }
+    .espaco{
+        margin-left: 6%;
+    }
+</style>
+
+
+<body>
+    <h1 data-target=".content1">&#x2022; Sobermesas</h1>
+
+    <div class="content content1">
+      <p>
+
+        <!-- ------------------------------------- BOLOS -------------------------------------->
+        <h2 data-target=".content2">- Bolos</h2>
+            <div class="content content2">
+                
+                <h3 data-target=".content2001">+ Bolo de cenoura e nozes da avo 🫑🥘</h3>
+                    <div class="content content2001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+                <h3 data-target=".content2002">+ Aqueles mini bolos da mae de damascos 🫑</h3>
+                    <div class="content content2002">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+                <h3 data-target=".content2003">+ Red velvet 🫑</h3>
+                    <div class="content content2003">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+                <h3 data-target=".content2004">+ Bolo de chocolate da mae 🫑</h3>
+                    <div class="content content2004">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+                <h3 data-target=".content2005">+ Banana bread 🫑</h3>
+                    <div class="content content2005">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+        
+
+        <!-- ------------------------------------- PAO -------------------------------------->
+        <h2 data-target=".content3">- Pao</h2>
+            <div class="content content3">
+                
+                <h3 data-target=".content3001">+ Pao de alho com queijo 🫑</h3>
+                    <div class="content content3001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+                
+            </div>
+
+        <!-- ------------------------------------- TARTES -------------------------------------->
+        <h2 data-target=".content4">- Tartes</h2>
+            <div class="content content4">
+                
+                <h3 data-target=".content4001">+ American apple pie 🫑</h3>
+                    <div class="content content4001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+
+        <!-- ------------------------------------- PANQUECAS -------------------------------------->
+        <h2 data-target=".content5">- Panquecas</h2>
+            <div class="content content5">
+                
+                <h3 data-target=".content5001">+ Panquecas OPs do RICADINHO 🫑⏱🥘</h3>
+                    <div class="content content5001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+                <h3 data-target=".content5002">+ Panquecas de banana 🫑⏱</h3>
+                    <div class="content content5002">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+        
+        <!-- ------------------------------------- OUTROS -------------------------------------->
+        <h2 data-target=".content6">- Outros</h2>
+            <div class="content content6">
+                
+                <h3 data-target=".content6001">+ Bolachas da Mecas 🫑</h3>
+                    <div class="content content6001">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+                <h3 data-target=".content6002">+ Brigadeiros 🫑⏱</h3>
+                    <div class="content content6002">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+                <h3 data-target=".content6003">+ Cumble de maça 🫑🥘</h3>
+                    <div class="content content6003">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+                <h3 data-target=".content6004">+ Red bean paste (anko beans) 🌱</h3>
+                    <div class="content content6004">
+                        <div class="espaco">
+                            A meter ...
+                        </div>
+                    </div>
+
+            </div>
+      </p>
+    </div>
+
+</body>
+</html>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script>
+    $("h1").click(function() {
+      var target = $(this).data("target");
+      $(target).slideToggle("fast");
+  
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+
+    $("h2").click(function() {
+      var target = $(this).data("target");
+      $(target).slideToggle("fast");
+  
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+
+    $("h3").click(function() {
+      var target = $(this).data("target");
+      $(target).slideToggle("fast");
+  
+      var $this = $(this);
+      $this.toggleClass("open");
+    });
+</script>
