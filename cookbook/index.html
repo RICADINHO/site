@@ -41,31 +41,14 @@
     mark{
       background-color: white;
     }
+    .emojis{
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
 </style>
-<!--
--<body>
-  Cookbook em construção --- Para questões enviar email para support@microsoft.com <br><br>
-  Enquanto esperas aqui está a receita para as minhas panquecas ops: <br>
-  <h1>Panquecas OPs do RICADINHO</h1>
-  <h2>Ingredientes:</h2>
-  <ul>
-    <li>farinha (300g)</li>
-    <li>açúcar branco (30g)</li>
-    <li>açúcar baunilhado (30g)*</li>
-    <li>fermento (2.5 tsp)</li>
-    <li>bicabornato de sodio (1 tsp)</li>
-    <li>sal (0.5 tsp)</li>
-    <li>leite (430ml)</li>
-    <li>manteiga derretida (60g)</li>
-    <li>ovo (1 grande)</li>
-  </ul>
-  <h2>Receita:</h2>
-  <p>Numa taça misturar todos os ingredientes secos bem e depois meter ou outros, a manteiga convem nao ir a ferver, deixar arrefecer um bocado antes de meter, aconcelho a usar uma whisk (ns como se diz em pt) pra mexer tudo. N mexer ate ficar muito smooth, tem de ter um bocado de "grunhos" pra ficar fixe, depois de tar mexido deixar no frigorifico a noite toda (podes n deixar sequer, eu obtive melhores resultados ao deixar a massa descançar, ficou melhor e mais consistente)</p>
-  * Se n tiver isto meter 60g açucar normal e +/- 1 tsp de essencia de baunilha
-</body>
-</html>
---->
-<body>
+
+<body id="corpo">
   <center><h1>RICADINHO's COOKBOOK</h1></center><br>
   <center><h3 style="font-weight: normal;">Fiz esta pagina para guardar todas as receitas que gostei/fiz e que não me quero esquecer (novas receitas todas as semanas!?!??!?!? wtf????)</h3></center>
   <br><hr style="width: 50%;"><br>
@@ -73,31 +56,51 @@
 <BR><BR>
   <div class="squares">
     <div class="icon1" style="background-image: url('proteinas/broder.jpg');background-repeat: no-repeat;background-size: 100% 100%;">
-      <a href="proteinas/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark1')" onmouseout="muda2('mark1')"><p><mark id="mark1">PROTEINAS</mark></p></a>
+      <a href="proteinas/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark1')" onmouseout="muda2('mark1')"><p><mark id="mark1">BROTEINAS</mark></p></a>
     </div>
-    <div onclick="audio()" class="icon1" style="background-image: url('hidratos/massa.png');background-repeat: no-repeat;background-size: 100% 100%;">
+    <div onclick="audio(1)" class="icon1" style="background-image: url('hidratos/massa.png');background-repeat: no-repeat;background-size: 100% 100%;">
        <a href="hidratos/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark2')" onmouseout="muda2('mark2')" onclick="audio()"><p><mark id="mark2">HIDRATOS</mark></p></a>
    </div>
    <div class="icon1" style="background-image: url('sobremesas/the_rock_is_cooking.png');background-repeat: no-repeat;background-size: 100% 100%;">
     <a href="sobremesas/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark3')" onmouseout="muda2('mark3')"><p><mark id="mark3">SOBREMESAS</mark></p></a>
     </div>
- <div class="icon2" style="background-image: url('outros/icon.png');background-repeat: no-repeat;background-size: 100% 100%;">
+ <div onclick="altera()" class="icon2" style="background-image: url('outros/icon.png');background-repeat: no-repeat;background-size: 100% 100%;">
   <a href="outros/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark4')" onmouseout="muda2('mark4')"><p><mark id="mark4">OUTROS</mark></p></a>
 </div>
 </div>
 
 <br><br><br><hr style="width: 50%;"><br>
 
-<center><h4>Tags: 🫑 vegetariano, 🌱 vegan, ⏱ rapido de fazer, 🌶 picante, 🥘 favoritos</h4></center>
+
+<center><img onclick="audio(0)" src="e4.png" class="emojis"></center>
+<!--<center><h4>Dificuldade: 🦷 facil, 💀 normal, <img src="esqieleto3.png" class="emojis"> dificil, <img onclick="audio(0)" src="e4.png" class="emojis"> bem dificil</h4></center>-->
+<center><h4>Tags: 🫑 vegetariano, 🌱 vegan, ⏱ rapido de fazer, 🌶 picante, <img src="favorito.png" class="emojis"> favoritos</h4></center>
 <center><h4>Mediçoes: 1 tbsp = 15ml, 1 tsp = 5ml , 1 cup = 240ml</h4></center>
 </body>
-<audio id="okok">
+<audio id="massa">
   <source src="massa_broda.oga" type="audio/mpeg">
+</audio>
+<audio id="metal">
+  <source src="som_metal.mp3" type="audio/mpeg">
 </audio>
 <script>
   var a = document.getElementById("okok");
   var mark1 = document.getElementById("mark1");
   var href1 = document.getElementById("href1");
+  var corpo = document.getElementById("corpo");
+  var yerps = 0
+
+  function altera(){
+    if(yerps == 0){
+      corpo.style.backgroundColor = "rgb(90,46,152)";
+      corpo.style.color = "rgb(165,209,103)";
+      yerps = 1;
+    }else{
+      corpo.style.backgroundColor = "rgb(222, 172, 138)";
+      corpo.style.color = "black";
+      yerps = 0
+    }
+  }
 
   function muda(idmark){
     var ok = document.getElementById(idmark);
@@ -113,7 +116,11 @@
     ok.style = "background-color: white;color: black";
   }
 
-  function audio(){
-    okok.play()
+  function audio(num){
+    if(num==1){
+      massa.play()
+    }else{
+      metal.play()
+    }
   }
 </script>
