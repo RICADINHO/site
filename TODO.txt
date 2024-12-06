@@ -14,5 +14,9 @@
 ||Anuncios||
 \\--------//
 
-- SIGN UP TO A NEW REALITY NOW!!!!! (/singup)
-- WANT TO LOG IN? NO? [%$#£] YOU! (/login)
+- SIGN UP TO A NEW REALITY NOW!!!!! (/login -> /singup)
+- ALREADY HAVE AN ACCOUNT? HOLY [Mama]!! (/singup -> /login)
+- WANT TO LOG IN? NO? [%$#£] YOU! (home page -> /login)
+- WANT TO BE HAPPY? CREATE A [Regret] NOW! (home page -> /singup)
+- FEELING LONELY?? NOT ANYMORE!! ()
+- STOP WHAT YOU'RE DOING RIGHT NOW AND [Kill] ME!! ()

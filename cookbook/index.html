@@ -46,11 +46,12 @@
       height: 20px;
       vertical-align: middle;
     }
+    
 </style>
 
 <body id="corpo">
   <center><h1>RICADINHO's COOKBOOK</h1></center><br>
-  <center><h3 style="font-weight: normal;">Fiz esta pagina para guardar todas as receitas que gostei/fiz e que não me quero esquecer (novas receitas todas as semanas!?!??!?!? wtf????)</h3></center>
+  <center><h3 id="texto_cima" style="font-weight: normal;">Cookbook? Do RICADINHO? wtf? https://ricadinho.com/cookbook/</h3></center>
   <br><hr style="width: 50%;"><br>
 
 <BR><BR>
@@ -72,10 +73,9 @@
 <br><br><br><hr style="width: 50%;"><br>
 
 
-<center><img onclick="audio(0)" src="e4.png" class="emojis"></center>
+<center><img id="emoji_centro" onclick="audio(0)" src="e4.png" class="emojis"></center>
 <!--<center><h4>Dificuldade: 🦷 facil, 💀 normal, <img src="esqieleto3.png" class="emojis"> dificil, <img onclick="audio(0)" src="e4.png" class="emojis"> bem dificil</h4></center>-->
-<center><h4>Tags: 🫑 vegetariano, 🌱 vegan, ⏱ rapido de fazer, 🌶 picante, <img src="favorito.png" class="emojis"> favoritos</h4></center>
-<center><h4>Mediçoes: 1 tbsp = 15ml, 1 tsp = 5ml , 1 cup = 240ml</h4></center>
+<center><h4 id="texto_tags">Tags: 🫑 vegetariano, 🌱 vegan, ⏱ rapido de fazer, <img src="favorito.png" class="emojis"> favoritos <br><br>  Mediçoes: 1 tbsp = 15ml, 1 tsp = 5ml , 1 cup = 240ml </h4></center>
 </body>
 <audio id="massa">
   <source src="massa_broda.oga" type="audio/mpeg">
@@ -88,7 +88,29 @@
   var mark1 = document.getElementById("mark1");
   var href1 = document.getElementById("href1");
   var corpo = document.getElementById("corpo");
-  var yerps = 0
+  var emoji_centro = document.getElementById("emoji_centro")
+  var texto_cima = document.getElementById("texto_cima")
+  var texto_tags = document.getElementById("texto_tags")
+
+  var yerps = 0;
+
+  var x1 = Math.floor(Math.random() * 10);
+  var x2 = Math.floor(Math.random() * 100);
+
+  if(x1 == 0){// meter mais texto
+    texto_cima.textContent = "yerp"
+  }
+
+  if(x2>=95){
+    corpo.style.backgroundImage = "url('A.png')"
+    texto_cima.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    texto_tags.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  }
+  if(x2<=10){
+    emoji_centro.src = "mf-doom.png"
+  }
+  
+
 
   function altera(){
     if(yerps == 0){
