@@ -97,23 +97,26 @@
   var x1 = Math.floor(Math.random() * 10);
   var x2 = Math.floor(Math.random() * 100);
 
+  console.log("probabilidade 10: "+x1)
+  console.log("probabilidade 100: "+x2)
+
   if(x1 == 0){// meter mais texto
-    texto_cima.textContent = "yerp"
+    texto_cima.textContent = "dominios MVG: https://ricadinho.com/ -- https://martinho.pt/ -- https://mvg.lol/ -- https://rabosgigantes.com/ -- https://peido.pt/"
   }
 
-  if(x2>=95){
+  if(x2>=95){ // probabilidade dos AAAAAAAAAAAA
     corpo.style.backgroundImage = "url('A.png')"
     texto_cima.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     texto_tags.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   }
-  if(x2<=10){
+  if(x2<=10){ // probabilidade do emoji da panela
     emoji_centro.src = "mf-doom.png"
   }
   
 
 
-  function altera(){
-    if(yerps == 0){
+  function altera(){ // altera o background da pagina para o <mark> OUTROS
+    if(yerps == 0){ 
       corpo.style.backgroundColor = "rgb(90,46,152)";
       corpo.style.color = "rgb(165,209,103)";
       yerps = 1;
@@ -124,21 +127,21 @@
     }
   }
 
-  function muda(idmark){
+  function muda(idmark){ // onmouseover alteraçoes do texto do <mark>
     var ok = document.getElementById(idmark);
-    if(idmark == "mark4"){
+    if(idmark == "mark4"){ // OUTROS
       ok.style = "background-color: rgb(90,46,152);color: rgb(165,209,103)";
-    }else{
+    }else{// BRODEINAS HIDRATOS SOBERMESAS
       ok.style = "background-color: black;color: white";
     }
   }
 
-  function muda2(idmark){
+  function muda2(idmark){ // onmouseout alteraçoes do texto do <mark>
     var ok = document.getElementById(idmark);
     ok.style = "background-color: white;color: black";
   }
 
-  function audio(num){
+  function audio(num){ // toca o audio para o que for preciso
     if(num==1){
       massa.play()
     }else{

@@ -383,7 +383,7 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
 }
 </script>-->
 
-<a id="anuncio6" href="http://ricadinho.com/login/login">
+<a id="anuncioLadoRef" href="http://ricadinho.com/login/login">
   <img title ="LOSE YOURSELF ON THIS NEW REALITY" style="position: absolute;right: 0px;bottom: 100px;" src="cenas_do_site/anuncios/anuncio6/anuncio6.png" alt="anuncio6" id="anuncioLado">
 </a>
 
@@ -393,8 +393,7 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
 
 <script>
 
-var i = document.getElementById("anuncioBaixo");
-var anuncioL = document.getElementById("anuncioLado")
+
 
   /*const isMobile = navigator.userAgentData.mobile;
   console.log("É MOBILE??? " + isMobile)
@@ -407,54 +406,80 @@ var anuncioL = document.getElementById("anuncioLado")
   }*/
 
   // ------------------------------------------- ANUNCIOS ---------------------------
-  var x1 = Math.floor(Math.random() * 6);
-  var x2 = Math.floor(Math.random() * 100);
-  var x3 = Math.floor(Math.random() * 10);
+  var i = document.getElementById("anuncioBaixo");
   var r = document.getElementById("referencia");
 
-  console.log("Numero rand dos 4 anuncios: "+x1);
-  console.log("Numero rand do anuncio escondido: "+x2);
-  console.log("Numero rand dos anuncios easter egg: "+x3);
+  var h1 = Math.floor(Math.random() * 6);
+  var h2 = Math.floor(Math.random() * 100);
+  var h3 = Math.floor(Math.random() * 10);
 
-  if(x2 == 1){ // anuncio escondido
+
+  var anuncioL = document.getElementById("anuncioLado");
+  var anuncioLR = document.getElementById("anuncioLadoRef");
+
+  var v1 = Math.floor(Math.random() * 10);
+
+  console.log("Anuncios horizontais:")
+  console.log("Numero rand dos 4 anuncios: "+h1);
+  console.log("Numero rand do anuncio escondido: "+h2);
+  console.log("Numero rand dos anuncios easter egg: "+h3);
+  console.log("------------------------------------\nanuncios verticais:");
+  console.log("v1: "+v1)
+
+  // ANUNCIOS VERTICAIS
+
+  if(v1 >=4){
+    anuncioLR.href = "http://ricadinho.com/login/login";
+    anuncioL.src="cenas_do_site/anuncios/anunciosV/anuncio6/anuncio6.png";
+    anuncioL.title = "LOSE YOURSELF ON THIS NEW REALITY";
+  }else{
+    anuncioLR.href = "http://ricadinho.com/login/login";
+    anuncioL.src="cenas_do_site/anuncios/anunciosV/anuncio10/anuncio10.png";
+    anuncioL.title = "WHY ARE YOU LIKE THIS";
+  }
+
+
+  // ANUNCIOS HORIZONTAIS
+
+  if(h2 == 1){ // anuncio escondido
     r.href = "http://mvg.lol";
-    i.src = "cenas_do_site/anuncios/anuncio4/anuncio4V2.png";
+    i.src = "cenas_do_site/anuncios/anunciosH/anuncio4/anuncio4V2.png";
     i.title = "[%$#£] YOU"
-  }else if(x1==0){ //anuncio 1
-    if(x3 == 7){//anuncio 1 / QUIM
+  }else if(h1==0){ //anuncio 1
+    if(h3 == 7){//anuncio 1 / QUIM
     r.href = "http://ricadinho.com/MrBrodinha/quim";
-    i.src = "cenas_do_site/anuncios/anuncio1/anuncio1QUIM.png";
+    i.src = "cenas_do_site/anuncios/anunciosH/anuncio1/anuncio1QUIM.png";
     i.title = "QUIM ME";
     }else{//anuncio 1 / broda
     r.href = "http://ricadinho.com/MrBrodinha";
-    i.src = "cenas_do_site/anuncios/anuncio1/anuncioX.png";
+    i.src = "cenas_do_site/anuncios/anunciosH/anuncio1/anuncioX.png";
     i.title = "CLICK ME";
     }
-  }else if(x1==1){ // anuncio 2 / comida
+  }else if(h1==1){ // anuncio 2 / comida
     r.href = "http://ricadinho.com/comida";
-    i.src = "cenas_do_site/anuncios/anuncio2/anuncio2V2.png";
+    i.src = "cenas_do_site/anuncios/anunciosH/anuncio2/anuncio2V2.png";
     i.title = "EAT";
-  }else if(x1==2){ // anuncio 3
-    /*if(x3 == 2){//anuncio 3 / real
+  }else if(h1==2){ // anuncio 3
+    /*if(h3 == 2){//anuncio 3 / real
     r.href = "http://ricadinho.com/LOVE/real";
     i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081953193099014265/anuncio3V2.png";
     i.title = "NEW MESSAGE!!!!♥️♥️♥️♥️♥️"
     }else{//anuncio 3 / 404*/
     r.href = "http://ricadinho.com/LOVE";
-    i.src = "cenas_do_site/anuncios/anuncio3/anuncio3V2.png";
+    i.src = "cenas_do_site/anuncios/anunciosH/anuncio3/anuncio3V2.png";
     i.title = "NEED LOVE??"
    // }
-  }else if(x1==3){ //anuncio 4 / marte
+  }else if(h1==3){ //anuncio 4 / marte
     r.href = "https://martinho.pt/";
-    i.src = "cenas_do_site/anuncios/anuncio5/anuncio5V2.png";
+    i.src = "cenas_do_site/anuncios/anunciosH/anuncio5/anuncio5V2.png";
     i.title = "THE BEST ON THE MARKET";
-  }else if(x1==4){ // anuncio 5 / MVG
+  }else if(h1==4){ // anuncio 5 / MVG
     r.href = "https://mvg.lol";
-    i.src = "cenas_do_site/anuncios/anuncio7/anuncioMVG.png";
+    i.src = "cenas_do_site/anuncios/anunciosH/anuncio7/anuncioMVG.png";
     i.title = "MVG FTW";
-  }else if(x1==5){ // anuncio 6 / cookbook
+  }else if(h1==5){ // anuncio 6 / cookbook
     r.href = "https://ricadinho.com/cookbook";
-    i.src = "cenas_do_site/anuncios/anuncio8/anuncioCook.png";
+    i.src = "cenas_do_site/anuncios/anunciosH/anuncio8/anuncioCook.png";
     i.title = "THE BEST RECIPES IN THE WEB";
   }
 </script>
