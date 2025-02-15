@@ -3,41 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="massa.png">
+    <link rel="icon" type="image/x-icon" href="../extras/massa.png">
+    <link rel="stylesheet" href="../extras/ficheiros/categorias.css">
+    <link rel="stylesheet" href="../extras/ficheiros/navbar.css">
     <title>Massas</title>
 </head>
 
 
 
-
-<style>
-    body{
-        background-color: rgb(222, 172, 138);
-    }
-    .content{
-        display: none;
-    }
-    h1{
-        cursor: grab;
-    }
-    h2{
-        margin-left: 2%;
-        cursor: grab;
-    }
-    h3{
-        margin-left: 4%;
-        cursor: grab;
-    }
-    .espaco{
-        margin-left: 6%;
-    }
-    .datas{
-        font-size: small;
-    }
-</style>
-
-
 <body>
+
+    <ul class="nav">
+        <li class="nav"><a href="../">Cookbook</a></li>
+        <li class="nav"><a href="../proteinas/">Proteinas</a></li>
+        <li class="nav"><a class="active" href="#">Hidratos</a></li>
+        <li class="nav"><a href="../sobremesas">Sobermesas</a></li>
+        <li class="nav"><a href="../outros">Outros</a></li>
+      </ul><br><br>
     <!-- ------------------------------------- MASSAS -------------------------------------->
     <!-- ------------------------------------- MASSAS -------------------------------------->
     <!-- ------------------------------------- MASSAS -------------------------------------->
@@ -221,28 +203,4 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-<script>
-    $("h1").click(function() {
-      var target = $(this).data("target");
-      $(target).slideToggle("fast");
-  
-      var $this = $(this);
-      $this.toggleClass("open");
-    });
-
-    $("h2").click(function() {
-      var target = $(this).data("target");
-      $(target).slideToggle("fast");
-  
-      var $this = $(this);
-      $this.toggleClass("open");
-    });
-
-    $("h3").click(function() {
-      var target = $(this).data("target");
-      $(target).slideToggle("fast");
-  
-      var $this = $(this);
-      $this.toggleClass("open");
-    });
-</script>
+<script src="../extras/ficheiros/categorias.js"></script>

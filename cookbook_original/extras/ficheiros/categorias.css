@@ -1,0 +1,31 @@
+.datas{
+    font-size: small;
+}
+body{
+    background-color: rgb(222, 172, 138);
+}
+.content{
+    display: none;
+}
+h1{
+    cursor: grab;
+}
+h2{
+    margin-left: 2%;
+    cursor: grab;
+}
+h3{
+    margin-left: 4%;
+    cursor: grab;
+}
+.espaco{
+    margin-left: 6%;
+}
+.datas{
+    font-size: small;
+}
+.emojis{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
