@@ -3,9 +3,8 @@
 
 <head>
    <title>PACHECO POWEEEEEEEEEEEEEEEEEEEEEEER</title>
-   <link rel="stylesheet" href="styles.css">
-   <link id="ok" rel="icon" type="image/x-icon" href="broda_sem_fundo.png">
-   <link href="https://ricadinho.com/cenas_do_site/ficheiros/capcha.css" rel="stylesheet">
+   <link id="ok" rel="icon" type="image/x-icon" href="extras_mrbrodinha/broda_sem_fundo.png">
+   <link href="../cenas_do_site/ficheiros/capcha.css" rel="stylesheet">
 </head>
 
 
@@ -16,69 +15,40 @@
            <button type="button" style="cursor: pointer;" id="fkrc-checkbox" class="fkrc-checkbox fkrc-m-p fkrc-line-normal"></button>
        </div>
        <p class="fkrc-im-not-a-robot fkrc-m-p fkrc-line-normal">I'm not a robot</p>
-       <img src="https://ricadinho.com/cenas_do_site/ficheiros/capcha.svg" class="fkrc-captcha-logo fkrc-line-normal" alt="">
+       <img src="../cenas_do_site/ficheiros/capcha.svg" class="fkrc-captcha-logo fkrc-line-normal" alt="">
        <p href="" class="fkrc-checkbox-desc fkrc-m-p fkrc-line-normal"><a href="#">Privacy - Terms</a></p>
-       <img src="https://ricadinho.com/cenas_do_site/ficheiros/capcha.svg" class="fkrc-spinner fkrc-m-p fkrc-line-normal" alt="" id="fkrc-spinner">
+       <img src="../cenas_do_site/ficheiros/capcha.svg" class="fkrc-spinner fkrc-m-p fkrc-line-normal" alt="" id="fkrc-spinner">
    </div><br><br><br>
    <!-- Captcha checkbox verification window -->
 
-   <img src="https://ricadinho.com/cenas_do_site/ficheiros/capcha.svg" alt="" class="fkrc-verifywin-window-arrow" id="fkrc-verifywin-window-arrow"/>
+   <img src="../cenas_do_site/ficheiros/capcha.svg" alt="" class="fkrc-verifywin-window-arrow" id="fkrc-verifywin-window-arrow"/>
 </div>
 
 
 <audio id="myAudio" loop >
-   <source src="Skrillex.mp3" type="audio/mpeg">
+   <source src="extras_mrbrodinha/candyland_ER.mp3" type="audio/mpeg">
 </audio>
 
 <div style="display:flex;justify-content:center;align-items:center;height:100vh;" >
-   <video id="video" src="brodaFinal.mp4" width="1280" height="768" muted loop></video>
+   <video id="video" src="extras_mrbrodinha/brodaFinal.mp4" width="1280" height="768" muted loop></video>
 </div>
 
-<script src="https://ricadinho.com/cenas_do_site/ficheiros/capcha.js" type="text/javascript"></script>
+<script src="../cenas_do_site/ficheiros/capcha.js" type="text/javascript"></script>
 
 <script>
- var r = Math.floor(Math.random() * 10);
  var x = document.getElementById("myAudio"); 
  var y = document.getElementById("toca");
  var z = document.getElementById("video");
-   console.log("video");
 
+ audios = ["extras_mrbrodinha/funky.mp3","extras_mrbrodinha/Skrillex.mp3","extras_mrbrodinha/candyland_ER.mp3","extras_mrbrodinha/candyland.mp3","extras_mrbrodinha/groove.mp3","extras_mrbrodinha/omfg.mp3","extras_mrbrodinha/Symbolism.mp3","extras_mrbrodinha/compilation.mp3","extras_mrbrodinha/faded.mp3"]
+ var audio_random = Math.floor(Math.random() * audios.length);
+ console.log("audio random: "+audio_random)
  function playAudio() {  
-   z.play();//teste
+   z.play();
    y.style.display = "none";
-   console.log(x);
-   console.log(z);
-   console.log(r);
-   if(r == 0){
-      x.src = "funky.mp3";
-      x.play();
-   }else if(r == 1){
-      x.src = "amongus.mp3";
-      x.play();
-   }else if(r == 2){
-      x.src = "candyland_ER.mp3";
-      x.play();
-   }else if(r == 3){
-      x.src = "candyland.mp3";
-      x.play();
-   }else if(r == 4){
-      x.src = "groove.mp3";
-      x.play();
-   }else if(r == 5){
-      x.src = "omfg.mp3";
-      x.play();
-   }else if(r == 6){
-      x.src = "Symbolism.mp3";
-      x.play();
-   }else if(r == 7){
-      x.src = "compilation.mp3";
-      x.play();
-   }else if(x == 8){
-      x.src = "fadded.mp3"
-      x.play();
-   }else{
-      x.play();
-   }
+   x.src = audios[audio_random];
+   x.play();
+
  } 
  
 </script>

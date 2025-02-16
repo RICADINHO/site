@@ -56,41 +56,11 @@
   </style>
 </head>
 
-<!--                                                    BACKGROUNDS
-ESTATICA - https://images-ext-2.discordapp.net/external/Kp6kDJ96-9Yn_HApdl2K-iV-SCdUgUsrV-Zvcoj0pcs/https/img1.picmix.com/output/stamp/normal/5/7/8/4/1814875_932a4.gif
-PRETO - https://media.discordapp.net/attachments/412661004527206401/1075092202012823632/image.png
-fundo pixeis - https://media.discordapp.net/attachments/412661004527206401/1075480414996672522/966315.png
-8bit chuva - https://media.discordapp.net/attachments/570659114162847746/1075930594829152287/rain.gif
-gif wave 8bit - https://cdn.discordapp.com/attachments/570659114162847746/1077549425993461770/vaporwave.gif
-vaporwave espaço na esquerda - https://cdn.discordapp.com/attachments/570659114162847746/1077549372318949396/vaporwave2.jpg
--->
 
-<!--
-<head>         DA REDIRECT PASSADOS \/ SEGUNDOS
-  <meta http-equiv="refresh" content="7; url='https://martetm.eu/'" />
-</head>
---> 
 
-<!--
-<body onload="checkFirstVisit()"></body>
+<body id="foto_fundo" style="background-image: url('cenas_do_site/8bit_day/14-sem_sol_(nautical_dawn).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;">
 
-<script>
-function checkFirstVisit() {
-  if(document.cookie.indexOf('mycookie')==-1) {
-    // The cookie doesn't exist. Create it now
-    document.cookie = 'mycookie=1';
-  }
-  else {
-    // Not the first visit, so alert
-    var x = document.getElementById("sonoro");
-    x.play();
-    alert('You refreshed!');
-  }
-}
-</script>
--->
-
-<audio id="sonoro" loop >
+<audio id="audio" loop >
   <source src="dialtone.mp3" type="audio/mpeg">
 </audio>
 
@@ -107,68 +77,73 @@ function checkFirstVisit() {
   </script>
 -->
 
+
+
+
+  <div id="aula">
+    <h1 id="texto_central_1"><a id="textoC" title="THE BEST WEBSITE IN THE WORLD" href="http://ricadinho.com/" style="color: black">RICADINHO.com</a></h1>
+    <h1 id="texto_central_2" title="THE SECOND BEST WEBSITE IN THE WORLD" style="display: none;text-decoration: none;"><a id="MVGlink" href="https://mvg.lol"><span style="color: goldenrod;">MVG.lol</span></a></h1>
+    <h1 id="texto_central_3" title="HAVE YOU SEEN [it?]???" style="display: none;text-decoration: none;"><a id="deltalink" href="https://deltarune.com/sighting/"><span id="spam1" style="color: #ffaec9">[hyperlink</span> <span style="color: #fff200;">blocked]</span></a></h1>
+  </div>
+
+
+
+
+
+<a id="anuncioLadoReferencia" href="http://ricadinho.com/login/login">
+  <img title ="texto de mouseover" style="position: absolute;right: 0px;bottom: 100px;" src="cenas_do_site/anuncios/anunciosV/anuncio6/anuncio6.png" alt="anuncio6" id="anuncioLado">
+</a>
+
+<a id="anuncioBaixoReferencia" href="http://ricadinho.com/login/login"> 
+  <img  width="auto" height="auto" title="texto de mouseover" style="position: absolute;bottom: 0px;right: 33%;" id="anuncioBaixo" src="cenas_do_site/anuncios/anunciosH/anuncio4/anuncio4V2.png" alt="anuncio" class="center">
+</a>
+</body>
+
+<script src="https://www.unpkg.com/suncalc@1.9.0/suncalc.js"></script>
+<script src="cenas_do_site/ficheiros/sol.js"></script>
 <script>
-  var x = document.getElementById("sonoro"); 
-  var y = document.getElementById("tocar");
-  var y2 = document.getElementById("para");
-  console.log(x);
-  console.log(y);
+// ------------------------------------------- AUDIO DE FUNDO ---------------------------
+var audio = document.getElementById("audio"); 
+  var botao_tocar = document.getElementById("tocar");
+  var botao_parar = document.getElementById("para");
   
   function desmuda(){
-    y.textContent = '►';
-    y.style.fontSize = '20px';
+    botao_tocar.textContent = '►';
+    botao_tocar.style.fontSize = '20px';
   }
 
   function muda(){
-    y.textContent = '☎';
-    y.style.fontSize = '18px';
+    botao_tocar.textContent = '☎';
+    botao_tocar.style.fontSize = '18px';
   }
 
   function playAudio() {
-    x.play();
-    //y.style.visibility = "hidden";
-    //y2.style.visibility = "hidden";
-    y.style.display = "none";
-    //y2.style.display = "none";
-    y2.style.display = "inline-block"; //meter de volta
-    console.log(x);
-    console.log(y);
+    audio.play();
+    botao_tocar.style.display = "none";
+    botao_parar.style.display = "inline-block"; //meter de volta
   } 
   
   function pauseAudio() { 
-    /*x.pause(); 
-    x.currentTime = 0;*/
-    y2.textContent = "nop";
-    setTimeout(nop2, 500);
+    botao_parar.textContent = "nop";
+    setTimeout(nop1, 500);
   } 
 
-  function nop2(){
-    y2.textContent = ";)";
-    setTimeout(nop1, 300);
-  }
-
   function nop1(){
-    y2.textContent = "<3";
-    setTimeout(nop, 200);
+    botao_parar.textContent = ";)";
+    setTimeout(nop2, 300);
   }
 
-  function nop(){
-    y2.style.display = "none";
+  function nop2(){
+    botao_parar.textContent = "<3";
+    setTimeout(nop3, 200);
   }
-</script>
 
+  function nop3(){
+    botao_parar.style.display = "none";
+  }
 
-<body>
-  <a href="http://ricadinho.com/clips"></a>
-    <div id="aula">
-      <h1 id="texto_central_1"><a id="textoC" title="THE BEST WEBSITE IN THE WORLD" href="http://ricadinho.com/" style="color: black">RICADINHO.com</a></h1>
-      <h1 id="texto_central_2" title="THE SECOND BEST WEBSITE IN THE WORLD" style="display: none;text-decoration: none;"><a id="MVGlink" href="https://mvg.lol"><span style="color: goldenrod;">MVG.lol</span></a></h1>
-      <h1 id="texto_central_3" title="HAVE YOU SEEN [it?]???" style="display: none;text-decoration: none;"><a id="deltalink" href="https://deltarune.com/sighting/"><span id="spam1" style="color: #ffaec9">[hyperlink</span> <span style="color: #fff200;">blocked]</span></a></h1>
-    </div>
-</body>
-
-<script>
-  var numero_textoC = Math.floor(Math.random() * 10);
+// ------------------------------------------- TEXTO DO CENTRO ---------------------------
+var numero_textoC = Math.floor(Math.random() * 10);
   var texto_centro1 = document.getElementById("texto_central_1");
   var texto_centro2 = document.getElementById("texto_central_2");
   var texto_centro3 = document.getElementById("texto_central_3");
@@ -181,259 +156,38 @@ function checkFirstVisit() {
     texto_centro1.style.display = "none";
     texto_centro2.style.display = "inline-block"
   }
-</script>
-
-<body id="foto_fundo" style="background-image: url('URL_DA_FOTO_PA'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;"></body>
-
-<script src="https://www.unpkg.com/suncalc@1.9.0/suncalc.js"></script>
-
-<script>
-var times = SunCalc.getTimes(new Date(), 39.8, -8.1);
-var tempo = new Date();
-var botao1 = document.getElementById("tocar");
-var botao2 = document.getElementById("para");
-var foto_de_fundo = document.getElementById("foto_fundo");
-
-var amanha = new Date();
-amanha.setDate(tempo.getDate() +1);
-console.log(amanha);
-var times2 = SunCalc.getTimes(amanha, 39.8,-8.1);
-console.log(times2);
-
-console.log(times);// nautical dawn | dawn | sunrise | 1metade | 2metade | solarNoon | 1metade_2 | 2metade_2 | sunset | dusk | nautical dusk | night | metade da noite | night end | nautical dawn (repete)
-
-//cortes de tempo entre sunrire e meio dia
-var metade_entre_sunrise_solarNoon = (times.sunrise.getTime() + times.solarNoon.getTime())/2;// 1meio
-var primeira_metade_antes_meioDia = (metade_entre_sunrise_solarNoon + times.sunrise.getTime())/2;// 1metade 
-var segunda_metade_antes_meioDia = (metade_entre_sunrise_solarNoon + times.solarNoon.getTime())/2;// 2metade
-//cortes de tempo entre meio dia e sunset
-var METADE_entre_solarNoon_sunset = (times.solarNoon.getTime() + times.sunset.getTime())/2;// 2meio
-var PRIMEIRA_metade = (METADE_entre_solarNoon_sunset + times.solarNoon.getTime())/2;// 1metade_2
-var SEGUNDA_metade = (METADE_entre_solarNoon_sunset + times.sunset.getTime())/2;// 2metade_2
-//cortes de tempo das noites
-var NOITE_metade = (times.night.getTime() + times.nightEnd.getTime())/2;
-var teste_metade = (times.night.getTime() + times2.nightEnd.getTime())/2;
-//console.log(times.sunrise.getTime())
-//console.log(times.solarNoon.getTime())
-/*console.log((times.sunrise.getTime() + times.solarNoon.getTime())/2)
-console.log((metade_entre_sunrise_solarNoon + times.sunrise.getTime())/2)
-console.log((metade_entre_sunrise_solarNoon + times.solarNoon.getTime())/2)*/
-/*var sunriseStr = times.sunrise.getHours() + ':' + times.sunrise.getMinutes();
-var sunrisePos = SunCalc.getPosition(times.sunrise, 51.5, -0.1);
-var sunriseAzimuth = sunrisePos.azimuth * 180 / Math.PI*/
-/*console.log(times);
-console.log(times.dawn);
-console.log(new Date());
-var ola = new Date();
-console.log(times.dawn.getMonth() === ola.getMonth());
-console.log(ola.getTime());*/
-console.log("-----------TEMPOS--------------");
-console.log("tempo: "+tempo.getTime());
-console.log("nauticalDawn: "+times.nauticalDawn.getTime());
-console.log("dawn: "+times.dawn.getTime());
-console.log("sunrise: "+times.sunrise.getTime());
-console.log("primera metade antes meio dia: "+primeira_metade_antes_meioDia);
-console.log("segunda metade antes meio dia: "+segunda_metade_antes_meioDia);
-console.log("solarNoon: "+times.solarNoon.getTime());
-console.log("primeira metade depois meio dia: "+PRIMEIRA_metade);
-console.log("segunda metade depois meio dia: "+SEGUNDA_metade);
-console.log("sunset: "+times.sunset.getTime());
-console.log("dusk: "+times.dusk.getTime());
-console.log("nauticalDusk: "+times.nauticalDusk.getTime());
-console.log("night: "+times.night.getTime());
-console.log("noite metade: "+ teste_metade);
-console.log("nightEnd: "+times2.nightEnd.getTime());
-console.log("---------ACABOU TEMPOS---------");
-
-if(times.nauticalDawn.getTime() <= tempo.getTime() && tempo.getTime() < times.dawn.getTime()){//NAUTICAL DAWN
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/14-sem_sol_(nautical_dawn).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);";
-  botao2.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);display: none";
-}else if(times.dawn.getTime() <= tempo.getTime() && tempo.getTime() < times.sunrise.getTime()){//DAWN
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/1-sol_a_nascer_bem_pequeno_(dawn).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(24,35,127);border-color: rgba(24,35,127);color: rgba(255, 255, 255);";
-  botao2.style = "background-color: rgba(24,35,127);border-color: rgba(24,35,127);color: rgba(255, 255, 255);display: none";
-}else if(times.sunrise.getTime() <= tempo.getTime() && tempo.getTime() < primeira_metade_antes_meioDia){//SUNRISE
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/2-sol_a_nascer_(sunrise).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(31,45,229);border-color: rgba(31,45,229);color: darkblue;"
-  botao2.style = "background-color: rgba(31,45,229);border-color: rgba(31,45,229);color: darkblue;display: none"
-}else if(primeira_metade_antes_meioDia <= tempo.getTime() && tempo.getTime() < segunda_metade_antes_meioDia){//PRIMERA METADE ENTRE SUNRISE E MEIO DIA
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/3-sol_depois_de_nascer_(primeira_metade_entre_2_e_5).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(71,185,255);border-color: rgba(71,185,255);";
-  botao2.style = "background-color: rgba(71,185,255);border-color: rgba(71,185,255);display: none";
-}else if(segunda_metade_antes_meioDia <= tempo.getTime() && tempo.getTime() < times.solarNoon.getTime()){//SEGUNDA METADE ENTRE SUNRISE E MEIO DIA
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/4-sol_quase_meio_dia_(segunda_metade_entre_2_e_5).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
-  botao2.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);display: none";
-}else if(times.solarNoon.getTime() <= tempo.getTime() && tempo.getTime() < PRIMEIRA_metade){//MEIO DIA
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/5-meio_dia_(solarNoon).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(115,224,255);border-color: rgba(115,224,255);";
-  botao2.style = "background-color: rgba(115,224,255);border-color: rgba(115,224,255);display: none";
-}else if(PRIMEIRA_metade <= tempo.getTime() && tempo.getTime() < SEGUNDA_metade){//1 METADE ENTRE MEIO DIA E SUNSET
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/6-sol_depois_de_meio_dia_(primeira_metade_entre_5_e_8).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
-  botao2.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);display: none";
-}else if(SEGUNDA_metade <= tempo.getTime() && tempo.getTime() < times.sunset.getTime()){//2 ETADE ENTRE MEIO DIA E SUNSET
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/7-sol_perto_de_por_(segunda_metade_entre_5_e_8).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(73,116,229);border-color: rgba(73,116,229);color: rgb(48, 48, 48);";
-  botao2.style = "background-color: rgba(73,116,229);border-color: rgba(73,116,229);color: rgb(48, 48, 48);display: none";
-}else if(times.sunset.getTime() <= tempo.getTime() && tempo.getTime() < times.dusk.getTime()){//SUNSET
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/8-sol_a_por_(sunset).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(123,19,158);border-color: rgba(123,19,158);color: rgb(215, 215, 215);";
-  botao2.style = "background-color: rgba(123,19,158);border-color: rgba(123,19,158);color: rgb(215, 215, 215);display: none";
-}else if(times.dusk.getTime() <= tempo.getTime() && tempo.getTime() < times.nauticalDusk.getTime()){//DUSK
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/9-sol_quase_a_por_(dusk).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(136,0,158,255);border-color: rgba(136,0,158,255);color: rgb(215, 215, 215);";
-  botao2.style = "background-color: rgba(136,0,158,255);border-color: rgba(136,0,158,255);color: rgb(215, 215, 215);display: none";
-}else if(times.nauticalDusk.getTime() <= tempo.getTime() && tempo.getTime() < times.night.getTime()){//NAUTICALDUSK
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/14-sem_sol_(nautical_dawn).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);";
-  botao2.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);display: none";
-}else if(times.night.getTime() <= tempo.getTime() && tempo.getTime() < teste_metade){//NIGHT
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/11-inicio_da_noite_(night).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);";
-  botao2.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);display: none";
-}else if(teste_metade <= tempo.getTime() && tempo.getTime() < times2.nightEnd.getTime()){//MEIA NOITE
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/12-meio_da_noite.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);";
-  botao2.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);display: none";
-}else if(times2.nightEnd.getTime() <= tempo.getTime()){// && tempo.getTime() < times2.nauticalDawn.getTime()){//NIGHTEND
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/13-fim_da_noite_(night end).png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rrgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);";
-  botao2.style = "background-color: rgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);display: none";
-}else{// ERRO
-  /*foto_de_fundo.style = "background-image: url('cenas_do_site/pagina_de_erro.png');background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%";
-  botao1.style = "background-color: black;border-color: black;color: white;";
-  botao2.style = "background-color: black;border-color: black;color: white;display: none";*/
-  foto_de_fundo.style = "background-image: url('cenas_do_site/8bit_day/12-meio_da_noite.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);";
-  botao2.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);display: none";
-}
-</script>
-
-<!--
-<script>
-var botao1 = document.getElementById("tocar");
-var botao2 = document.getElementById("para");
-var ola = document.getElementById("foto_fundo");
-var data = new Date();
-var horas = data.getHours();
-console.log(horas>2);
-
-if(horas >=0 && horas < 2){//----------------------NIGHT
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642214802477106/21-2.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);";
-  botao2.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);display: none";
-}else if(horas >= 2 && horas < 4){//---------------------MEIA NOITE
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582578619514950/2-4.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);";
-  botao2.style = "background-color: rgba(30,25,79);border-color: rgba(30,25,79);color: rgba(255, 255, 255);display: none";
-}else if(horas >= 4 && horas < 6){//---------------------NIGHEND
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582599100301352/4-6.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rrgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);";
-  botao2.style = "background-color: rgba(35,30,98);border-color: rgba(35,30,98);color: rgba(255, 255, 255, 0.8);display: none";
-}else if(horas >= 6 && horas < 7){//-------------------NAUTICAL DAWN
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582612513701919/6-7.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);";
-  botao2.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);display: none";
-}else if(horas >= 7 && horas < 8){//----------------------DAWN
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582625880952842/7-8.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(24,35,127);border-color: rgba(24,35,127);color: rgba(255, 255, 255);";
-  botao2.style = "background-color: rgba(24,35,127);border-color: rgba(24,35,127);color: rgba(255, 255, 255);display: none";
-}else if(horas >= 8 && horas < 9){//--------------------SUNRISE
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582636991647825/8-9.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(31,45,229);border-color: rgba(31,45,229);color: darkblue;"
-  botao2.style = "background-color: rgba(31,45,229);border-color: rgba(31,45,229);color: darkblue;display: none"
-}else if(horas >=9 && horas < 10){//---------------------PRIMERA METADE ENTRE SUNRISE E MEIO DIA
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077582655668887572/9-10.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(71,185,255);border-color: rgba(71,185,255);";
-  botao2.style = "background-color: rgba(71,185,255);border-color: rgba(71,185,255);display: none";
-}else if(horas >= 10 && horas <12){//------------------------SEGUNDA METADE ENTRE SUNRISE E MEIO DIA
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642079351603200/10-12.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
-  botao2.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);display: none";
-}else if(horas >=12 && horas < 13){//-----------------------MEIO DIA
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642098771243139/12-13.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(115,224,255);border-color: rgba(115,224,255);";
-  botao2.style = "background-color: rgba(115,224,255);border-color: rgba(115,224,255);display: none";
-}else if(horas >= 13 && horas < 15){//-----------------------PRIMEIRA METADE ENTRE MEIO DIA E SUNSET
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642113778458665/13-16.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);";
-  botao2.style = "background-color: rgba(102,218,255);border-color: rgba(102,218,255);display: none";
-}else if(horas >=15 && horas < 16){//-------------------------SEGUNDA METADE ENTRE MEIO DIA E SUNSET
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642123949645925/16-17.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(73,116,229);border-color: rgba(73,116,229);color: rgb(48, 48, 48);";
-  botao2.style = "background-color: rgba(73,116,229);border-color: rgba(73,116,229);color: rgb(48, 48, 48);display: none";
-}else if(horas >=16 && horas <17){//--------------------------SUNSET
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642138621313024/17-19.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(123,19,158);border-color: rgba(123,19,158);color: rgb(215, 215, 215);";
-  botao2.style = "background-color: rgba(123,19,158);border-color: rgba(123,19,158);color: rgb(215, 215, 215);display: none";
-}else if(horas >= 17 && horas < 18){//------------------------DUSK
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642175757688913/19-20.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(136,0,158,255);border-color: rgba(136,0,158,255);color: rgb(215, 215, 215);";
-  botao2.style = "background-color: rgba(136,0,158,255);border-color: rgba(136,0,158,255);color: rgb(215, 215, 215);display: none";
-}else if(horas >=18 && horas <19){//-------------------------NAUTICALDUSK
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642202781585438/20-21.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgb(230, 230, 230);";
-  botao2.style = "background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgb(230, 230, 230);display: none";
-}else if(horas >=19){//--------------------NIGHT
-  ola.style = "background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077642214802477106/21-2.png'); background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;";
-  botao1.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);";
-  botao2.style = "background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);display: none";
-}
-</script>-->
-
-<a id="anuncioLadoRef" href="http://ricadinho.com/login/login">
-  <img title ="LOSE YOURSELF ON THIS NEW REALITY" style="position: absolute;right: 0px;bottom: 100px;" src="cenas_do_site/anuncios/anuncio6/anuncio6.png" alt="anuncio6" id="anuncioLado">
-</a>
-
-<a id="referencia" href="linkzao doidao"> 
-  <img  width="auto" height="auto" title="ok?" style="position: absolute;bottom: 0px;right: 33%;" id="anuncioBaixo" src="cenas_do_site/anuncios/anuncio4/anuncio4V2.png" alt="anuncio" class="center">
-</a>
-
-<script>
 
 
-
-  /*const isMobile = navigator.userAgentData.mobile;
-  console.log("É MOBILE??? " + isMobile)
-  
-  if(isMobile){
-    i.style.width = "70%";
-    i.style.right = "14%";
-    //anuncioL.style.height="40%"
-    anuncioL.style.display = "none"
-  }*/
 
   // ------------------------------------------- ANUNCIOS ---------------------------
-  var i = document.getElementById("anuncioBaixo");
-  var r = document.getElementById("referencia");
+  var anuncioB = document.getElementById("anuncioBaixo");
+  var anuncioBR = document.getElementById("anuncioBaixoReferencia");
 
   var h1 = Math.floor(Math.random() * 6);
   var h2 = Math.floor(Math.random() * 100);
-  var h3 = Math.floor(Math.random() * 10);
+  var h3 = Math.floor(Math.random() * 4);
 
-
+  
   var anuncioL = document.getElementById("anuncioLado");
-  var anuncioLR = document.getElementById("anuncioLadoRef");
+  var anuncioLR = document.getElementById("anuncioLadoReferencia");
 
-  var v1 = Math.floor(Math.random() * 10);
+  var v1 = Math.floor(Math.random() * 2);
 
   console.log("Anuncios horizontais:")
-  console.log("Numero rand dos 4 anuncios: "+h1);
+  console.log("Numero rand dos anuncios horizontais: "+h1);
   console.log("Numero rand do anuncio escondido: "+h2);
   console.log("Numero rand dos anuncios easter egg: "+h3);
-  console.log("------------------------------------\nanuncios verticais:");
-  console.log("v1: "+v1)
+  console.log("Anuncios verticais:");
+  console.log("Numero rand dos anuncios verticais: "+v1)
 
   // ANUNCIOS VERTICAIS
 
-  if(v1 >=4){
-    anuncioLR.href = "http://ricadinho.com/login/login";
+  if(v1 ==0){
+    anuncioLR.href = "login/login";
     anuncioL.src="cenas_do_site/anuncios/anunciosV/anuncio6/anuncio6.png";
     anuncioL.title = "LOSE YOURSELF ON THIS NEW REALITY";
   }else{
-    anuncioLR.href = "http://ricadinho.com/login/login";
+    anuncioLR.href = "login/login";
     anuncioL.src="cenas_do_site/anuncios/anunciosV/anuncio10/anuncio10.png";
     anuncioL.title = "WHY ARE YOU LIKE THIS";
   }
@@ -441,47 +195,59 @@ if(horas >=0 && horas < 2){//----------------------NIGHT
 
   // ANUNCIOS HORIZONTAIS
 
-  if(h2 == 1){ // anuncio escondido
-    r.href = "http://mvg.lol";
-    i.src = "cenas_do_site/anuncios/anunciosH/anuncio4/anuncio4V2.png";
-    i.title = "[%$#£] YOU"
-  }else if(h1==0){ //anuncio 1
-    if(h3 == 7){//anuncio 1 / QUIM
-    r.href = "http://ricadinho.com/MrBrodinha/quim";
-    i.src = "cenas_do_site/anuncios/anunciosH/anuncio1/anuncio1QUIM.png";
-    i.title = "QUIM ME";
+  if(h2 == 1){ // anuncio escondido middle finger
+    anuncioBR.href = "https://mrbrodinha.com/";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio4/anuncio4V2.png";
+    anuncioB.title = "[%$#£] YOU"
+  }else if(h1==0){ //anuncio 1 / MrBrodinha
+    if(h3 == 0){//anuncio 1 / QUIM
+    anuncioBR.href = "MrBrodinha/quim";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio1/anuncio1QUIM.png";
+    anuncioB.title = "QUIM ME";
     }else{//anuncio 1 / broda
-    r.href = "http://ricadinho.com/MrBrodinha";
-    i.src = "cenas_do_site/anuncios/anunciosH/anuncio1/anuncioX.png";
-    i.title = "CLICK ME";
+    anuncioBR.href = "MrBrodinha/";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio1/anuncioX.png";
+    anuncioB.title = "CLICK ME";
     }
   }else if(h1==1){ // anuncio 2 / comida
-    r.href = "http://ricadinho.com/comida";
-    i.src = "cenas_do_site/anuncios/anunciosH/anuncio2/anuncio2V2.png";
-    i.title = "EAT";
-  }else if(h1==2){ // anuncio 3
+    anuncioBR.href = "comida/";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio2/anuncio2V2.png";
+    anuncioB.title = "EAT";
+  }else if(h1==2){ // anuncio 3 / LOVE
     /*if(h3 == 2){//anuncio 3 / real
-    r.href = "http://ricadinho.com/LOVE/real";
-    i.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081953193099014265/anuncio3V2.png";
-    i.title = "NEW MESSAGE!!!!♥️♥️♥️♥️♥️"
+    anuncioBR.href = "http://ricadinho.com/LOVE/real";
+    anuncioB.src = "https://cdn.discordapp.com/attachments/570659114162847746/1081953193099014265/anuncio3V2.png";
+    anuncioB.title = "NEW MESSAGE!!!!♥️♥️♥️♥️♥️"
     }else{//anuncio 3 / 404*/
-    r.href = "http://ricadinho.com/LOVE";
-    i.src = "cenas_do_site/anuncios/anunciosH/anuncio3/anuncio3V2.png";
-    i.title = "NEED LOVE??"
+    anuncioBR.href = "LOVE/";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio3/anuncio3V2.png";
+    anuncioB.title = "NEED LOVE??"
    // }
   }else if(h1==3){ //anuncio 4 / marte
-    r.href = "https://martinho.pt/";
-    i.src = "cenas_do_site/anuncios/anunciosH/anuncio5/anuncio5V2.png";
-    i.title = "THE BEST ON THE MARKET";
+    anuncioBR.href = "https://martinho.pt/";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio5/anuncio5V2.png";
+    anuncioB.title = "THE BEST ON THE MARKET";
   }else if(h1==4){ // anuncio 5 / MVG
-    r.href = "https://mvg.lol";
-    i.src = "cenas_do_site/anuncios/anunciosH/anuncio7/anuncioMVG.png";
-    i.title = "MVG FTW";
+    anuncioBR.href = "https://mvg.lol";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio7/anuncioMVG.png";
+    anuncioB.title = "MVG FTW";
   }else if(h1==5){ // anuncio 6 / cookbook
-    r.href = "https://ricadinho.com/cookbook";
-    i.src = "cenas_do_site/anuncios/anunciosH/anuncio8/anuncioCook.png";
-    i.title = "THE BEST RECIPES IN THE WEB";
+    anuncioBR.href = "cookbook/";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio8/anuncioCook.png";
+    anuncioB.title = "THE BEST RECIPES IN THE WEB";
   }
+</script>
+
+<script>
+    /*const isMobile = navigator.userAgentData.mobile;
+  console.log("É MOBILE??? " + isMobile)
+  
+  if(isMobile){
+    anuncioB.style.width = "70%";
+    anuncioB.style.right = "14%";
+    //anuncioL.style.height="40%"
+    anuncioL.style.display = "none"
+  }*/
 </script>
 
 </html>

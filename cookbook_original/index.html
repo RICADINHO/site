@@ -54,7 +54,7 @@
 
 <body id="corpo">
 
-  <ul class="nav">
+  <ul id="navbar_main" class="nav">
     <li class="nav"><a class="active" href="#">Cookbook</a></li>
     <li class="nav"><a href="proteinas">Proteinas</a></li>
     <li class="nav"><a href="hidratos">Hidratos</a></li>
@@ -62,8 +62,8 @@
     <li class="nav"><a href="outros">Outros</a></li>
   </ul><br><br>
 
-  <center><h1 id="titulo">RICADINHO's COOKBOOK</h1></center><br>
-  <center><h3 id="texto_cima" style="font-weight: normal;">Cookbook? Do RICADINHO? WTF???</h3></center>
+  <center><h1 id="titulo">RICADINHO's COOKBOOK</h1></center>
+  <center><h3 id="texto_cima" style="font-weight: normal;">Cookbook de receitas feitas por mim ou que encontrei e que não me quero esquecer</h3></center>
   <br><hr style="width: 50%;"><br>
 
 <br><br>
@@ -101,21 +101,23 @@
 </audio>
 
 <script>
-  var mark1 = document.getElementById("mark1");
-  var href1 = document.getElementById("href1");
-  var corpo = document.getElementById("corpo");
-  var emoji_centro = document.getElementById("emoji_centro")
-  var texto_cima = document.getElementById("texto_cima")
-  var texto_tags = document.getElementById("texto_tags")
-  var titulo = document.getElementById("titulo")
+  var mark1 = document.getElementById("mark1"); // id do texto dentro da imagem do outros
+  var corpo = document.getElementById("corpo"); //id do body do documento
+  var emoji_centro = document.getElementById("emoji_centro") // id do emoji sozinho no centro
+  var texto_cima = document.getElementById("texto_cima") // id do texto depois do titulo
+  var texto_tags = document.getElementById("texto_tags") // id do texto das tags e medicoes
+  var titulo = document.getElementById("titulo") // id do texto do titulo
+  var navbar_main = document.getElementById("navbar_main") // id da ul da nav_bar
+  var lis = navbar_main.querySelectorAll("li a") // id de todos os li da nav_bar
+  var ativo = navbar_main.querySelector(".active") // id o li ativo da nav_bar
 
-  var cor_background_OUTROS = 0;
-  var audios = ["extras/sons/broda_distorcido.mp3","extras/sons/broda_inertido.mp3","extras/sons/broda_muito_rapido.mp3","extras/sons/broda_rapido.mp3","extras/sons/broda_normal.mp3","extras/sons/broda_muito_slow.mp3","extras/sons/broda_slow.mp3"]
-  var textos = ["MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG","dominios MVG: https://ricadinho.com/    https://martinho.pt/    https://mvg.lol/    https://rabosgigantes.com/    https://peido.pt/"]
+  var cor_background_OUTROS = 0; // variavel que muda a cor do outros
+  var audios = ["extras/sons/broda_distorcido.mp3","extras/sons/broda_inertido.mp3","extras/sons/broda_muito_rapido.mp3","extras/sons/broda_rapido.mp3","extras/sons/broda_normal.mp3","extras/sons/broda_muito_slow.mp3","extras/sons/broda_slow.mp3"] // caminhos para os audios de "broda"
+  var textos = ["Cookbook? Do RICADINHO? WTF???","MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG","dominios MVG: https://ricadinho.com/    https://martinho.pt/    https://mvg.lol/    https://rabosgigantes.com/    https://peido.pt/", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et vehicula leo, vitae hendrerit massa. Nulla et lectus vitae ante eleifend bibendum et a est. Praesent quis bibendum orci, ut imperdiet urna. Etiam pellentesque, ipsum ut ullamcorper sollicitudin, nisi diam consectetur mi, sed mollis ex felis id est. Suspendisse nulla velit, feugiat eu nisi sodales, sagittis bibendum nisl. Vestibulum rhoncus, libero ac iaculis auctor, eros leo fermentum est, eget tincidunt elit eros eu purus. Vestibulum convallis ornare velit, non efficitur orci semper eu."] // textos para mudar na pagina principal
 
-  var prob_textos = Math.floor(Math.random() * textos.length);
-  var x1 = Math.floor(Math.random() * 10);
-  var x2 = Math.floor(Math.random() * 100);
+  var prob_textos = Math.floor(Math.random() * textos.length); // escolhe um elemento random da lista dos textos
+  var x1 = Math.floor(Math.random() * 10); // num random de 0 a 10
+  var x2 = Math.floor(Math.random() * 100); // num random de 0 a 100
 
   console.log("probabilidade 10: "+x1)
   console.log("probabilidade 100: "+x2)
@@ -131,6 +133,9 @@
     texto_tags.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     titulo.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     emoji_centro.style.display = "none"
+    navbar_main.style.backgroundImage = "url('extras/A.png')"
+    ativo.style.backgroundImage = "url('extras/A.png')"
+    lis.forEach(li => li.textContent = "AAAAAAAAAA");
   }
 
   if(x2<=10){ // probabilidade do emoji do mf doom
@@ -140,14 +145,21 @@
 
 
   function altera(){ // altera o background da pagina para o <mark> OUTROS
-    if(cor_background_OUTROS == 0){ 
+    if(cor_background_OUTROS == 0){ // muda para as cores invertidas
+      cor_background_OUTROS = 1;
       corpo.style.backgroundColor = "rgb(90,46,152)";
       corpo.style.color = "rgb(165,209,103)";
-      cor_background_OUTROS = 1;
-    }else{
+      navbar_main.style.backgroundColor = "#a5d167";
+      lis.forEach(li => li.style.color = "#5a2e98");
+      ativo.style.backgroundColor = "#5a2e98";
+      ativo.style.color = "#a5d167";
+    }else{ // muda de volta para o normal
+      cor_background_OUTROS = 0
       corpo.style.backgroundColor = "rgb(222, 172, 138)";
       corpo.style.color = "black";
-      cor_background_OUTROS = 0
+      navbar_main.style.backgroundColor = "#90603b";
+      lis.forEach(li => li.style.color = "black");
+      ativo.style.backgroundColor = "#5a2e98";
     }
   }
 
@@ -168,11 +180,11 @@
   function audio(num){ // toca o audio para o que for preciso
     var audio_random = Math.floor(Math.random() * audios.length);
 
-    if(num==1){
+    if(num==1){ // audio da imagem da massa
       massa.play()
-    }else if(num==2){
+    }else if(num==2){ // audio do emoji do esqueleto
       metal.play()
-    }else{
+    }else{ // audios do broda da imagem do broda
       broda.src = audios[audio_random]
       broda.play()
     }
