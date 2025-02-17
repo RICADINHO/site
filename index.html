@@ -32,20 +32,6 @@
 
 <!-- Meta Tags Generated via https://heymeta.com -->
   <style>
-   /* body {
-        background-image: url('https://cdn.discordapp.com/attachments/570659114162847746/1077549425993461770/vaporwave.gif');
-        background-repeat: no-repeat;
-        background-attachment: fixed; 
-        background-size: 100% 100%;
-    }*/
-    /*img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      position: absolute;
-      bottom: 0px;
-      right: 500px;
-    }*/
     a:active, a:visited, a:active, a:hover, a:link{
       text-decoration: none;
     }
@@ -62,6 +48,10 @@
 
 <audio id="audio" loop >
   <source src="dialtone.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="audio_anuncioKill">
+  <source src="squish.mp3" type="audio/mpeg">
 </audio>
 
 <button id="tocar" onmouseover="muda()" onmouseout="desmuda()" onclick="playAudio()" style="background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);font-size: 20px;"><span style="font-size: 20px;">&#9658;<!--&#9742--></span></button>
@@ -97,6 +87,7 @@
 <a id="anuncioBaixoReferencia" href="http://ricadinho.com/login/login"> 
   <img  width="auto" height="auto" title="texto de mouseover" style="position: absolute;bottom: 0px;right: 33%;" id="anuncioBaixo" src="cenas_do_site/anuncios/anunciosH/anuncio4/anuncio4V2.png" alt="anuncio" class="center">
 </a>
+
 </body>
 
 <script src="https://www.unpkg.com/suncalc@1.9.0/suncalc.js"></script>
@@ -147,12 +138,11 @@ var numero_textoC = Math.floor(Math.random() * 10);
   var texto_centro1 = document.getElementById("texto_central_1");
   var texto_centro2 = document.getElementById("texto_central_2");
   var texto_centro3 = document.getElementById("texto_central_3");
-  //texto_centro1.style.display = "none";
 
-  if(numero_textoC == 1){
+  if(numero_textoC >= 9){
     texto_centro1.style.display = "none";
     texto_centro3.style.display = "inline-block"; 
-  }else if(numero_textoC <=3){
+  }else if(numero_textoC <=2){
     texto_centro1.style.display = "none";
     texto_centro2.style.display = "inline-block"
   }
@@ -160,13 +150,15 @@ var numero_textoC = Math.floor(Math.random() * 10);
 
 
   // ------------------------------------------- ANUNCIOS ---------------------------
+
+  var audio_anuncioKill = document.getElementById("audio_anuncioKill")
+
   var anuncioB = document.getElementById("anuncioBaixo");
   var anuncioBR = document.getElementById("anuncioBaixoReferencia");
 
-  var h1 = Math.floor(Math.random() * 6);
+  var h1 = Math.floor(Math.random() * 7);
   var h2 = Math.floor(Math.random() * 100);
   var h3 = Math.floor(Math.random() * 4);
-
   
   var anuncioL = document.getElementById("anuncioLado");
   var anuncioLR = document.getElementById("anuncioLadoReferencia");
@@ -235,6 +227,13 @@ var numero_textoC = Math.floor(Math.random() * 10);
     anuncioBR.href = "cookbook/";
     anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio8/anuncioCook.png";
     anuncioB.title = "THE BEST RECIPES IN THE WEB";
+  }else if(h1==6){ // anuncio 7 / kill me
+    anuncioBR.href = "#";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio9/anuncioKill.png";
+    anuncioB.title = "DO IT";
+    anuncioB.onclick = function(){
+      audio_anuncioKill.play()
+    }
   }
 </script>
 

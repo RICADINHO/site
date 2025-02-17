@@ -4,7 +4,7 @@ ul.nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: rgb(144, 96, 59);
+  background-color: #fcd685; /*rgb(144, 96, 59);*/
   position: fixed;
   top: 0;
   width: 100%;
@@ -25,9 +25,9 @@ li.nav a {
 }
 
 li.nav a:hover:not(.active) {
-  background-color: #e0e0e0;
+  background-color: #00000029;
 }
 
 .active {
-  background-color: #d49a12da;
+  background-color: rgb(222, 172, 138);
 }

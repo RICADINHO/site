@@ -23,8 +23,7 @@
 - NEED AN ACCOUNT IN YOUR NAME?? WHYYYYYY!!! (/login -> /signup)
 - WANT TO BE HAPPY? CREATE A [Regret] NOW! (home page -> /signup)
 - FEELING LONELY?? NOT ANYMORE!! ()
-- STOP WHAT YOU'RE DOING RIGHT NOW AND [Kill] ME!! ()
 - ARE YOU A GEEK? CLICK ME!! (home page -> coisa mais sortuda que me aconteceu) cmsqma
 - FEELING LUCKY? SO AM I! (home page -> coisa mais sortuda que me aconteceu)
 - HUGE NUMBERS NERD?? YOU'RE GONNA LOVE THIS! (home page -> coisa mais sortuda que me aconteceu)
-- LOST IN THE [Liquid]? SEE EVERYTHING! (home page -> hub anuncios) (1/100 chance)
+- LOST IN THE [Liquid ou Substance]? SEE EVERYTHING! (home page -> hub anuncios) (1/100 chance)
