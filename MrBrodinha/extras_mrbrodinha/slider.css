@@ -1,0 +1,19 @@
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#volumeBar {
+    width: 200px;
+    cursor: pointer;
+}
+
+#volumePercentage {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}

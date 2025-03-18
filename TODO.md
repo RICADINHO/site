@@ -1,7 +1,7 @@
 # 1
 
-- organizar os assets todos do cenas_do_site e meter os outros la
 - meter a firebase a funcionar
+- fazer mailing list
 
 ## 2
 
@@ -27,3 +27,8 @@
 - FEELING LUCKY? SO AM I! (home page -> coisa mais sortuda que me aconteceu)
 - HUGE NUMBERS NERD?? YOU'RE GONNA LOVE THIS! (home page -> coisa mais sortuda que me aconteceu)
 - LOST IN THE [Liquid ou Substance]? SEE EVERYTHING! (home page -> hub anuncios) (1/100 chance)
+
+
+### ja feito
+
+- organizar os assets todos do cenas_do_site e meter os outros la (1.)

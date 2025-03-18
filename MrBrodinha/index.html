@@ -5,13 +5,32 @@
    <title>PACHECO POWEEEEEEEEEEEEEEEEEEEEEEER</title>
    <link id="ok" rel="icon" type="image/x-icon" href="extras_mrbrodinha/broda_sem_fundo.png">
    <link href="../cenas_do_site/ficheiros/capcha.css" rel="stylesheet">
+   <link href="extras_mrbrodinha/slider.css" rel="stylesheet">
+   <style>
+      .hidden {
+         display: none; /* Add this CSS class to hide elements */
+      }
+   </style>
 </head>
+
+<div id="barra_broda" class="volume-container" onmouseout="aad()">
+   <input type="range" id="volumeBar" min="0" max="100" value="0">
+   <span id="volumePercentage">0%</span>
+</div>
+
+<center><img id="image" src="extras_mrbrodinha/broda_pose.jpg" alt="Sample Image" width="32%" height="32%" style="opacity: 0%;"></center>
+
+<audio id="audio" loop>
+   <source src="extras_mrbrodinha/arrastar.mp3" type="audio/mpeg">
+</audio>
+
+
 
 
 <div id="toca" class="fkrc-container fkrc-m-p" onclick="playAudio()">
    <!-- Captcha checkbox widget -->
-   <div id="fkrc-checkbox-window" class="fkrc-checkbox-window fkrc-m-p fkrc-block" >
-       <div class="fkrc-checkbox-container fkrc-m-p" >
+   <div id="fkrc-checkbox-window" class="fkrc-checkbox-window fkrc-m-p fkrc-block">
+       <div class="fkrc-checkbox-container fkrc-m-p">
            <button type="button" style="cursor: pointer;" id="fkrc-checkbox" class="fkrc-checkbox fkrc-m-p fkrc-line-normal"></button>
        </div>
        <p class="fkrc-im-not-a-robot fkrc-m-p fkrc-line-normal">I'm not a robot</p>
@@ -20,39 +39,65 @@
        <img src="../cenas_do_site/ficheiros/capcha.svg" class="fkrc-spinner fkrc-m-p fkrc-line-normal" alt="" id="fkrc-spinner">
    </div><br><br><br>
    <!-- Captcha checkbox verification window -->
-
    <img src="../cenas_do_site/ficheiros/capcha.svg" alt="" class="fkrc-verifywin-window-arrow" id="fkrc-verifywin-window-arrow"/>
 </div>
 
-
-<audio id="myAudio" loop >
+<audio id="myAudio" loop>
    <source src="extras_mrbrodinha/candyland_ER.mp3" type="audio/mpeg">
 </audio>
 
-<div style="display:flex;justify-content:center;align-items:center;height:100vh;" >
+<div id="video_div" style="display:flex;justify-content:center;align-items:center;height:100vh;">
    <video id="video" src="extras_mrbrodinha/brodaFinal.mp4" width="1280" height="768" muted loop></video>
 </div>
 
 <script src="../cenas_do_site/ficheiros/capcha.js" type="text/javascript"></script>
-
 <script>
- var x = document.getElementById("myAudio"); 
- var y = document.getElementById("toca");
- var z = document.getElementById("video");
+   var x = document.getElementById("myAudio"); 
+   var y = document.getElementById("toca");
+   var z = document.getElementById("video");
+   var video_div = document.getElementById("video_div")
 
- audios = ["extras_mrbrodinha/funky.mp3","extras_mrbrodinha/Skrillex.mp3","extras_mrbrodinha/candyland_ER.mp3","extras_mrbrodinha/candyland.mp3","extras_mrbrodinha/groove.mp3","extras_mrbrodinha/omfg.mp3","extras_mrbrodinha/Symbolism.mp3","extras_mrbrodinha/compilation.mp3","extras_mrbrodinha/faded.mp3"]
- var audio_random = Math.floor(Math.random() * audios.length);
- console.log("audio random: "+audio_random)
- function playAudio() {  
-   z.play();
-   y.style.display = "none";
-   x.src = audios[audio_random];
-   x.play();
+   audios = ["extras_mrbrodinha/funky.mp3","extras_mrbrodinha/Skrillex.mp3","extras_mrbrodinha/candyland_ER.mp3","extras_mrbrodinha/candyland.mp3","extras_mrbrodinha/groove.mp3","extras_mrbrodinha/omfg.mp3","extras_mrbrodinha/Symbolism.mp3","extras_mrbrodinha/compilation.mp3","extras_mrbrodinha/faded.mp3"]
+   var audio_random = Math.floor(Math.random() * audios.length);
+   console.log("audio random: " + audio_random);
 
- } 
- 
+   const volumeBar = document.getElementById('volumeBar');
+   const volumePercentage = document.getElementById('volumePercentage');
+   const image = document.getElementById('image');
+   var audio = document.getElementById("audio");
+   var barra_broda = document.getElementById("barra_broda");
+   const volumeContainer = document.querySelector('.volume-container');
+
+   var ran = Math.floor(Math.random() * 10);
+   console.log("tipo de pagina: "+ran);
+
+   if (ran == 0) {
+      toca.classList.add('hidden');
+      video_div.classList.add('hidden');
+   }else{
+      barra_broda.classList.add('hidden');
+      image.classList.add('hidden');
+   }
+
+   volumeBar.addEventListener('input', () => {
+      const value = volumeBar.value;
+      volumePercentage.textContent = `${value}%`;
+
+      // Update the image's opacity based on the volume bar's value
+      const opacity = value / 100; // Convert percentage to a value between 0 and 1
+      image.style.opacity = opacity;
+      audio.play();
+   });
+
+   function aad() {
+      audio.pause();
+   }
+
+   function playAudio() {  
+      z.play();
+      y.style.display = "none";
+      x.src = audios[audio_random];
+      x.play();
+   } 
 </script>
-
-<!--<video src="broda_corte.mp4" autoplay muted loop> </video>-->
-
 </html>
