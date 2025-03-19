@@ -13,6 +13,7 @@
    </style>
 </head>
 
+<b id="barra_texto">Broda bar:</b>
 <div id="barra_broda" class="volume-container" onmouseout="aad()">
    <input type="range" id="volumeBar" min="0" max="100" value="0">
    <span id="volumePercentage">0%</span>
@@ -67,8 +68,9 @@
    var audio = document.getElementById("audio");
    var barra_broda = document.getElementById("barra_broda");
    const volumeContainer = document.querySelector('.volume-container');
+   var barra_texto = document.getElementById("barra_texto");
 
-   var ran = Math.floor(Math.random() * 10);
+   var ran = Math.floor(Math.random() * 2); // BRODA BAR
    console.log("tipo de pagina: "+ran);
 
    if (ran == 0) {
@@ -77,6 +79,7 @@
    }else{
       barra_broda.classList.add('hidden');
       image.classList.add('hidden');
+      barra_texto.classList.add('hidden');
    }
 
    volumeBar.addEventListener('input', () => {
