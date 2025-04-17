@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BEST RICADINHO WINS</title>
+  <style>
+    canvas {
+      image-rendering: pixelated;
+      width: 420px; /* 10x scale */
+      height: 420px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  
+
+    <div style="position: absolute;bottom: 50%;right: 2%;border: 2px solid black;">
+      <b>LEADERBOARD</b> <br><br><br>
+      ola <br><br>
+      ola <br><br>
+      ola
+    </div>
+    <center><h1>GENERATOR</h1></center>
+    <br>
+    <center><canvas id="canvas1" width="28" height="28"></canvas></center>
+    <center><b id="texto_cores"> 0 preto(0%) , 0 branco(0%)</b></center>
+    <br><br><br>
+    <center><button onclick="canvas1()">GERAR OUTRA VEZ</button></center>
+
+
+    <br><br><br><br>
+
+
+    <div style="position: absolute;bottom: -50%;right: 2%;border: 2px solid black;">
+      <b>LEADERBOARD</b> <br><br><br>
+      ola <br><br>
+      ola <br><br>
+      ola
+    </div>
+    <center><h1>PRETO E BRANCO</h1></center>
+    <br>
+    <center><canvas id="canvas2" width="28" height="28"></canvas></center>
+    <center><b id="texto_pb"> 0 preto(0%) , 0 branco(0%)</b></center>
+    <br><br><br>
+    <center><button onclick="canvas2()">GERAR OUTRA VEZ</button></center>
+
+
+    <br><br><br><br>
+
+
+    <div style="position: absolute;bottom: -140%;right: 2%;border: 2px solid black;">
+      <b>LEADERBOARD</b> <br><br><br>
+      ola <br><br>
+      ola <br><br>
+      ola
+    </div>
+    <center><h1>RICADINHO GENERATOR</h1></center>
+    <br>
+    <center style="display: flex;justify-content: center;align-items: center;">
+    <canvas id="rica" width="8" height="8"></canvas>
+    
+    <b id="texto_match" style="padding: 0px 15px;"> - 0% MATCH - </b>
+
+    <canvas id="canvas3" width="8" height="8"></canvas>
+    </center>
+    <br><br><br>
+    <center><button onclick="canvas3()">GERAR OUTRA VEZ</button></center>
+
+
+    <br><br><br><br>
+
+</body>
+
+
+<script>
+
+        var canvas = document.getElementById('rica');
+        var ctx = canvas.getContext('2d');
+        var imageData = ctx.createImageData(8, 8);
+
+        vermelho=[0,8,16,17,18,25,33,40,42,50,59,60]
+        azul = [3,6,7,11,20,31,35,39,45]
+        amarelo=[13,23,29,30,32,48,49]
+        magenta=[4,22,28,38,63]
+        preto=[1,2,5,9,10,14,24,27,34,41,52,54,56,58,62]
+
+        for (let i = 0; i < imageData.data.length; i += 4) {
+            if(vermelho.includes(i/4)){ // vermelho
+              imageData.data[i]     = 255; // R
+              imageData.data[i + 1] = 0; // G
+              imageData.data[i + 2] = 0; // B
+              imageData.data[i + 3] = 255;      // A
+            }else if(azul.includes(i/4)){ // azul
+              imageData.data[i]     = 0; // R
+              imageData.data[i + 1] = 0; // G
+              imageData.data[i + 2] = 255; // B
+              imageData.data[i + 3] = 255;      // A
+            }else if(amarelo.includes(i/4)){ // amarelo
+              imageData.data[i]     = 255; // R
+              imageData.data[i + 1] = 255; // G
+              imageData.data[i + 2] = 0; // B
+              imageData.data[i + 3] = 255;      // A
+            }else if(magenta.includes(i/4)){ // magenta
+              imageData.data[i]     = 255; // R
+              imageData.data[i + 1] = 0; // G
+              imageData.data[i + 2] = 255; // B
+              imageData.data[i + 3] = 255;      // A
+            }else if(preto.includes(i/4)){ // preto
+              imageData.data[i]     = 0; // R
+              imageData.data[i + 1] = 0; // G
+              imageData.data[i + 2] = 0; // B
+              imageData.data[i + 3] = 255;      // A
+            }else{ // branco
+              imageData.data[i]     = 255; // R
+              imageData.data[i + 1] = 255; // G
+              imageData.data[i + 2] = 255; // B
+              imageData.data[i + 3] = 255;      // A
+            }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+
+    //canvas1()
+    //canvas2()
+    //canvas3()
+    
+    function canvas1(){
+
+        var canvas = document.getElementById('canvas1');
+        var ctx = canvas.getContext('2d');
+        var imageData = ctx.createImageData(28, 28);
+
+        // Define 5 distinct colors (R, G, B)
+        const colors = [
+          [255, 0, 0],    // red
+          [0, 255, 0],    // green
+          [0, 0, 255],    // blue
+          [255, 255, 0],  // yellow
+          [255, 0, 255]   // magenta
+        ];
+
+        for (let i = 0; i < imageData.data.length; i += 4) {
+        
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        imageData.data[i]     = color[0]; // R
+        imageData.data[i + 1] = color[1]; // G
+        imageData.data[i + 2] = color[2]; // B
+        imageData.data[i + 3] = 255;      // A
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+    }
+
+    function canvas2(){
+
+        var texto_pb = document.getElementById("texto_pb");
+        var canvas = document.getElementById('canvas2');
+        var ctx = canvas.getContext('2d');
+        var imageData = ctx.createImageData(28, 28);
+
+        var preto = 0
+        var branco = 0
+
+        const colors = [
+          [0, 0, 0],   
+          [255, 255, 255] 
+        ];
+        
+        for (let i = 0; i < imageData.data.length; i += 4) {
+
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        if (color[0] == 0){
+          preto+=1
+        }else{
+          branco+=1
+        }
+
+        imageData.data[i]     = color[0]; // R
+        imageData.data[i + 1] = color[1]; // G
+        imageData.data[i + 2] = color[2]; // B
+        imageData.data[i + 3] = 255;      // A
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+
+        percentagem_preto = preto/(28*28) * 100
+        var ron = Math.round(percentagem_preto * 100) / 100
+        var ron2 = Math.round((100-percentagem_preto) * 100) / 100
+        texto_pb.textContent = preto+" preto ("+ron+"%) , "+branco+" branco ("+ron2+"%)"
+    }
+
+    function canvas3(){
+
+        var canvas = document.getElementById('canvas3');
+        var ctx = canvas.getContext('2d');
+        var imageData = ctx.createImageData(8, 8);
+
+        // Define 5 distinct colors (R, G, B)
+        const colors = [
+          [255, 0, 0],    // red
+          [255, 255, 255],    // green
+          [0, 0, 255],    // blue
+          [255, 255, 0],  // yellow
+          [0,0,0], // branco
+          [255, 0, 255]   // magenta
+        ];
+
+        for (let i = 0; i < imageData.data.length; i += 4) {
+
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        imageData.data[i]     = color[0]; // R
+        imageData.data[i + 1] = color[1]; // G
+        imageData.data[i + 2] = color[2]; // B
+        imageData.data[i + 3] = 255;      // A
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+
+        comparacao(imageData)
+    }
+
+    function comparacao(imageData){
+      var texto_match = document.getElementById("texto_match")
+      const targetCanvas = document.getElementById('rica');
+      const targetCtx = targetCanvas.getContext('2d');
+      const targetData = targetCtx.getImageData(0, 0, 8, 8).data;
+
+      let matches = 0;
+      for (let i = 0; i < imageData.data.length; i += 4) {
+          const r1 = imageData.data[i];
+          const g1 = imageData.data[i + 1];
+          const b1 = imageData.data[i + 2];
+
+          const r2 = targetData[i];
+          const g2 = targetData[i + 1];
+          const b2 = targetData[i + 2];
+
+          if (r1 === r2 && g1 === g2 && b1 === b2) {
+              matches++;
+          }
+      }
+
+      const totalPixels = imageData.data.length / 4;
+      var match = matches/totalPixels * 100
+      var ron = Math.round(match * 100) / 100
+      texto_match.textContent = "- "+ron+"% MATCH - "//matches+"/"+totalPixels+" MATCH"
+  
+    }
+  </script>
+</html>

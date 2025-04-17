@@ -156,7 +156,7 @@ var numero_textoC = Math.floor(Math.random() * 10);
   var anuncioB = document.getElementById("anuncioBaixo");
   var anuncioBR = document.getElementById("anuncioBaixoReferencia");
 
-  var h1 = Math.floor(Math.random() * 7);
+  var h1 = Math.floor(Math.random() * 8);
   var h2 = Math.floor(Math.random() * 100);
   var h3 = Math.floor(Math.random() * 4);
   
@@ -234,6 +234,10 @@ var numero_textoC = Math.floor(Math.random() * 10);
     anuncioB.onclick = function(){
       audio_anuncioKill.play()
     }
+  }else if(h1==7){ // anuncio 8 / gambling
+    anuncioBR.href = "gambling/";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio10/anuncioGambling.png";
+    anuncioB.title = "I CAN ALREADY SEE THE DIAMONDS";
   }
 </script>
 
