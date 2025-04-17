@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../cenas_do_site/anuncios/anunciosH/anuncio10/dado.png">
+    <title>GAMBLE AWAY!!!</title>
+</head>
+<style>
+    body {
+        background-image: url('img15.png');
+        background-repeat: repeat;
+        background-attachment: fixed;
+    }
+
+    a:active, a:visited, a:active, a:hover, a:link{
+      text-decoration: none;
+      color: white;
+    }
+</style>
+<body>
+
+    <audio id="audio_gambling" src="LuigisCasino.mp3" loop></audio>
+
+    <img id="img_roleta" src="roleta.gif" width="15%" height="30%" style="position: fixed;top: 34%;">
+
+    <img src="dados2.gif" style="position: absolute;right: 0px;" width="10%">
+
+    <div id="casino" style="border: 3px solid rgba(135,25,53,255); border-radius: 25px; background-color: rgba(0, 0, 0, 0.801); color: white; display: flex; justify-content: center; align-items: center; width: 50%; justify-self: center; padding: 10px; flex-direction: column; position: relative;">
+    
+        <img src="espadas.gif" width="50" style="position: absolute; top: 10px; right: 10px;border-radius: 5px;">
+    
+        <h1>RICADINHO's CASINO</h1>
+        <br><br><br>
+        
+    
+        <h2>RANDOM NUMBER</h2>
+        <br><br><br><br>
+    
+        <h2>HIGH or LOW</h2>
+        <br><br><br><br>
+    
+        <h2><a href="generator/">GENERATOR</a></h2>
+    
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+        <img src="dado.gif" width="20%" height="30%" title="onde é que ele vai?">
+    
+    </div>
+    
+    <span style="position:absolute;bottom: -150px;left: 10px;font-size: 8px;color: white;">*RICADINHO™ & MVG™ are not responsible for any loses that may occur</span>
+    
+    
+</body>
+
+<script>
+
+    var aud = document.getElementById("audio_gambling")
+    function audio(){
+        aud.play()
+    }
+</script>
+</html>

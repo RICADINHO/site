@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHICH ONE WILL YOU GET</title>
+</head>
+<style>
+    body{
+    background-image: url('img4.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    }
+</style>
+
+
+<body>
+    <br><br><br><br><br><br><br><br><br><br>
+    <div style="border: 3px solid rgba(135,25,53,255);background-color: rgba(0, 0, 0, 0.692);color: white; display: flex;justify-content: center;align-items: center;width: 20%;justify-self: center;padding: 10px;flex-direction: column;">
+    
+        <h1>HIGH or LOW</h1>
+
+        <b id="numero">GENERATE ME</b> <br> <br>
+
+        <button onclick="num()">CLICK ME</button>
+    </div>
+
+</body>
+
+
+<script>
+    var numero = document.getElementById("numero")
+
+    function num(){
+        numero.textContent = Math.floor(Math.random() * 1000001)
+    }
+
+    
+</script>
+</html>

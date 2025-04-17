@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <title>HOW MANY TIMES CAN YOU DO IT</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <center><h1>RANDOM NUMBER</h1></center>
+    <center>Guess the random number to WIN! <br> <br> <br> <br> 
+
+    <div class="popup" ><b id="num_a_adivinhar">num</b> 
+        <span class="popuptext" id="myPopup">POPUUUUUUUUUUUUUUUUUUP</span>
+    </div>
+
+    <h4 id="num_random">Gera o numero</h4>
+    <button onclick="numero()">CLICA</button></center>
+    meter o popup so quando ganha
+</body>
+
+<script>
+    var num_a_adivinhar = document.getElementById("num_a_adivinhar")
+    var num_random = document.getElementById("num_random")
+    var popup = document.getElementById("myPopup");
+
+    num_a_adivinhar.textContent = Math.floor(Math.random() * 101)
+
+    function numero(){
+        num_random.textContent = Math.floor(Math.random() * 101);
+        if(num_random.textContent != num_a_adivinhar.textContent){
+            popup.textContent = "ERROU"
+            popup.classList.toggle("show");
+        }else{
+            popup.textContent = "ACERTASTE"
+            popup.classList.toggle("show");
+        }
+        setTimeout(reset_num, 1000);
+    }
+
+    function reset_num(){
+        console.log("numero gerado "+num_random.textContent)
+        console.log("numero para adivinhar "+num_a_adivinhar.textContent)
+        popup.classList.toggle("fade");
+        num_random.textContent = "Gera o numero"
+        num_a_adivinhar.textContent = Math.floor(Math.random() *101)
+    }
+</script>
+</html>

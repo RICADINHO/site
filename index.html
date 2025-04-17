@@ -156,7 +156,7 @@ var numero_textoC = Math.floor(Math.random() * 10);
   var anuncioB = document.getElementById("anuncioBaixo");
   var anuncioBR = document.getElementById("anuncioBaixoReferencia");
 
-  var h1 = Math.floor(Math.random() * 8);
+  var h1 = Math.floor(Math.random() * 9);
   var h2 = Math.floor(Math.random() * 100);
   var h3 = Math.floor(Math.random() * 4);
   
@@ -192,11 +192,11 @@ var numero_textoC = Math.floor(Math.random() * 10);
     anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio4/anuncio4V2.png";
     anuncioB.title = "[%$#£] YOU"
   }else if(h1==0){ //anuncio 1 / MrBrodinha
-    if(h3 == 0){//anuncio 1 / QUIM
+    if(h3 == 0){//anuncio 1.1 / QUIM
     anuncioBR.href = "MrBrodinha/quim";
     anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio1/anuncio1QUIM.png";
     anuncioB.title = "QUIM ME";
-    }else{//anuncio 1 / broda
+    }else{//anuncio 1.2 / broda
     anuncioBR.href = "MrBrodinha/";
     anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio1/anuncioX.png";
     anuncioB.title = "CLICK ME";
@@ -237,7 +237,11 @@ var numero_textoC = Math.floor(Math.random() * 10);
   }else if(h1==7){ // anuncio 8 / gambling
     anuncioBR.href = "gambling/";
     anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio10/anuncioGambling.png";
-    anuncioB.title = "I CAN ALREADY SEE THE DIAMONDS";
+    anuncioB.title = "I'M FEELING UNSTOPPABLE";
+  }else if(h1==8){ // anuncio 9 / gambling 2
+    anuncioBR.href = "gambling/";
+    anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio11/anuncioGambling2.png";
+    anuncioB.title = "I'M SO CLOSE";
   }
 </script>
 
