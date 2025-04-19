@@ -26,7 +26,7 @@
 - ARE YOU A GEEK? CLICK ME!! (home page -> coisa mais sortuda que me aconteceu) cmsqma
 - HUGE NUMBERS NERD?? YOU'RE GONNA LOVE THIS! (home page -> coisa mais sortuda que me aconteceu)
 - LOST IN THE [Liquid ou Substance]? SEE EVERYTHING! (home page -> hub anuncios) (1/100 chance)
-
+- FELLING LIKE A MILLION BUCKS? WAST THEM! (home page -> gambling)
 
 ### ja feito
 

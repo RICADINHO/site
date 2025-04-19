@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxianJyZXNneGdpd3JsbWh6cm1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUwOTk0MTYsImV4cCI6MjA2MDY3NTQxNn0.ZrivsC43W6kBegY7r4dwZB_pTRUZJgBU5GzBsDNQiq4'
+    const SUPABASE_URL = 'https://lbjrresgxgiwrlmhzrmm.supabase.co';
+  const { createClient } = supabase;
+  const client = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  async function fetchData() {
+    const { data, error } = await client
+      .from('users') // replace with your table name
+      .select('*');
+
+    if (error) {
+      console.error('Error fetching data:', error.message);
+    } else {
+      console.log('Rows:', data);
+    }
+  }
+
+  fetchData();
+</script>
+
+
+
