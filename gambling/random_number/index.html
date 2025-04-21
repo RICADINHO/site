@@ -17,11 +17,36 @@
 
     <button id="botao_fast_mode" onclick="fastmode()" style="position: absolute;top: 2%;left: 1%;">Fast mode</button>
     
-    <div style="position: absolute;bottom: 50%;right: 2%;border: 2px solid black;padding: 8px;">
-        <b>LEADERBOARDS</b> <br><br><br>
-        teste1 - 12<br><br>
-        teste2 - 5<br><br>
-        teste3 - 2
+    <div style="position: absolute;bottom: 65%;right: 2%;border: 2px solid black;padding: 8px;">
+        <b>LEADERBOARD 100</b> <br>
+        Number of wins: <br><br>
+        <span id="top1100"></span><br>
+        <span id="top2100"></span><br>
+        <span id="top3100"></span><br>
+    </div>
+
+    <div style="position: absolute;bottom: 40%;right: 2%;border: 2px solid black;padding: 8px;">
+        <b>LEADERBOARD 1000</b> <br>
+        Number of wins: <br><br>
+        <span id="top11000"></span><br>
+        <span id="top21000"></span><br>
+        <span id="top31000"></span><br>
+    </div>
+
+    <div style="position: absolute;bottom: 10%;right: 2%;border: 2px solid black;padding: 8px;">
+        <b>LEADERBOARD 10000</b> <br>
+        Numer of wins: <br><br>
+        <span id="top110000"></span><br>
+        <span id="top210000"></span><br>
+        <span id="top310000"></span><br>
+    </div>
+
+    <div style="position: absolute;bottom: -20%;right: 2%;border: 2px solid black;padding: 8px;">
+        <b>LEADERBOARD HOLY</b> <br>
+        Difference from real number: <br><br>
+        <span id="top1M"></span><br>
+        <span id="top2M"></span><br>
+        <span id="top3M"></span><br>
     </div>
 
     <div class="popup" ><b id="num_a_adivinhar100">num</b> 
@@ -66,6 +91,7 @@
 
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script>
     let lock_geral = [true,true,true]
     let speed = 500
@@ -114,6 +140,8 @@
             popup100.classList.remove("hide");
             popup100.classList.add("show");
 
+            update_user("t100");
+
             setTimeout(() => this.reset_num(0), 1500);
         }else if(Math.abs(num_random100.textContent - num_a_adivinhar100.textContent) == 1){ // POR 1
             popup100.textContent = "POR 1"
@@ -129,13 +157,13 @@
             popup100.classList.add("show");
 
             setTimeout(() => this.reset_num(0), 1000);
-        }else if(Math.abs(num_random100.textContent - num_a_adivinhar100.textContent) < 10){ // QUASE
+        }else if(Math.abs(num_random100.textContent - num_a_adivinhar100.textContent) < 5){ // QUASE
             popup100.textContent = "QUASE"
 
             popup100.classList.remove("hide");
             popup100.classList.add("show");
 
-            setTimeout(() => this.reset_num(0), 1000);
+            setTimeout(() => this.reset_num(0), 500);
         }else{ // ERROU
             setTimeout(() => this.reset_num(0), speed);
         }
@@ -156,21 +184,23 @@
             popup1000.classList.remove("hide");
             popup1000.classList.add("show");
 
-            setTimeout(() => this.reset_num(1), 3000);
+            update_user("t1000");
+
+            setTimeout(() => this.reset_num(1), 2500);
         }else if(Math.abs(num_random1000.textContent - num_a_adivinhar1000.textContent) == 1){ // POR 1
             popup1000.textContent = "POR 1"
 
             popup1000.classList.remove("hide");
             popup1000.classList.add("show");
 
-            setTimeout(() => this.reset_num(1), 2000);
+            setTimeout(() => this.reset_num(1), 2500);
         }else if(flipInt(num_random1000.textContent) == num_a_adivinhar1000.textContent){ // NUMERO INVERTIDO
             popup1000.textContent = "NUMERO INVERTIDO"
 
             popup1000.classList.remove("hide");
             popup1000.classList.add("show");
 
-            setTimeout(() => this.reset_num(1), 2000);
+            setTimeout(() => this.reset_num(1), 2500);
         }else if(Math.abs(num_random1000.textContent - num_a_adivinhar1000.textContent) < 10){ // BEM QUASE
             popup1000.textContent = "BEM QUASE"
 
@@ -178,13 +208,6 @@
             popup1000.classList.add("show");
 
             setTimeout(() => this.reset_num(1), 2000);
-        }else if(num_random1000.textContent === "777"){ // 777 METER UM AUIDO DE SLOT MACHINE
-            popup1000.textContent = "GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE"
-
-            popup1000.classList.remove("hide");
-            popup1000.classList.add("show");
-
-            setTimeout(() => this.reset_num(1), 1500);
         }else if(Math.abs(num_random1000.textContent - num_a_adivinhar1000.textContent) < 50){ // QUASE
             popup1000.textContent = "QUASE"
 
@@ -192,6 +215,13 @@
             popup1000.classList.add("show");
 
             setTimeout(() => this.reset_num(1), 1500);
+        }else if(num_random1000.textContent === "777"){ // 777 METER UM AUIDO DE SLOT MACHINE
+            popup1000.textContent = "GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE"
+
+            popup1000.classList.remove("hide");
+            popup1000.classList.add("show");
+
+            setTimeout(() => this.reset_num(1), 1000);
         }else{ // ERROU
             setTimeout(() => this.reset_num(1), speed);
         }
@@ -213,14 +243,16 @@
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 4500);
+            update_user("t10000");
+
+            setTimeout(() => this.reset_num(2), 4000);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) == 1){ // POR 1
             popup10000.textContent = "POR 1"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 4500);
+            setTimeout(() => this.reset_num(2), 3500);
         }else if(flipInt(num_random10000.textContent) == num_a_adivinhar10000.textContent){ // NUMERO INVERTIDO
             popup10000.textContent = "NUMERO INVERTIDO"
 
@@ -234,28 +266,28 @@
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 3500);
+            setTimeout(() => this.reset_num(2), 3000);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 50){ // BEM QUASE
             popup10000.textContent = "BEM QUASE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 3000);
+            setTimeout(() => this.reset_num(2), 2500);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 100){ // QUASE
             popup10000.textContent = "QUASE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 2500);
+            setTimeout(() => this.reset_num(2), 2000);
         }else if(num_random10000.textContent === "777"){ // 777 METER UM AUIDO DE SLOT MACHINE
             popup10000.textContent = "GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 1500);
+            setTimeout(() => this.reset_num(2), 1000);
         }else{ // ERROU
             setTimeout(() => this.reset_num(2), speed);
         }
@@ -275,6 +307,8 @@
             popupM.classList.remove("hide");
             popupM.classList.add("show");
 
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
+
             setTimeout(() => this.reset_num(3), 30000);
         }else if(Math.abs(num_randomM.textContent - num_a_adivinharM.textContent) == 1){ // POR 1
             popupM.textContent = "POOOOOOOOOOO OOOOOOOR 1 \n NO WAAAAAAAAAA AAAAAAAAAAY"
@@ -289,12 +323,16 @@
             popupM.classList.remove("hide");
             popupM.classList.add("show");
 
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
+
             setTimeout(() => this.reset_num(3), 30000);
         }else if(Math.abs(num_randomM.textContent - num_a_adivinharM.textContent) < 10){ // QUASE (>10)
             popupM.textContent = "QUASE LAAAAAAAA AAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAA (>10)"
 
             popupM.classList.remove("hide");
             popupM.classList.add("show");
+
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
 
             setTimeout(() => this.reset_num(3), 25000);
         }else if(Math.abs(num_randomM.textContent - num_a_adivinharM.textContent) < 50){ // QUASE (>50)
@@ -303,12 +341,16 @@
             popupM.classList.remove("hide");
             popupM.classList.add("show");
 
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
+
             setTimeout(() => this.reset_num(3), 25000);
         }else if(Math.abs(num_randomM.textContent - num_a_adivinharM.textContent) < 100){ // QUASE (>100)
             popupM.textContent = "OMGGGGGGGGGGGGG (>100)"
 
             popupM.classList.remove("hide");
             popupM.classList.add("show");
+
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
 
             setTimeout(() => this.reset_num(3), 20000);
         }else if(Math.abs(num_randomM.textContent - num_a_adivinharM.textContent) < 1000){ // QUASE (>1000)
@@ -317,6 +359,8 @@
             popupM.classList.remove("hide");
             popupM.classList.add("show");
 
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
+
             setTimeout(() => this.reset_num(3), 15000);
         }else if(Math.abs(num_randomM.textContent - num_a_adivinharM.textContent) < 10000){ // QUASE (>10000)
             popupM.textContent = "QUASE (>10000)"
@@ -324,8 +368,11 @@
             popupM.classList.remove("hide");
             popupM.classList.add("show");
 
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
+
             setTimeout(() => this.reset_num(3), 10000);
         }else{ // ERROU
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
             setTimeout(() => this.reset_num(3), speed);
         }
     }
@@ -392,5 +439,200 @@
             botaoM.disabled = false;
         }
     }
+
+
+
+
+    let tem_user = false // para ver se existe algum user logged in
+    var top1100 = document.getElementById("top1100")
+    var top2100 = document.getElementById("top2100")
+    var top3100 = document.getElementById("top3100")
+    var top11000 = document.getElementById("top11000")
+    var top21000 = document.getElementById("top21000")
+    var top31000 = document.getElementById("top31000")
+    var top110000 = document.getElementById("top110000")
+    var top210000 = document.getElementById("top210000")
+    var top310000 = document.getElementById("top310000")
+    var top1M = document.getElementById("top1M")
+    var top2M = document.getElementById("top2M")
+    var top3M = document.getElementById("top3M")
+
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxianJyZXNneGdpd3JsbWh6cm1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUwOTk0MTYsImV4cCI6MjA2MDY3NTQxNn0.ZrivsC43W6kBegY7r4dwZB_pTRUZJgBU5GzBsDNQiq4'
+    const SUPABASE_URL = 'https://lbjrresgxgiwrlmhzrmm.supabase.co';
+
+    const { createClient } = supabase;
+    const client = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function checkUser() {
+        const {
+        data: { user },
+        error
+        } = await client.auth.getUser();
+
+        if (user) {
+            tem_user = true
+
+            const { data: nome_user } = await client
+            .from('users')
+            .select('nome')
+            .eq('email', user.email)
+            .single();
+            console.log("user: "+nome_user)
+        }
+    }
+
+    async function recordes() {
+
+        const { data: data_recordes } = await client
+            .from('users')
+            .select('*')
+
+
+        //console.log(parseInt(data_recordes[0].recordes_gambling[0][1][0].split("_")[0]))
+        //console.log(data_recordes[0].nome)
+        
+        recorde_100 = []
+        recorde_1000 = []
+        recorde_10000 = []
+        recorde_M = []
+        
+        for (let i = 0; i < data_recordes.length; i++) {
+            recorde_100.push([data_recordes[i].nome,parseInt(data_recordes[i].recordes_gambling[0][1][0].split("_")[0])])
+            recorde_1000.push([data_recordes[i].nome,parseInt(data_recordes[i].recordes_gambling[0][1][0].split("_")[1])])
+            recorde_10000.push([data_recordes[i].nome,parseInt(data_recordes[i].recordes_gambling[0][1][0].split("_")[2])])
+            recorde_M.push([data_recordes[i].nome,parseInt(data_recordes[i].recordes_gambling[0][1][0].split("_")[3])])
+        }
+
+        recorde_100.sort(compareSecondColumn)
+        recorde_1000.sort(compareSecondColumn)
+        recorde_10000.sort(compareSecondColumn)
+        recorde_M.sort(compareSecondColumn)
+
+
+        top1100.textContent = recorde_100[recorde_100.length - 1][0]+" - "+recorde_100[recorde_100.length - 1][1]
+        top2100.textContent = recorde_100[recorde_100.length - 2][0]+" - "+recorde_100[recorde_100.length - 2][1]
+        top3100.textContent = recorde_100[recorde_100.length - 3][0]+" - "+recorde_100[recorde_100.length - 3][1]
+
+        top11000.textContent = recorde_1000[recorde_1000.length - 1][0]+" - "+recorde_1000[recorde_1000.length - 1][1]
+        top21000.textContent = recorde_1000[recorde_1000.length - 2][0]+" - "+recorde_1000[recorde_1000.length - 2][1]
+        top31000.textContent = recorde_1000[recorde_1000.length - 3][0]+" - "+recorde_1000[recorde_1000.length - 3][1]
+        
+        top110000.textContent = recorde_10000[recorde_10000.length - 1][0]+" - "+recorde_10000[recorde_10000.length - 1][1]
+        top210000.textContent = recorde_10000[recorde_10000.length - 2][0]+" - "+recorde_10000[recorde_10000.length - 2][1]
+        top310000.textContent = recorde_10000[recorde_10000.length - 3][0]+" - "+recorde_10000[recorde_10000.length - 3][1]
+
+        top1M.textContent = recorde_M[0][0]+" - "+recorde_M[0][1]
+        top2M.textContent = recorde_M[1][0]+" - "+recorde_M[1][1]
+        top3M.textContent = recorde_M[2][0]+" - "+recorde_M[2][1]
+
+    }
+
+    async function update_user(tipo){
+        if(tem_user){
+
+            const {
+                data: { user },
+                    error1
+            } = await client.auth.getUser();
+
+            const { data: recordes_a_ser_atualizados } = await client
+                .from('users')
+                .select('recordes_gambling')
+                .eq('email', user.email)
+
+            if(tipo=="t100"){
+
+                var antigo = recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")
+                antigo[0] = parseInt(antigo[0]) +1
+                antigo = antigo.join("_")
+                recordes_a_ser_atualizados[0].recordes_gambling[0][1][0] = antigo
+                novo = recordes_a_ser_atualizados[0].recordes_gambling
+
+                const { error: updateError } = await client
+                .from('users')
+                .update({ recordes_gambling: novo })
+                .eq('email', user.email);
+
+                if (updateError) {
+                    console.error(updateError);
+                } else {
+                    console.log('Update aos 100 feito');
+                }
+            }else if(tipo=="t1000"){
+
+                var antigo = recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")
+                antigo[1] = parseInt(antigo[1]) +1
+                antigo = antigo.join("_")
+                recordes_a_ser_atualizados[0].recordes_gambling[0][1][0] = antigo
+                novo = recordes_a_ser_atualizados[0].recordes_gambling
+
+                
+                const { error: updateError } = await client
+                .from('users')
+                .update({ recordes_gambling: novo })
+                .eq('email', user.email);
+
+                if (updateError) {
+                    console.error(updateError);
+                } else {
+                    console.log('Update aos 1000 feito');
+                }
+            }else if(tipo=="t10000"){
+
+                var antigo = recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")
+                antigo[2] = parseInt(antigo[2]) +1
+                antigo = antigo.join("_")
+                recordes_a_ser_atualizados[0].recordes_gambling[0][1][0] = antigo
+                novo = recordes_a_ser_atualizados[0].recordes_gambling
+
+                
+                const { error: updateError } = await client
+                .from('users')
+                .update({ recordes_gambling: novo })
+                .eq('email', user.email);
+
+                if (updateError) {
+                    console.error(updateError);
+                } else {
+                    console.log('Update aos 10000 feito');
+                }
+            }else{
+
+                if (tipo < parseInt(recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")[3])){
+
+                    console.log(tipo)
+                    var antigo = recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")
+                    antigo[3] = tipo
+                    antigo = antigo.join("_")
+                    recordes_a_ser_atualizados[0].recordes_gambling[0][1][0] = antigo
+                    novo = recordes_a_ser_atualizados[0].recordes_gambling
+
+                    const { error: updateError } = await client
+                    .from('users')
+                    .update({ recordes_gambling: novo })
+                    .eq('email', user.email);
+
+                    if (updateError) {
+                        console.error(updateError);
+                    } else {
+                        console.log('Update ao HOLY feito');
+                    }
+                }
+            }
+        }
+    }
+
+    function compareSecondColumn(a, b) {
+        if (a[1] === b[1]) {
+            return 0;
+        }
+        else {
+            return (a[1] < b[1]) ? -1 : 1;
+        }
+    }
+
+
+    recordes()
+    checkUser()
 </script>
 </html>
