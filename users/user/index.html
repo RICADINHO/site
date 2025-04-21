@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You</title>
+</head>
+<body>
+    ola
+    <button onclick="sair()">log out</button>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxianJyZXNneGdpd3JsbWh6cm1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUwOTk0MTYsImV4cCI6MjA2MDY3NTQxNn0.ZrivsC43W6kBegY7r4dwZB_pTRUZJgBU5GzBsDNQiq4'
+    const SUPABASE_URL = 'https://lbjrresgxgiwrlmhzrmm.supabase.co';
+
+  const { createClient } = supabase;
+  const client = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  
+checkUser()
+
+  async function checkUser() {
+    const {
+      data: { user },
+      error
+    } = await client.auth.getUser();
+
+    if (user) {
+      console.log('User is logged in:', user);
+      
+      const { data: dados_user } = await client
+      .from('users')
+      .select('*')
+      .eq('email', user.email)
+      .single();
+
+      console.log(dados_user)
+      document.body.innerHTML += `<p>nome: ${dados_user.nome}</p>`;
+      document.body.innerHTML += `<p>email: ${dados_user.email}</p>`;
+      document.body.innerHTML += `<p>recordes: ${dados_user.recordes_gambling}</p>`;
+      document.body.innerHTML += `<p>data de criacao: ${dados_user.data_criacao}</p>`;
+      document.body.innerHTML += `<p>cor favorita: ${dados_user.cor_favorita}</p>`;
+      document.body.innerHTML += `<p>vibe: ${dados_user.vibe}</p>`;
+    } else {
+      console.log('No user logged in');
+      document.body.innerHTML += `<p>Parabens?</p>`;
+      // Optionally redirect to login
+      // window.location.href = '/login.html';
+    }
+  }
+  
+  async function sair() {
+    const { error } = await client.auth.signOut()
+    window.location.href = 'https://ricadinho.com/';
+  }
+  
+
+</script>
+</html>

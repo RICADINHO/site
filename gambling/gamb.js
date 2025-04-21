@@ -38,7 +38,7 @@ checkBtn.addEventListener("click", e =>{
         corpo.style.backgroundImage = "url('img15.png')";
         img_roleta.style = "position: absolute;top: 34%;display: inline-block;";
         img_dados2.style = "position: absolute;right: 0px;display: inline-block;"
-        casino.style = "border: 3px solid rgba(135,25,53,255); border-radius: 25px; background-color: rgba(0, 0, 0, 0.801); color: white; display: flex; justify-content: center; align-items: center; width: 50%; justify-self: center; padding: 10px; flex-direction: column; position: relative;";
+        casino.style = "border: 3px solid rgba(135,25,53,255); border-radius: 25px; background-color: rgba(0, 0, 0, 0.801); color: white; display: flex; justify-content: center; align-items: center; width: 50%; margin: auto;padding: 10px; flex-direction: column; position: relative;";
         aud.play()
     }, 500)
   }else{

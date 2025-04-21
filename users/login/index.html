@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>login in??</title>
+  <link rel="icon" type="image/x-icon" href="escape.png">
+</head>
+
+
+<style>
+    body{
+        background-color: black;
+    }
+</style>
+
+
+<body>
+    <p style="color: rgb(36,191,173);">Wanna feel the waves? <a style="color: rgb(36,191,173);" href="../signup/">Click me</a></p>
+    <br><br><br><br><br><br><br>
+    <div style="border: 3px solid rgba(135,25,53,255); border-radius: 25px; background-image: url('vaporwave.gif');color: white; display: flex; justify-content: center; align-items: center; width: 30%; padding: 10px; flex-direction: column;margin: auto;">
+        <br>
+        <h2 style="color: rgba(36,191,173,255)">Login</h2>
+        <input type="email" id="email" placeholder="Email" style="background-color: rgba(0, 0, 0, 0.3);color: rgb(36, 0, 216);"/> <br>
+        <input type="password" id="password" placeholder="Password" style="background-color: black;color: rgb(133,0,157);"/> <br>
+        <button onclick="login()" style="background-color: black;color: rgba(230,0,63,255);">Login</button><br>
+        <div id="message"></div>
+        <br>
+    </div>
+
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxianJyZXNneGdpd3JsbWh6cm1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUwOTk0MTYsImV4cCI6MjA2MDY3NTQxNn0.ZrivsC43W6kBegY7r4dwZB_pTRUZJgBU5GzBsDNQiq4'
+    const SUPABASE_URL = 'https://lbjrresgxgiwrlmhzrmm.supabase.co';
+
+    const { createClient } = supabase;
+    const client = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      const { data, error } = await client.auth.signInWithPassword({ email, password });
+
+      const messageDiv = document.getElementById('message');
+      if (error) {
+        messageDiv.textContent = error.message;
+        console.error('Login error:', error);
+      } else {
+        messageDiv.textContent = "Nice";
+        console.log('User:', data.user);
+        window.location.href = 'https://ricadinho.com/';
+      }
+    }
+</script>
+</html>

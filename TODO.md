@@ -8,6 +8,7 @@
 
 - pagina de hub de anuncios (tipo pagina de achievements, quando te aparece um anuncio desbloqiueias na pagina de hub, os que ainda n descobriste ficam a preto, usar login para isto)
 - meter o site com features mais caoticas
+- meter um popup random cada vez que alguem entra num jogo do gambling a fazer perguntas ridiculas (maior de 999? Gostas do RICADINHO? Rating do website. CLICK ME!) para começar a musica de fundo. Muitas só com uma resposta e no canto meter RICADINHO is not responsible for ... para cada um
 
 ### 3
 
@@ -19,9 +20,12 @@
 
 ## Anuncios
 
-
-- ALREADY HAVE AN ACCOUNT? HOLY [Mama]!! (/singup -> /login)
-- NEED AN ACCOUNT IN YOUR NAME?? WHYYYYYY!!! (/login -> /signup)
+- fazer algo na lingua do gaster undertale
+- THANK YOU FOR MAKING THE WORLD A BETTER PLACE! (home page depois do login)
+- HAVE AN ACCOUNT ALREADY? HOLY [Mama]!! (home page -> /login)
+- NEED AN ACCOUNT IN YOUR NAME?? WHYYYYYY!!! (home page -> /signup)
+- already found your way?\n click me! (bubble text da cabeça da estatua do /signup -> /login)
+- wanna feel the waves? click me! (/login -> /singup) (apenas texto talvez)
 - FEELING LONELY?? NOT ANYMORE!! ()
 - ARE YOU A GEEK? CLICK ME!! (home page -> coisa mais sortuda que me aconteceu) cmsqma
 - HUGE NUMBERS NERD?? YOU'RE GONNA LOVE THIS! (home page -> coisa mais sortuda que me aconteceu)

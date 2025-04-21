@@ -54,9 +54,13 @@
   <source src="squish.mp3" type="audio/mpeg">
 </audio>
 
+<audio id="auido_anuncioTHANKYOU">
+  <source src="auido_anuncioTHANKYOU.mp3" type="audio/mpeg">
+</audio>
+
 <button id="tocar" onmouseover="muda()" onmouseout="desmuda()" onclick="playAudio()" style="background-color: rgba(26,14,112,255);border-color: rgba(26,14,112,255);color: rgb(233, 233, 233);font-size: 20px;"><span style="font-size: 20px;">&#9658;<!--&#9742--></span></button>
 <button id="para" onclick="pauseAudio()" type="button"  style="background-color: rgba(125,16,157,255);border-color: rgba(125,16,157,255);color: rgba(255, 255, 255, 0.8);" ><span style="font-size: 20px;">&#9724<!--&#8741;&#9646--></span></button> 
-<div id="login" style="float: right; font-size: 22px;"> <a href="http://ricadinho.com/login/login"><span style="color: rgb(189, 0, 189)">L</span><span style="color: blue">o</span><span style="color: green;">g</span> <span style="color:yellow">i</span><span style="color: red">n</span></a></div>
+<div style="float: right; font-size: 22px;"> <a id="texto_login" href="users/login"><span style="color: rgb(189, 0, 189)">L</span><span style="color: blue">o</span><span style="color: green;">g</span> <span style="color:yellow">i</span><span style="color: red">n</span></a></div>
 <!----
 <button onclick="windowClose()">ola??</button>
 
@@ -80,16 +84,17 @@
 
 
 
-<a id="anuncioLadoReferencia" href="http://ricadinho.com/login/login">
+<a id="anuncioLadoReferencia" href="http://ricadinho.com/users/login">
   <img title ="texto de mouseover" style="position: absolute;right: 0px;bottom: 100px;" src="cenas_do_site/anuncios/anunciosV/anuncio6/anuncio6.png" alt="anuncio6" id="anuncioLado">
 </a>
 
-<a id="anuncioBaixoReferencia" href="http://ricadinho.com/login/login"> 
+<a id="anuncioBaixoReferencia" href="http://ricadinho.com/users/login"> 
   <img  width="auto" height="auto" title="texto de mouseover" style="position: absolute;bottom: 0px;right: 33%;" id="anuncioBaixo" src="cenas_do_site/anuncios/anunciosH/anuncio4/anuncio4V2.png" alt="anuncio" class="center">
 </a>
 
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="https://www.unpkg.com/suncalc@1.9.0/suncalc.js"></script>
 <script src="cenas_do_site/ficheiros/sol.js"></script>
 <script>
@@ -175,12 +180,12 @@ var numero_textoC = Math.floor(Math.random() * 10);
   // ANUNCIOS VERTICAIS
 
   if(v1 ==0){
-    anuncioLR.href = "login/login";
-    anuncioL.src="cenas_do_site/anuncios/anunciosV/anuncio6/anuncio6.png";
+    anuncioLR.href = "users/signup";
+    anuncioL.src="cenas_do_site/anuncios/anunciosV/anuncio1V/anuncio1V.png";
     anuncioL.title = "LOSE YOURSELF ON THIS NEW REALITY";
   }else{
-    anuncioLR.href = "login/login";
-    anuncioL.src="cenas_do_site/anuncios/anunciosV/anuncio10/anuncio10.png";
+    anuncioLR.href = "users/login";
+    anuncioL.src="cenas_do_site/anuncios/anunciosV/anuncio2V/anuncio2V.png";
     anuncioL.title = "WHY ARE YOU LIKE THIS";
   }
 
@@ -243,6 +248,56 @@ var numero_textoC = Math.floor(Math.random() * 10);
     anuncioB.src = "cenas_do_site/anuncios/anunciosH/anuncio11/anuncioGambling2.png";
     anuncioB.title = "I'M SO CLOSE";
   }
+
+
+
+  // ------------------------------------------- COISAS DE LOGIN ---------------------------
+
+  let texto_login = document.getElementById("texto_login")
+  var cores = ["lightblue","blue","green","yellow","red","purple","orange","pink","darkred"]
+  var auido_anuncioTHANKYOU = document.getElementById("auido_anuncioTHANKYOU")
+  
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxianJyZXNneGdpd3JsbWh6cm1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUwOTk0MTYsImV4cCI6MjA2MDY3NTQxNn0.ZrivsC43W6kBegY7r4dwZB_pTRUZJgBU5GzBsDNQiq4'
+  const SUPABASE_URL = 'https://lbjrresgxgiwrlmhzrmm.supabase.co';
+
+  const { createClient } = supabase;
+  const client = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  async function checkUser() {
+    const {
+      data: { user },
+      error
+    } = await client.auth.getUser();
+
+    if (user) {
+      console.log('User is logged in:', user);
+      // Example: show name or email
+      
+      const { data: nome } = await client
+        .from('users')
+        .select('nome')
+        .eq('email', user.email)
+        .single();
+      console.log(nome)
+      
+      texto_login.textContent = nome.nome;
+      texto_login.style.color = cores[Math.floor(Math.random() * cores.length)];
+      texto_login.href = "users/user/"
+
+      anuncioLR.href = "#";
+      anuncioL.src="cenas_do_site/anuncios/anuncios_externos/anuncioTHANKYOU/thankyou.png";
+      anuncioL.title = "THANK YOU";
+      anuncioL.onclick = function(){
+        auido_anuncioTHANKYOU.play()
+      }
+
+    } else {
+      console.log('No user logged in');
+
+    }
+  }
+
+  checkUser();
 </script>
 
 <script>
