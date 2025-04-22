@@ -366,7 +366,7 @@
 
             setTimeout(() => this.reset_num(3), 15000);
         }else if(Math.abs(num_randomM.textContent - num_a_adivinharM.textContent) < 10000){ // QUASE (>10000)
-            popupM.textContent = "QUASE (>10000)"
+            popupM.textContent = "BEM QUASE (>10000)"
 
             popupM.classList.remove("hide");
             popupM.classList.add("show");
@@ -374,6 +374,24 @@
             update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
 
             setTimeout(() => this.reset_num(3), 10000);
+        }else if(Math.abs(num_randomM.textContent - num_a_adivinharM.textContent) < 100000){ // QUASE (>100000)
+            popupM.textContent = "QUASE (>100000)"
+
+            popupM.classList.remove("hide");
+            popupM.classList.add("show");
+
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
+
+            setTimeout(() => this.reset_num(3), 8000);
+        }else if(Math.abs(num_randomM.textContent - num_a_adivinharM.textContent) < 1000000){ // PERTO (>1000000)
+            popupM.textContent = "PERTO (>1000000)"
+
+            popupM.classList.remove("hide");
+            popupM.classList.add("show");
+
+            update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
+
+            setTimeout(() => this.reset_num(3), 5000);
         }else{ // ERROU
             update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
             setTimeout(() => this.reset_num(3), speed);
