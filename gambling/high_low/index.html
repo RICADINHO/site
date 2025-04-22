@@ -41,7 +41,7 @@
         
         <b id="numero">GENERATE ME</b> <br> <br>
 
-        <button onclick="num()">CLICK ME</button>
+        <button id="botao" onclick="num()">CLICK ME</button>
     </div>
 
 </body>
@@ -50,6 +50,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script>
     var numero = document.getElementById("numero")
+    var botao = document.getElementById("botao")
+    let num_high = 0
+    let num_low = 999999999
 
     async function num(){
         var num_random = Math.floor(Math.random() * 1000000001)
@@ -57,23 +60,22 @@
 
             numero.textContent = num_random
 
-            const {
-                data: { user },
-                    error1
-            } = await client.auth.getUser();
-
-            const { data: recordes_a_ser_atualizados } = await client
-                .from('users')
-                .select('recordes_gambling')
-                .eq('email', user.email)
-            
-            num_high = parseInt(recordes_a_ser_atualizados[0].recordes_gambling[1][1][0].split("_")[0])
-            num_low = parseInt(recordes_a_ser_atualizados[0].recordes_gambling[1][1][0].split("_")[1])
-
             //console.log(recordes_a_ser_atualizados[0].recordes_gambling[1][1][0])
 
             if(num_random > num_high){
-                alert("NOVO RECORDE PESSOAL NO HIGH")
+                botao.disabled = true;
+                tempAlert('NOVO RECORDE PESSOAL NO HIGH',2000);
+
+                const {
+                data: { user },
+                    error1
+                } = await client.auth.getUser();
+
+                const { data: recordes_a_ser_atualizados } = await client
+                .from('users')
+                .select('recordes_gambling')
+                .eq('email', user.email)
+
                 var antigo = recordes_a_ser_atualizados[0].recordes_gambling[1][1][0].split("_")
                 antigo[0] = num_random
                 antigo = antigo.join("_")
@@ -91,9 +93,23 @@
                     } else {
                         console.log('Update ao HIGH feito');
                     }
+                botao.disabled = false;
+                num_high = num_random 
             }
             if(num_random < num_low){
-                alert("NOVO RECORDE PESSOAL NO LOW")
+                botao.disabled = true;
+                tempAlert('NOVO RECORDE PESSOAL NO HIGH',2000);
+
+                const {
+                data: { user },
+                    error1
+                } = await client.auth.getUser();
+
+                const { data: recordes_a_ser_atualizados } = await client
+                .from('users')
+                .select('recordes_gambling')
+                .eq('email', user.email)
+
                 var antigo = recordes_a_ser_atualizados[0].recordes_gambling[1][1][0].split("_")
                 antigo[1] = num_random
                 antigo = antigo.join("_")
@@ -111,6 +127,8 @@
                     } else {
                         console.log('Update ao LOW feito');
                     }
+                botao.disabled = false;
+                num_low = num_random
             }
 
         }else{
@@ -144,6 +162,20 @@
             console.log("user: "+user.email+" __ "+nome_user )
 
             login.textContent = user.email
+
+
+            /*const {
+                data: { user },
+                    error1
+            } = await client.auth.getUser();*/
+
+            const { data: recordes_a_ser_atualizados } = await client
+                .from('users')
+                .select('recordes_gambling')
+                .eq('email', user.email)
+
+            num_high = parseInt(recordes_a_ser_atualizados[0].recordes_gambling[1][1][0].split("_")[0])
+            num_low = parseInt(recordes_a_ser_atualizados[0].recordes_gambling[1][1][0].split("_")[1])
         }
     }
 
@@ -183,6 +215,17 @@
             return (a[1] < b[1]) ? -1 : 1;
         }
     }
+
+    function tempAlert(msg,duration)
+        {
+        var el = document.createElement("div");
+        el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
+        el.innerHTML = msg;
+        setTimeout(function(){
+        el.parentNode.removeChild(el);
+        },duration);
+        document.body.appendChild(el);
+        }
 
     checkUser()
     recordes()
