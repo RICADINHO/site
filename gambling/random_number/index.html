@@ -11,9 +11,12 @@
 </style>
 
 <body>
+    
     <center><h1>RANDOM NUMBER</h1></center>
+    <span id="login" style="left: 0%;">LOGIN PLEASE</span>
     <center>Guess the random number to WIN! <br> <br> <br> <br> 
 
+    
 
     <button id="botao_fast_mode" onclick="fastmode()" style="position: absolute;top: 2%;left: 1%;">Fast mode</button>
     
@@ -478,6 +481,8 @@
             .eq('email', user.email)
             .single();
             console.log("user: "+nome_user)
+
+            login.textContent = user.email
         }
     }
 
