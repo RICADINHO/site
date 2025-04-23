@@ -9,5 +9,5 @@
 ```
 
 
-# https://www.RICADINHO.com
+# https://RICADINHO.com
 

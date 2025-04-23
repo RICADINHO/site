@@ -21,7 +21,7 @@
 
     <div style="top:30%;right: 1%; position:absolute;border: 3px solid rgba(135,25,53,255);background-color: rgba(0, 0, 0, 0.692);color: white; display: flex;justify-content: center;align-items: center;width: 20%;padding: 5px;flex-direction: column;">
         <b>LEADERBOARD HIGH</b> <br>
-        Highest number pulled: <br><br>
+        Highest number pulled: <br>
         <span id="top1high"></span><br>
         <span id="top2high"></span><br>
         <span id="top3high"></span><br>
@@ -93,12 +93,15 @@
                     } else {
                         console.log('Update ao HIGH feito');
                     }
+                setTimeout(() => {
+                    console.log("parabens")
+                }, 10000);
                 botao.disabled = false;
                 num_high = num_random 
             }
             if(num_random < num_low){
                 botao.disabled = true;
-                tempAlert('NOVO RECORDE PESSOAL NO HIGH',2000);
+                tempAlert('NOVO RECORDE PESSOAL NO LOW',2000);
 
                 const {
                 data: { user },
@@ -127,6 +130,9 @@
                     } else {
                         console.log('Update ao LOW feito');
                     }
+                setTimeout(() => {
+                    console.log("parabens")
+                }, 10000);
                 botao.disabled = false;
                 num_low = num_random
             }

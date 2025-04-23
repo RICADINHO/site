@@ -96,7 +96,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script>
-    let lock_geral = [true,true,true]
+    let lock_geral = [true,true,true,true]
     let speed = 500
     let modo = 0
     var botao_fast_mode = document.getElementById("botao_fast_mode")
@@ -277,13 +277,27 @@
             popup10000.classList.add("show");
 
             setTimeout(() => this.reset_num(2), 2500);
-        }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 100){ // QUASE
+        }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 80){ // QUASE
             popup10000.textContent = "QUASE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
             setTimeout(() => this.reset_num(2), 2000);
+        }else if(flipInt(num_random10000.textContent) == "1987"){ // 1987
+            popup10000.textContent = "THE BITE OF 87'?"
+
+            popup10000.classList.remove("hide");
+            popup10000.classList.add("show");
+
+            setTimeout(() => this.reset_num(2), 2500);
+        }else if(flipInt(num_random10000.textContent) == "1983"){ // 1983
+            popup10000.textContent = "THE BITE OF 83'?"
+
+            popup10000.classList.remove("hide");
+            popup10000.classList.add("show");
+
+            setTimeout(() => this.reset_num(2), 2500);
         }else if(num_random10000.textContent === "777"){ // 777 METER UM AUIDO DE SLOT MACHINE
             popup10000.textContent = "GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE"
 
@@ -299,6 +313,7 @@
 
         // -------------------------------------- 1000000000 ---------------------------------------
     function numeroM(){
+        lock_geral[3] = false;
         botaoM.disabled = true;
         num_randomM.textContent = Math.floor(Math.random() * 1000000001);
 
@@ -391,7 +406,7 @@
 
             update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
 
-            setTimeout(() => this.reset_num(3), 5000);
+            setTimeout(() => this.reset_num(3), 3000);
         }else{ // ERROU
             update_user(Math.abs(num_randomM.textContent-num_a_adivinharM.textContent))
             setTimeout(() => this.reset_num(3), speed);
@@ -401,10 +416,11 @@
 
 
     function gera_tudo(){
-        if(lock_geral[0] & lock_geral[1] & lock_geral[2]){
+        if(lock_geral[0] & lock_geral[1] & lock_geral[2] & lock_geral[3]){
             numero100()
             numero1000()
             numero10000()
+            numeroM()
         }
     }
 
@@ -458,6 +474,7 @@
             num_randomM.textContent = "Gera o numero"
             num_a_adivinharM.textContent = Math.floor(Math.random() * 1000000001)
             botaoM.disabled = false;
+            lock_geral[3] = true
         }
     }
 
