@@ -255,49 +255,49 @@
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 3500);
+            setTimeout(() => this.reset_num(2), 3000);
         }else if(flipInt(num_random10000.textContent) == num_a_adivinhar10000.textContent){ // NUMERO INVERTIDO
             popup10000.textContent = "NUMERO INVERTIDO"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 3500);
+            setTimeout(() => this.reset_num(2), 3000);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 10){ // MESMO QUASE
             popup10000.textContent = "MESMO QUASE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 3000);
+            setTimeout(() => this.reset_num(2), 2500);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 50){ // BEM QUASE
             popup10000.textContent = "BEM QUASE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 2500);
+            setTimeout(() => this.reset_num(2), 2000);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 80){ // QUASE
             popup10000.textContent = "QUASE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 2000);
+            setTimeout(() => this.reset_num(2), 1500);
         }else if(flipInt(num_random10000.textContent) == "1987"){ // 1987
             popup10000.textContent = "THE BITE OF 87'?"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 2500);
+            setTimeout(() => this.reset_num(2), 1500);
         }else if(flipInt(num_random10000.textContent) == "1983"){ // 1983
             popup10000.textContent = "THE BITE OF 83'?"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 2500);
+            setTimeout(() => this.reset_num(2), 1500);
         }else if(num_random10000.textContent === "777"){ // 777 METER UM AUIDO DE SLOT MACHINE
             popup10000.textContent = "GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE"
 
@@ -440,7 +440,7 @@
             modo = 0
             botao_fast_mode.style.color = "black"
         }else{
-            speed = 0
+            speed = 10
             modo = 1
             botao_fast_mode.style.color = "red"
         }
@@ -482,6 +482,8 @@
 
 
     let tem_user = false // para ver se existe algum user logged in
+    let numero_maiorM = 0 // melhor numero do user ate agr
+    let lock_updateuser = true //para ler apenas 1 vez o recorde
     var top1100 = document.getElementById("top1100")
     var top2100 = document.getElementById("top2100")
     var top3100 = document.getElementById("top3100")
@@ -569,18 +571,35 @@
 
     async function update_user(tipo){
         if(tem_user){
+            
+            if(lock_updateuser){
+                botaoM.disabled = true;
+                const {
+                    data: { user },
+                        error1
+                } = await client.auth.getUser();
 
-            const {
-                data: { user },
-                    error1
-            } = await client.auth.getUser();
+                const { data: recordes_a_ser_atualizados } = await client
+                    .from('users')
+                    .select('recordes_gambling')
+                    .eq('email', user.email)
 
-            const { data: recordes_a_ser_atualizados } = await client
+                numero_maiorM = parseInt(recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")[3])
+                lock_updateuser = false
+                botaoM.disabled = false
+            }
+
+            if(tipo=="t100"){
+
+                const {
+                    data: { user },
+                        error1
+                } = await client.auth.getUser();
+
+                const { data: recordes_a_ser_atualizados } = await client
                 .from('users')
                 .select('recordes_gambling')
                 .eq('email', user.email)
-
-            if(tipo=="t100"){
 
                 var antigo = recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")
                 antigo[0] = parseInt(antigo[0]) +1
@@ -599,6 +618,16 @@
                     console.log('Update aos 100 feito');
                 }
             }else if(tipo=="t1000"){
+
+                const {
+                    data: { user },
+                        error1
+                } = await client.auth.getUser();
+
+                const { data: recordes_a_ser_atualizados } = await client
+                .from('users')
+                .select('recordes_gambling')
+                .eq('email', user.email)
 
                 var antigo = recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")
                 antigo[1] = parseInt(antigo[1]) +1
@@ -619,6 +648,16 @@
                 }
             }else if(tipo=="t10000"){
 
+                const {
+                    data: { user },
+                        error1
+                } = await client.auth.getUser();
+
+                const { data: recordes_a_ser_atualizados } = await client
+                .from('users')
+                .select('recordes_gambling')
+                .eq('email', user.email)
+
                 var antigo = recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")
                 antigo[2] = parseInt(antigo[2]) +1
                 antigo = antigo.join("_")
@@ -637,9 +676,22 @@
                     console.log('Update aos 10000 feito');
                 }
             }else{
+                console.log("okay bitch ass...")
+                if (tipo < numero_maiorM){
 
-                if (tipo < parseInt(recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")[3])){
+                    const {
+                        data: { user },
+                            error1
+                    } = await client.auth.getUser();
 
+                    const { data: recordes_a_ser_atualizados } = await client
+                        .from('users')
+                        .select('recordes_gambling')
+                        .eq('email', user.email)
+
+                    botaoM.disabled = true;
+                    botaoM.textContent = "Updating Leaderboard... (check f12)"
+                    
                     console.log(tipo)
                     var antigo = recordes_a_ser_atualizados[0].recordes_gambling[0][1][0].split("_")
                     antigo[3] = tipo
@@ -648,15 +700,19 @@
                     novo = recordes_a_ser_atualizados[0].recordes_gambling
 
                     const { error: updateError } = await client
-                    .from('users')
-                    .update({ recordes_gambling: novo })
-                    .eq('email', user.email);
+                        .from('users')
+                        .update({ recordes_gambling: novo })
+                        .eq('email', user.email);
 
                     if (updateError) {
                         console.error(updateError);
                     } else {
                         console.log('Update ao HOLY feito');
                     }
+                    numero_maiorM = tipo
+                    botaoM.textContent = "HOLY GRAIL"
+                    botaoM.disabled = false;
+
                 }
             }
         }
@@ -674,5 +730,8 @@
 
     recordes()
     checkUser()
+    setTimeout(() => {
+        update_user(999999999)
+    }, 1000);
 </script>
 </html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
     <title>WHICH ONE WILL YOU GET</title>
 </head>
 <style>
@@ -39,7 +40,9 @@
     
         <h1>HIGH or LOW</h1>
         
-        <b id="numero">GENERATE ME</b> <br> <br>
+        <div class="popup" ><b id="numero">GENERATE ME</b> 
+            <span class="popuptext" id="popup">POPUUUUUUUUUUUUUUUUUUP</span>
+        </div><br> <br>
 
         <button id="botao" onclick="num()">CLICK ME</button>
     </div>
@@ -64,7 +67,10 @@
 
             if(num_random > num_high){
                 botao.disabled = true;
-                tempAlert('NOVO RECORDE PESSOAL NO HIGH',2000);
+
+                popup.textContent = "NOVO RECORDE (PB) NO HIGH!"
+                popup.classList.remove("hide");
+                popup.classList.add("show");
 
                 const {
                 data: { user },
@@ -93,15 +99,23 @@
                     } else {
                         console.log('Update ao HIGH feito');
                     }
+                
                 setTimeout(() => {
-                    console.log("parabens")
-                }, 10000);
-                botao.disabled = false;
-                num_high = num_random 
+                    popup.classList.remove("show");
+                    popup.classList.add("hide");
+                    botao.disabled = false;
+                    num_high = num_random 
+                }, 4000);
+
             }
             if(num_random < num_low){
                 botao.disabled = true;
-                tempAlert('NOVO RECORDE PESSOAL NO LOW',2000);
+
+
+                popup.textContent = "NOVO RECORDE (PB) NO LOW!"
+                popup.classList.remove("hide");
+                popup.classList.add("show");
+
 
                 const {
                 data: { user },
@@ -131,10 +145,12 @@
                         console.log('Update ao LOW feito');
                     }
                 setTimeout(() => {
-                    console.log("parabens")
-                }, 10000);
-                botao.disabled = false;
-                num_low = num_random
+                    popup.classList.remove("show");
+                    popup.classList.add("hide");
+                    botao.disabled = false;
+                    num_low = num_random
+                }, 4000);
+
             }
 
         }else{
@@ -222,16 +238,7 @@
         }
     }
 
-    function tempAlert(msg,duration)
-        {
-        var el = document.createElement("div");
-        el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
-        el.innerHTML = msg;
-        setTimeout(function(){
-        el.parentNode.removeChild(el);
-        },duration);
-        document.body.appendChild(el);
-        }
+
 
     checkUser()
     recordes()
