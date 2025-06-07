@@ -1,8 +1,6 @@
 # 1
 
-- meter a firebase a funcionar
 - fazer mailing list
-
 
 ## 2
 
@@ -13,7 +11,6 @@
 ### 3
 
 - pagina da coisa mais sortuda que me aconteceu (cmsqma) (esta pagina pode ir pro hub de gambling)
-- fazer espaço de anuncio para login -> signup e signup -> login
 - meter o site em react??
 - easter egg de paginas mal escritas (/singup /cockbook)
 
@@ -21,11 +18,11 @@
 ## Anuncios
 
 - fazer algo na lingua do gaster undertale
+- UNSURE IF YOU WANT TO PROCEED? SEE WHAT OTHERS THINK! (home page -> pagina de reviews do site)
 - THANK YOU FOR MAKING THE WORLD A BETTER PLACE! (home page depois do login)
 - HAVE AN ACCOUNT ALREADY? HOLY [Mama]!! (home page -> /login)
 - NEED AN ACCOUNT IN YOUR NAME?? WHYYYYYY!!! (home page -> /signup)
 - already found your way?\n click me! (bubble text da cabeça da estatua do /signup -> /login)
-- wanna feel the waves? click me! (/login -> /singup) (apenas texto talvez)
 - FEELING LONELY?? NOT ANYMORE!! ()
 - ARE YOU A GEEK? CLICK ME!! (home page -> coisa mais sortuda que me aconteceu) cmsqma
 - HUGE NUMBERS NERD?? YOU'RE GONNA LOVE THIS! (home page -> coisa mais sortuda que me aconteceu)
@@ -41,3 +38,5 @@
     - IMG ALEATORIA: img_aleatoria = np.random.uniform(0,255,(28,28)) plt.imshow(img_aleatoria) fazer um generator deste no site com login e quem tiver o maior numero de pixeis iguais (sorte) fica na leaderboard
 - FEELING LUCKY? SO AM I! (home page -> GAMBLING) (anuncio)
 - WANT TO BE HAPPY? WIN A MILLION [Regrets] NOW! (home page -> /gambling) (anuncio)
+- meter a firebase a funcionar (SUPABASE) (1.)
+- - wanna feel the waves? click me! (/login -> /singup) (anuncio)
