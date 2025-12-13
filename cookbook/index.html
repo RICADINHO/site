@@ -1,37 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Em breve</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="extras/bolo.png">
+  <link rel="stylesheet" href="extras/ficheiros/navbar.css">
+
+  <title>Yummy</title>
 </head>
 <style>
-    body{
-        background-color: rgb(222, 172, 138);
+  body{
+   /*color: rgb(240,231,224);*/
+   background-color: rgb(222, 172, 138);
+   cursor: url('extras/aranha_bem_assustadora.svg'), auto;
+   /*cursor: url('extras/aranha_bem_assustadora.svg'), grab; METER OUTROS CURSORES QUANDO ALGO É CLICAVEL*/ 
+  }
+  .squares {
+  display: flex;
+  justify-content: center;
+}
+.icon1,
+.icon2 {
+    width: 200px;
+    height: 200px;
+    background: #F5F8FA;
+}
+
+
+ .icon1 {
+        margin-right: 5%;
+        border-style: ridge;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    } 
+    .icon2 {
+        border-style: ridge;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+    mark{
+      background-color: white;
     }
-</style>
-<body>
-
-<h2>Em manutenção...  <progress id="file" value="40" max="100"> 40% </progress> </h2><br>
-Toma ai uma das minhas receitas favoritas enquanto nao ta feito. <br><br>
-
-<h3>Panquecas OPs do RICADINHO&trade; (19/01/2024, 11:27)</h3>
-<h4>Ingredientes (+/- 20 panquecas):</h4>
-<ul>
-    <li>Farinha (300g)</li>
-    <li>Açucar baunilhado (30g)*</li>
-    <li>Açucar branco (30g)</li>
-    <li>Fermento (2.5 tsp)</li>
-    <li>Bicarbonato de sodio (1 tsp)</li>
-    <li>Sal (0.5 tsp)</li>
-    <li>Leite (430ml)</li>
-    <li>Manteiga (60g)</li>
-    <li>Ovo (1 grande)</li>
-</ul>
-<h4>Receita</h4>
-Numa taça misturar todos os ingredientes secos bem e depois meter ou outros, derreter a manteiga mas nao convem ir a ferver, deixar arrefecer um bocado antes de meter, aconcelho a usar uma whisk (ns como se diz em pt) pra mexer tudo. N mexer ate ficar muito smooth, tem de ter um bocado de "grunhos" pra ficar fixe, depois de tar mexido deixar no frigorifico a noite toda (podes n deixar sequer, eu obtive melhores resultados ao deixar a massa descançar, ficou melhor e mais consistente)
-
-<p>* Se n tiver isto substitui por 30g açucar normal e +/- 1 tsp de essencia de baunilha</p>
+.emojis{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
     
+</style>
+
+<body id="corpo">
+
+  <ul id="navbar_main" class="nav">
+    <li class="nav"><a class="active" href="#">Cookbook</a></li>
+    <li class="nav"><a href="proteinas">Proteinas</a></li>
+    <li class="nav"><a href="hidratos">Hidratos</a></li>
+    <li class="nav"><a href="sobremesas">Sobermesas</a></li>
+    <li class="nav"><a href="outros">Outros</a></li>
+  </ul><br><br>
+  
+  <center><h1 id="titulo">RICADINHO's COOKBOOK</h1></center>
+  <center><h3 id="texto_cima" style="font-weight: normal;">Cookbook de receitas feitas por mim ou que encontrei e que não me quero esquecer</h3></center>
+  <br><hr style="width: 50%;"><br>
+
+<br><br>
+  <div class="squares">
+    <div onclick="audio(4)" class="icon1" style="background-image: url('extras/broder.jpg');background-repeat: no-repeat;background-size: 100% 100%;">
+      <a href="proteinas/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark1')" onmouseout="muda2('mark1')"><p><mark id="mark1">BROTEINAS</mark></p></a>
+    </div>
+    <div onclick="audio(1)" class="icon1" style="background-image: url('extras/massa.png');background-repeat: no-repeat;background-size: 100% 100%;">
+       <a href="hidratos/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark2')" onmouseout="muda2('mark2')" onclick="audio(1)"><p><mark id="mark2">HIDRATOS</mark></p></a>
+   </div>
+   <div onclick="audio(3)" class="icon1" style="background-image: url('extras/the_rock_is_cooking.png');background-repeat: no-repeat;background-size: 100% 100%;">
+    <a href="sobremesas/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark3')" onmouseout="muda2('mark3')"><p><mark id="mark3">SOBREMESAS</mark></p></a>
+    </div>
+ <div onclick="altera()" class="icon2" style="background-image: url('extras/icon.png');background-repeat: no-repeat;background-size: 100% 100%;">
+  <a href="outros/" style="border: 2px black;text-decoration: none;" onmouseover="muda('mark4')" onmouseout="muda2('mark4')"><p><mark id="mark4">OUTROS</mark></p></a>
+</div>
+</div>
+
+<br><br><br><hr style="width: 50%;"><br>
+
+
+<center><img id="emoji_centro" onclick="audio(2)" src="extras/esqueleto_metalico.png" class="emojis"></center>
+<!--<center><h4>Dificuldade: 🦷 facil, 💀 normal, <img src="esqieleto3.png" class="emojis"> dificil, <img onclick="audio(0)" src="e4.png" class="emojis"> bem dificil</h4></center>-->
+<center><h4 id="texto_tags">Tags: <img src="extras/favorito.png" class="emojis"> - favoritos | 🫑 - vegetariano | 🌱 - vegan | ⏱ - rapido de fazer | ⏳ - demorado a fazer <br>  Mediçoes: 1 tbsp = 15ml, 1 tsp = 5ml , 1 cup = 240ml </h4></center>
 </body>
-</html>
+
+<audio id="massa">
+  <source src="extras/sons/massa_broda.oga" type="audio/mpeg">
+</audio>
+<audio id="metal">
+  <source src="extras/sons/som_metal.mp3" type="audio/mpeg">
+</audio>
+<audio id="broda">
+  <source src="extras/sons/som_metal.mp3" type="audio/mpeg">
+</audio>
+<audio id="sobremesas">
+  <source src="extras/sons/sobremesas.ogg" type="audio/mpeg">
+</audio>
+
+<script>
+  var mark1 = document.getElementById("mark1"); // id do texto dentro da imagem do outros
+  var corpo = document.getElementById("corpo"); //id do body do documento
+  var emoji_centro = document.getElementById("emoji_centro") // id do emoji sozinho no centro
+  var texto_cima = document.getElementById("texto_cima") // id do texto depois do titulo
+  var texto_tags = document.getElementById("texto_tags") // id do texto das tags e medicoes
+  var titulo = document.getElementById("titulo") // id do texto do titulo
+  var navbar_main = document.getElementById("navbar_main") // id da ul da nav_bar
+  var lis = navbar_main.querySelectorAll("li a") // id de todos os li da nav_bar
+  var ativo = navbar_main.querySelector(".active") // id o li ativo da nav_bar
+
+  var cor_background_OUTROS = 0; // variavel que muda a cor do outros
+  var audios = ["extras/sons/broda_distorcido.mp3","extras/sons/broda_inertido.mp3","extras/sons/broda_muito_rapido.mp3","extras/sons/broda_rapido.mp3","extras/sons/broda_normal.mp3","extras/sons/broda_muito_slow.mp3","extras/sons/broda_slow.mp3"] // caminhos para os audios de "broda"
+  var textos = ["Cookbook? Do RICADINHO? WTF???","MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG MVG","dominios MVG: https://ricadinho.com/ ___ https://martinho.pt/ ___ https://mvg.lol/ ___ https://rabosgigantes.com/ ___ https://peido.pt/", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et vehicula leo, vitae hendrerit massa. Nulla et lectus vitae ante eleifend bibendum et a est. Praesent quis bibendum orci, ut imperdiet urna. Etiam pellentesque, ipsum ut ullamcorper sollicitudin, nisi diam consectetur mi, sed mollis ex felis id est. Suspendisse nulla velit, feugiat eu nisi sodales, sagittis bibendum nisl. Vestibulum rhoncus, libero ac iaculis auctor, eros leo fermentum est, eget tincidunt elit eros eu purus. Vestibulum convallis ornare velit, non efficitur orci semper eu."] // textos para mudar na pagina principal
+
+  var prob_textos = Math.floor(Math.random() * textos.length); // escolhe um elemento random da lista dos textos
+  var x1 = Math.floor(Math.random() * 10); // num random de 0 a 10
+  var x2 = Math.floor(Math.random() * 100); // num random de 0 a 100
+
+  console.log("probabilidade 10: "+x1)
+  console.log("probabilidade 100: "+x2)
+  console.log("prob_textos: "+prob_textos)
+
+  if(x1 == 0){// muda o texto a baixo do titulo
+    texto_cima.textContent = textos[prob_textos]
+  }
+
+  if(x2>=95){ // probabilidade dos AAAAAAAAAAAA
+    corpo.style.backgroundImage = "url('extras/A.png')"
+    texto_cima.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    texto_tags.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    titulo.textContent = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    emoji_centro.style.display = "none"
+    navbar_main.style.backgroundImage = "url('extras/A.png')"
+    ativo.style.backgroundImage = "url('extras/A.png')"
+    lis.forEach(li => li.textContent = "AAAAAAAAAA");
+  }
+
+  if(x2<=10){ // probabilidade do emoji do mf doom
+    emoji_centro.src = "extras/mf-doom.png"
+  }
+  
+
+
+  function altera(){ // altera o background da pagina para o <mark> OUTROS
+    if(cor_background_OUTROS == 0){ // muda para as cores invertidas
+      cor_background_OUTROS = 1;
+      corpo.style.backgroundColor = "rgb(90,46,152)";
+      corpo.style.color = "rgb(165,209,103)";
+      navbar_main.style.backgroundColor = "#a5d167";
+      lis.forEach(li => li.style.color = "#5a2e98");
+      ativo.style.backgroundColor = "#5a2e98";
+      ativo.style.color = "#a5d167";
+    }else{ // muda de volta para o normal
+      cor_background_OUTROS = 0
+      corpo.style.backgroundColor = "rgb(222, 172, 138)";
+      corpo.style.color = "black";
+      navbar_main.style.backgroundColor = "#fcd685";
+      lis.forEach(li => li.style.color = "black");
+      ativo.style.backgroundColor = "#deac8a";
+    }
+  }
+
+  function muda(idmark){ // onmouseover alteraçoes do texto do <mark>
+    var ok = document.getElementById(idmark);
+    if(idmark == "mark4"){ // OUTROS
+      ok.style = "background-color: rgb(90,46,152);color: rgb(165,209,103)";
+    }else{// BRODEINAS HIDRATOS SOBERMESAS
+      ok.style = "background-color: black;color: white";
+    }
+  }
+
+  function muda2(idmark){ // onmouseout alteraçoes do texto do <mark>
+    var ok = document.getElementById(idmark);
+    ok.style = "background-color: white;color: black";
+  }
+
+  function audio(num){ // toca o audio para o que for preciso
+    var audio_random = Math.floor(Math.random() * audios.length);
+
+    if(num==1){ // audio da imagem da massa
+      massa.play()
+    }else if(num==2){ // audio do emoji do esqueleto
+      metal.play()
+    }else if (num==3){ // audio das sobremesas do puble place
+      sobremesas.play()
+    }else{ // audios do broda da imagem do broda
+      broda.src = audios[audio_random]
+      broda.play()
+    }
+  }
+</script>
