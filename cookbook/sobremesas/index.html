@@ -16,6 +16,7 @@
 <body>
 
     <ul class="nav">
+        <li class="nav" id="main_lobby"><a href="../../">Back to reality</a></li>
         <li class="nav"><a href="../">Cookbook</a></li>
         <li class="nav"><a href="../proteinas/">Proteinas</a></li>
         <li class="nav"><a href="../hidratos/">Hidratos</a></li>
@@ -350,3 +351,17 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 <script src="../extras/ficheiros/categorias.js"></script>
+
+<script>
+      // Cenas do texto arco-iris para ir pra tras
+  var lobbyLink = document.querySelector("#main_lobby a");
+  var text = "Back to Reality";
+  var colors = ["red", "turquoise", "green", "blue", "indigo", "violet"];
+  var html = "";
+  // Loop through every letter and assign a color
+  for (var i = 0; i < text.length; i++) {
+    var color = colors[i % colors.length]; // Cycles through the colors
+    html += "<b><span style='color:" + color + "'>" + text[i] + "</span></b>";
+  }
+  lobbyLink.innerHTML = html;
+</script>

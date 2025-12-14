@@ -24,6 +24,12 @@ li.nav a {
   text-decoration: none;
 }
 
+#main_lobby {
+  position: absolute;
+  left: 0;
+  top: 0; /* Ensures it stays aligned at the top */
+}
+
 li.nav a:hover:not(.active) {
   background-color: #00000029;
 }
@@ -31,3 +37,4 @@ li.nav a:hover:not(.active) {
 .active {
   background-color: rgb(222, 172, 138);
 }
+

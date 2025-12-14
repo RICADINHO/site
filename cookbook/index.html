@@ -12,7 +12,7 @@
   body{
    /*color: rgb(240,231,224);*/
    background-color: rgb(222, 172, 138);
-   cursor: url('extras/aranha_bem_assustadora.svg'), auto;
+   cursor: url('extras/aranha_b    <a style="left: ;" href="../">ola</a>em_assustadora.svg'), auto;
    /*cursor: url('extras/aranha_bem_assustadora.svg'), grab; METER OUTROS CURSORES QUANDO ALGO É CLICAVEL*/ 
   }
   .squares {
@@ -49,19 +49,24 @@
     height: 20px;
     vertical-align: middle;
 }
-    
+  
+
 </style>
 
 <body id="corpo">
 
+  
+
   <ul id="navbar_main" class="nav">
+    <li class="nav" id="main_lobby"><a href="../">Back to reality</a></li>
     <li class="nav"><a class="active" href="#">Cookbook</a></li>
     <li class="nav"><a href="proteinas">Proteinas</a></li>
     <li class="nav"><a href="hidratos">Hidratos</a></li>
     <li class="nav"><a href="sobremesas">Sobermesas</a></li>
     <li class="nav"><a href="outros">Outros</a></li>
-  </ul><br><br>
-  
+  </ul>
+  <br><br>
+
   <center><h1 id="titulo">RICADINHO's COOKBOOK</h1></center>
   <center><h3 id="texto_cima" style="font-weight: normal;">Cookbook de receitas feitas por mim ou que encontrei e que não me quero esquecer</h3></center>
   <br><hr style="width: 50%;"><br>
@@ -104,6 +109,19 @@
 </audio>
 
 <script>
+
+  // Cenas do texto arco-iris para ir pra tras
+  var lobbyLink = document.querySelector("#main_lobby a");
+  var text = "Back to Reality";
+  var colors = ["red", "turquoise", "green", "blue", "indigo", "violet"];
+  var html = "";
+  // Loop through every letter and assign a color
+  for (var i = 0; i < text.length; i++) {
+    var color = colors[i % colors.length]; // Cycles through the colors
+    html += "<b><span style='color:" + color + "'>" + text[i] + "</span></b>";
+  }
+  lobbyLink.innerHTML = html;
+
   var mark1 = document.getElementById("mark1"); // id do texto dentro da imagem do outros
   var corpo = document.getElementById("corpo"); //id do body do documento
   var emoji_centro = document.getElementById("emoji_centro") // id do emoji sozinho no centro
