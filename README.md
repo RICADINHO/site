@@ -9,5 +9,3 @@
 ```
 
 
-# https://RICADINHO.com
-

@@ -1,5 +1,6 @@
 # 1
 
+- Meter site em react
 - fazer mailing list
 
 ## 2
@@ -11,8 +12,8 @@
 ### 3
 
 - pagina da coisa mais sortuda que me aconteceu (cmsqma) (esta pagina pode ir pro hub de gambling)
-- meter o site em react??
 - easter egg de paginas mal escritas (/singup /cockbook)
+- pagina de reviews
 
 
 ## Anuncios
@@ -21,13 +22,12 @@
 - UNSURE IF YOU WANT TO PROCEED? SEE WHAT OTHERS THINK! (home page -> pagina de reviews do site)
 - THANK YOU FOR MAKING THE WORLD A BETTER PLACE! (home page depois do login)
 - HAVE AN ACCOUNT ALREADY? HOLY [Mama]!! (home page -> /login)
-- NEED AN ACCOUNT IN YOUR NAME?? WHYYYYYY!!! (home page -> /signup)
 - already found your way?\n click me! (bubble text da cabeça da estatua do /signup -> /login)
 - FEELING LONELY?? NOT ANYMORE!! ()
 - ARE YOU A GEEK? CLICK ME!! (home page -> coisa mais sortuda que me aconteceu) cmsqma
 - HUGE NUMBERS NERD?? YOU'RE GONNA LOVE THIS! (home page -> coisa mais sortuda que me aconteceu)
 - LOST IN THE [Liquid ou Substance]? SEE EVERYTHING! (home page -> hub anuncios) (1/100 chance)
-- FELLING LIKE A MILLION BUCKS? WAST THEM! (home page -> gambling)
+- FELLING LIKE A MILLION BUCKS? WASTE THEM! (home page -> gambling)
 
 ### ja feito
 
