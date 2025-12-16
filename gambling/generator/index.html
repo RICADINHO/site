@@ -13,76 +13,55 @@
     border: 1px solid #000;
   }
   body{
-    background-color: rgb(51, 50, 50);
-  /*background-image: url('img14.png');
-  background-repeat: repeat;
-  background-attachment: fixed; 
-  background-size: 100% 100%;*/
-  color: rgb(255, 0, 221);
+    background-image: url('../img14.png');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    color: rgb(255, 0, 221);
   }
   a:active, a:visited, a:active, a:hover, a:link{
-      text-decoration: none;
-      color: rgb(255, 0, 221);
+    text-decoration: none;
+    color: rgb(255, 0, 221);
   }
 </style>
 <body>
-  
-  <b><a href="../">BACK TO THE CASINO</a></b>
 
-    <div style="position: absolute;bottom: 50%;right: 2%;border: 2px solid black;">
-      <b>LEADERBOARD</b> <br><br><br>
-      ola <br><br>
-      ola <br><br>
-      ola
-    </div>
-    <center><h1>GENERATOR</h1></center>
-    <br>
-    <center><canvas id="canvas1" width="28" height="28"></canvas></center>
-    <center><b id="texto_cores"> 0 preto(0%) , 0 branco(0%)</b></center>
-    <br><br><br>
-    <center><button onclick="canvas1()">GERAR OUTRA VEZ</button></center>
+  <div style="border: 3px solid rgba(255,0,221); border-radius: 25px; background-color: rgba(0, 0, 0, 0.9); color: rgba(255,0,221); display: flex; justify-content: center; align-items: center; width: 70%;margin: auto; padding: 10px; flex-direction: column; position: relative;">
+      <h1>GENERATOR</h1>
+      <br>
+      <canvas id="canvas1" width="28" height="28"></canvas>
+      <b id="texto_cores">0 black(0%) , 0 branco(0%)</b>
+      <br><br><br>
+      <button onclick="canvas1()">GENERATE</button>
 
 
-    <br><br><br><br>
+      <br><br><br><br>
 
 
-    <div style="position: absolute;bottom: -50%;right: 2%;border: 2px solid black;">
-      <b>LEADERBOARD</b> <br><br><br>
-      ola <br><br>
-      ola <br><br>
-      ola
-    </div>
-    <center><h1>PRETO E BRANCO</h1></center>
-    <br>
-    <center><canvas id="canvas2" width="28" height="28"></canvas></center>
-    <center><b id="texto_pb"> 0 preto(0%) , 0 branco(0%)</b></center>
-    <br><br><br>
-    <center><button onclick="canvas2()">GERAR OUTRA VEZ</button></center>
+      <h2>BLACK & WHITE</h2>
+      <br>
+      <canvas id="canvas2" width="28" height="28"></canvas>
+      <b id="texto_pb">0 Black(0%) , 0 White(0%)</b>
+      <br><br><br>
+      <button onclick="canvas2()">GENERATE</button>
 
 
-    <br><br><br><br>
+      <br><br><br><br>
 
 
-    <div style="position: absolute;bottom: -140%;right: 2%;border: 2px solid black;">
-      <b>LEADERBOARD</b> <br><br><br>
-      ola <br><br>
-      ola <br><br>
-      ola
-    </div>
-    <center><h1>RICADINHO GENERATOR</h1></center>
-    <br>
-    <center style="display: flex;justify-content: center;align-items: center;">
-    <canvas id="rica" width="8" height="8"></canvas>
-    
-    <b id="texto_match" style="padding: 0px 15px;"> - 0% MATCH - </b>
+      <h2>RICADINHO GENERATOR</h2>
+      <br>
+      <div style="display: flex;justify-content: center;align-items: center;">
+        <canvas id="rica" width="8" height="8"></canvas>
+        
+        <b id="texto_match" style="padding: 0px 15px;"> - 0% MATCH - </b>
 
-    <canvas id="canvas3" width="8" height="8"></canvas>
-    </center>
-    <br><br><br>
-    <center><button onclick="canvas3()">GERAR OUTRA VEZ</button></center>
+        <canvas id="canvas3" width="8" height="8"></canvas>
+      </div>
+      <br><br><br>
+      <button onclick="canvas3()">RICADINHO</button>
 
-
-    <br><br><br><br>
+      <br><br><br><br>
+  </div>
 
 </body>
 
