@@ -7,96 +7,112 @@
     <title>HOW MANY TIMES CAN YOU DO IT</title>
 </head>
 <style>
-
+    body {
+        
+        background-image: url('../img13.png');
+        background-repeat: repeat;
+        background-attachment: fixed;
+        color: rgb(0, 0, 0);
+    }
 </style>
 
 <body>
-    
-    <center><h1>RANDOM NUMBER</h1></center>
-    <span id="login" style="left: 0%;">LOGIN PLEASE</span>
-    <center>Guess the random number to WIN! <br> <br> <br> <br> 
 
     
-
-    <button id="botao_fast_mode" onclick="fastmode()" style="position: absolute;top: 2%;left: 1%;">Fast mode</button>
     
-    <div style="position: absolute;bottom: 65%;right: 2%;border: 2px solid black;padding: 8px;">
-        <b>LEADERBOARD 100</b> <br>
-        Number of wins: <br><br>
-        <span id="top1100"></span><br>
-        <span id="top2100"></span><br>
-        <span id="top3100"></span><br>
-    </div>
+        <div style="position: absolute;top: 10%;right: 2%;border: 3px solid rgba(135,25,53,255);background-color: rgba(0, 0, 0, 0.9);color: white; display: flex;justify-content: center;align-items: center;width: 15%;padding: 5px;flex-direction: column;">
+            <b style="margin-bottom: 10px;" >LEADERBOARD 100</b>
+            <span style="margin-bottom: 10px;">Number of wins:</span>
+            <span id="top1100"></span>
+            <span id="top2100"></span>
+            <span id="top3100" style="margin-bottom: 5px;"></span>
+        </div>
 
-    <div style="position: absolute;bottom: 40%;right: 2%;border: 2px solid black;padding: 8px;">
-        <b>LEADERBOARD 1000</b> <br>
-        Number of wins: <br><br>
-        <span id="top11000"></span><br>
-        <span id="top21000"></span><br>
-        <span id="top31000"></span><br>
-    </div>
+        <div style="position: absolute;top: 40%;right: 2%;border: 3px solid rgba(135,25,53,255);background-color: rgba(0, 0, 0, 0.9);color: white; display: flex;justify-content: center;align-items: center;width: 15%;padding: 5px;flex-direction: column;;">
+            <b style="margin-bottom: 10px;" >LEADERBOARD 1000</b> 
+            <span style="margin-bottom: 10px;">Number of wins:</span>
+            <span id="top11000"></span>
+            <span id="top21000"></span>
+            <span id="top31000" style="margin-bottom: 5px;"></span>
+        </div>
 
-    <div style="position: absolute;bottom: 10%;right: 2%;border: 2px solid black;padding: 8px;">
-        <b>LEADERBOARD 10000</b> <br>
-        Numer of wins: <br><br>
-        <span id="top110000"></span><br>
-        <span id="top210000"></span><br>
-        <span id="top310000"></span><br>
-    </div>
+        <div style="position: absolute;top: 70%;right: 2%;border: 3px solid rgba(135,25,53,255);background-color: rgba(0, 0, 0, 0.9);color: white; display: flex;justify-content: center;align-items: center;width: 15%;padding: 5px;flex-direction: column;">
+            <b style="margin-bottom: 10px;" >LEADERBOARD 10000</b> 
+            <span style="margin-bottom: 10px;">Numer of wins:</span>
+            <span id="top110000"></span>
+            <span id="top210000"></span>
+            <span id="top310000" style="margin-bottom: 5px;"></span>
+        </div>
 
-    <div style="position: absolute;bottom: -20%;right: 2%;border: 2px solid black;padding: 8px;">
-        <b>LEADERBOARD HOLY</b> <br>
-        Difference from real number: <br><br>
-        <span id="top1M"></span><br>
-        <span id="top2M"></span><br>
-        <span id="top3M"></span><br>
-    </div>
-
-    <div class="popup" ><b id="num_a_adivinhar100">num</b> 
-        <span class="popuptext" id="popup100">POPUUUUUUUUUUUUUUUUUUP</span>
-    </div>
-
-    <h4 id="num_random100">Gera o numero</h4>
-    <button id="botao_gerar100" onclick="numero100()">CLICA</button></center>
-
-    <br><br><br><br>
-
-    <center><div class="popup" ><b id="num_a_adivinhar1000">num</b> 
-        <span class="popuptext" id="popup1000">POPUUUUUUUUUUUUUUUUUUP</span>
-    </div>
-
-    <h4 id="num_random1000">Gera o numero</h4>
-    <button id="botao_gerar1000" onclick="numero1000()">CLICA</button></center>
-
-    <br><br><br><br>
-
-    <center><div class="popup" ><b id="num_a_adivinhar10000">num</b> 
-        <span class="popuptext" id="popup10000">POPUUUUUUUUUUUUUUUUUUP</span>
-    </div>
-
-    <h4 id="num_random10000">Gera o numero</h4>
-    <button id="botao_gerar10000" onclick="numero10000()">CLICA</button></center>
+        <div style="position: absolute;top: 35%;left: 2%;border: 3px solid rgba(135,25,53,255);background-color: rgba(0, 0, 0, 0.9);color: white; display: flex;justify-content: center;align-items: center;width: 15%;padding: 8px;flex-direction: column;">
+            <b style="margin-bottom: 10px;" >LEADERBOARD HOLY</b> 
+            <span style="margin-bottom: 10px;">Difference from real number:</span>
+            <span id="top1M"></span>
+            <span id="top2M"></span>
+            <span id="top3M" style="margin-bottom: 5px;"></span>
+        </div>
 
 
-    <button onclick="gera_tudo()">GERA TUDO</button>
 
-    <br><br><br><br><br><br>
+        <div style="border: 3px solid rgba(135,25,53,255); border-radius: 25px; background-color: rgba(0, 0, 0, 0.9); color: white; display: flex; justify-content: center; align-items: center; width: 50%;margin: auto; padding: 10px; flex-direction: column; position: relative;">
 
-    <center><div class="popup" ><b id="num_a_adivinharM">num</b> 
-        <span class="popuptext" id="popupM">POPUUUUUUUUUUUUUUUUUUP</span>
-    </div>
+            <center><h1>RANDOM NUMBER</h1></center>
+            <span id="login" style="position: absolute;right: 0%;top: 0%;">LOGIN PLEASE</span>
+            <center>Guess the random number to WIN! <br> <br> <br> 
+            
 
-    <h4 id="num_randomM">Gera o numero</h4>
-    <button id="botao_gerarM" onclick="numeroM()">HOLY GRAIL</button></center>
+            <button id="botao_fast_mode" onclick="fastmode()" style="position: absolute;top: 2%;left: 1%;">Fast mode</button>
+            
 
-    <br><br><br><br><br>
+            <div class="popup" ><b id="num_a_adivinhar100">num</b> 
+                <span class="popuptext" id="popup100">POPUUUUUUUUUUUUUUUUUUP</span>
+            </div>
+
+            <h4 id="num_random100">Gera o numero</h4>
+            <button id="botao_gerar100" onclick="numero100()">CLICA</button></center>
+
+            
+
+            <center><div class="popup" ><b id="num_a_adivinhar1000">num</b> 
+                <span class="popuptext" id="popup1000">POPUUUUUUUUUUUUUUUUUUP</span>
+            </div>
+
+            <h4 id="num_random1000">Gera o numero</h4>
+            <button id="botao_gerar1000" onclick="numero1000()">CLICA</button></center>
+
+            <br><br><br><br>
+
+            <center><div class="popup" ><b id="num_a_adivinhar10000">num</b> 
+                <span class="popuptext" id="popup10000">POPUUUUUUUUUUUUUUUUUUP</span>
+            </div>
+
+            <h4 id="num_random10000">Gera o numero</h4>
+            <button id="botao_gerar10000" onclick="numero10000()">CLICA</button></center>
 
 
+            <button onclick="gera_tudo()" style="position: absolute;top: 50%;left: 1%;">GERA TUDO</button>
+
+            <br><br><br><br><br><br>
+
+            <center><div class="popup" ><b id="num_a_adivinharM">num</b> 
+                <span class="popuptext" id="popupM">POPUUUUUUUUUUUUUUUUUUP</span>
+            </div>
+
+            <h4 id="num_randomM">Gera o numero</h4>
+            <button id="botao_gerarM" onclick="numeroM()" style="margin-bottom: 55px;">HOLY GRAIL</button></center>
+            
+
+        </div>
+
+<audio id="musica_normal" src="Hotel.mp3" loop></audio>
+<audio id="musica_rapida" src="Hotel_fast.mp3" loop></audio>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script>
     let lock_geral = [true,true,true,true]
+    let lock_musica = 0
+    
     let speed = 500
     let modo = 0
     var botao_fast_mode = document.getElementById("botao_fast_mode")
@@ -131,6 +147,11 @@
 
     // -------------------------------------- 100 ---------------------------------------
     function numero100(){
+        if (lock_musica==0 & modo==0){ // tocar musica de fundo se clicar no botao e fast mode nao estiver ativado
+            musica_normal.play()
+            lock_musica=1
+        }
+    
         lock_geral[0] = false
         botao100.disabled = true;
         num_random100.textContent = Math.floor(Math.random() * 101);
@@ -145,21 +166,21 @@
 
             update_user("t100");
 
-            setTimeout(() => this.reset_num(0), 1500);
+            setTimeout(() => this.reset_num(0), 2000);
         }else if(Math.abs(num_random100.textContent - num_a_adivinhar100.textContent) == 1){ // POR 1
             popup100.textContent = "POR 1"
 
             popup100.classList.remove("hide");
             popup100.classList.add("show");
 
-            setTimeout(() => this.reset_num(0), 1000);
+            setTimeout(() => this.reset_num(0), 2000);
         }else if(flipInt(num_random100.textContent) == num_a_adivinhar100.textContent){ // NUMERO INVERTIDO
             popup100.textContent = "NUMERO INVERTIDO"
 
             popup100.classList.remove("hide");
             popup100.classList.add("show");
 
-            setTimeout(() => this.reset_num(0), 1000);
+            setTimeout(() => this.reset_num(0), 2000);
         }else if(Math.abs(num_random100.textContent - num_a_adivinhar100.textContent) < 5){ // QUASE
             popup100.textContent = "QUASE"
 
@@ -175,6 +196,11 @@
 
     // -------------------------------------- 1000 ---------------------------------------
     function numero1000(){
+        if (lock_musica==0 & modo==0){ // tocar musica de fundo se clicar no botao e fast mode nao estiver ativado
+            musica_normal.play()
+            lock_musica=1
+        }
+
         lock_geral[1] = false
         botao1000.disabled = true;
         num_random1000.textContent = Math.floor(Math.random() * 1001);
@@ -189,42 +215,42 @@
 
             update_user("t1000");
 
-            setTimeout(() => this.reset_num(1), 2500);
+            setTimeout(() => this.reset_num(1), 3500);
         }else if(Math.abs(num_random1000.textContent - num_a_adivinhar1000.textContent) == 1){ // POR 1
             popup1000.textContent = "POR 1"
 
             popup1000.classList.remove("hide");
             popup1000.classList.add("show");
 
-            setTimeout(() => this.reset_num(1), 2500);
+            setTimeout(() => this.reset_num(1), 3500);
         }else if(flipInt(num_random1000.textContent) == num_a_adivinhar1000.textContent){ // NUMERO INVERTIDO
             popup1000.textContent = "NUMERO INVERTIDO"
 
             popup1000.classList.remove("hide");
             popup1000.classList.add("show");
 
-            setTimeout(() => this.reset_num(1), 2500);
+            setTimeout(() => this.reset_num(1), 3500);
         }else if(Math.abs(num_random1000.textContent - num_a_adivinhar1000.textContent) < 10){ // BEM QUASE
             popup1000.textContent = "BEM QUASE"
 
             popup1000.classList.remove("hide");
             popup1000.classList.add("show");
 
-            setTimeout(() => this.reset_num(1), 2000);
+            setTimeout(() => this.reset_num(1), 3000);
         }else if(Math.abs(num_random1000.textContent - num_a_adivinhar1000.textContent) < 50){ // QUASE
             popup1000.textContent = "QUASE"
 
             popup1000.classList.remove("hide");
             popup1000.classList.add("show");
 
-            setTimeout(() => this.reset_num(1), 1500);
+            setTimeout(() => this.reset_num(1), 2500);
         }else if(num_random1000.textContent === "777"){ // 777 METER UM AUIDO DE SLOT MACHINE
             popup1000.textContent = "GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE"
 
             popup1000.classList.remove("hide");
             popup1000.classList.add("show");
 
-            setTimeout(() => this.reset_num(1), 1000);
+            setTimeout(() => this.reset_num(1), 3000);
         }else{ // ERROU
             setTimeout(() => this.reset_num(1), speed);
         }
@@ -234,6 +260,11 @@
 
     // -------------------------------------- 10000 ---------------------------------------
     function numero10000(){
+        if (lock_musica==0 & modo==0){ // tocar musica de fundo se clicar no botao e fast mode nao estiver ativado
+            musica_normal.play()
+            lock_musica=1
+        }
+
         lock_geral[2] = false
         botao10000.disabled = true;
         num_random10000.textContent = Math.floor(Math.random() * 10001);
@@ -248,63 +279,63 @@
 
             update_user("t10000");
 
-            setTimeout(() => this.reset_num(2), 4000);
+            setTimeout(() => this.reset_num(2), 8000);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) == 1){ // POR 1
             popup10000.textContent = "POR 1"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 3000);
+            setTimeout(() => this.reset_num(2), 8000);
         }else if(flipInt(num_random10000.textContent) == num_a_adivinhar10000.textContent){ // NUMERO INVERTIDO
             popup10000.textContent = "NUMERO INVERTIDO"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 3000);
+            setTimeout(() => this.reset_num(2), 6000);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 10){ // MESMO QUASE
             popup10000.textContent = "MESMO QUASE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 2500);
+            setTimeout(() => this.reset_num(2), 3000);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 50){ // BEM QUASE
             popup10000.textContent = "BEM QUASE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 2000);
+            setTimeout(() => this.reset_num(2), 2500);
         }else if(Math.abs(num_random10000.textContent - num_a_adivinhar10000.textContent) < 80){ // QUASE
             popup10000.textContent = "QUASE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 1500);
+            setTimeout(() => this.reset_num(2), 2000);
         }else if(flipInt(num_random10000.textContent) == "1987"){ // 1987
             popup10000.textContent = "THE BITE OF 87'?"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 1500);
+            setTimeout(() => this.reset_num(2), 6000);
         }else if(flipInt(num_random10000.textContent) == "1983"){ // 1983
             popup10000.textContent = "THE BITE OF 83'?"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 1500);
+            setTimeout(() => this.reset_num(2), 6000);
         }else if(num_random10000.textContent === "777"){ // 777 METER UM AUIDO DE SLOT MACHINE
             popup10000.textContent = "GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE GAMBLE"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
-            setTimeout(() => this.reset_num(2), 1000);
+            setTimeout(() => this.reset_num(2), 3000);
         }else{ // ERROU
             setTimeout(() => this.reset_num(2), speed);
         }
@@ -313,6 +344,11 @@
 
         // -------------------------------------- 1000000000 ---------------------------------------
     function numeroM(){
+        if (lock_musica==0 & modo==0){ // tocar musica de fundo se clicar no botao e fast mode nao estiver ativado
+            musica_normal.play()
+            lock_musica=1
+        }
+
         lock_geral[3] = false;
         botaoM.disabled = true;
         num_randomM.textContent = Math.floor(Math.random() * 1000000001);
@@ -416,6 +452,11 @@
 
 
     function gera_tudo(){
+        if (lock_musica==0 & modo==0){ // tocar musica de fundo se clicar no botao e fast mode nao estiver ativado
+            musica_normal.play()
+            lock_musica=1
+        }
+
         if(lock_geral[0] & lock_geral[1] & lock_geral[2] & lock_geral[3]){
             numero100()
             numero1000()
@@ -439,10 +480,16 @@
             speed = 500
             modo = 0
             botao_fast_mode.style.color = "black"
+            musica_rapida.pause()
+            musica_rapida.currentTime=0;
+            musica_normal.play()
         }else{
             speed = 10
             modo = 1
             botao_fast_mode.style.color = "red"
+            musica_normal.pause()
+            musica_normal.currentTime = 0;
+            musica_rapida.play()
         }
     }
 
