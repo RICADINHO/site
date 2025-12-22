@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<title>404</title>
-<link rel="icon" type="image/x-icon" href="heart_break.png">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../cenas_do_site/extras_das_paginas/extras_LOVE/heart_break.png">
+  <title>404</title>
+</head>
 
 <body style="text-align: center;">
-  <span style="font-size: 150px">404</span><p></p>
-  love not found
+
+  <span id="mensagem_erro" style="font-size: 150px">404</span><p></p>
+  <span id="mensagem_texto">love not found</span>
+
+  <button id="love" onclick="new_message()" style="display: none;"><span id="texto_botao">NEW MESSAGE?!?!?!?!?!?!?!</span></button>
+
+  <div style="display:flex;justify-content:center;align-items:center;height:1%;display: hidden;" >
+    <video id="video" src="../cenas_do_site/extras_das_paginas/extras_LOVE/todos.mp4" width="2400" height="1080" muted loop></video>
+  </div>
+
+  <div style="display:flex;justify-content:center;align-items:center;height:1%;display: hidden;" >
+    <video id="video2" src="../cenas_do_site/extras_das_paginas/extras_LOVE/todos.mp4" width="2400" height="1080" muted loop></video>
+  </div>
+
+  <audio id="audio" loop >
+    <source src="../cenas_do_site/extras_das_paginas/extras_LOVE/love.mp3" type="audio/mpeg">
+  </audio>
+
 </body>
-<!--
-<audio id="myAudio" loop >
-    <source src="mariokart.mp3" type="audio/mpeg">
-</audio>
-  
-<button id="tocar" onclick="playAudio(); " type="button" style="background-color:dodgerblue ;border-color: dodgerblue;color:darkblue; ">Play Audio</button>
-<button id="para" onclick="pauseAudio()" type="button" style="background-color: dodgerblue;border-color: dodgerblue;color: darkblue;">Pause Audio</button> 
 
 <script>
-  var x = document.getElementById("myAudio"); 
-  var y = document.getElementById("tocar");
-  var y2 = document.getElementById("para");
-  
-  function playAudio() {
-    x.play();
-  } 
-  
-  function pauseAudio() { 
-    x.pause(); 
-    x.currentTime = 0;
-  } 
-</script>-->
+  let love = document.getElementById("love")
+  let mensagem_erro = document.getElementById("mensagem_erro")
+  let mensagem_texto = document.getElementById("mensagem_texto")
+  let texto_botao = document.getElementById("texto_botao")
 
+  var numero_love = Math.floor(Math.random() * 10);
+  console.log(numero_love)
+
+    // Cenas do texto arco-iris para ir pra tras
+  var lobbyLink = document.querySelector("#love");
+  var text = "NEW MESSAGE!!!!1!1!!1!";
+  var colors = ["red", "turquoise", "yellow", "orange", "green", "blue", "indigo", "violet"];
+  var html = "";
+  // Loop through every letter and assign a color
+  for (var i = 0; i < text.length; i++) {
+    var color = colors[Math.floor(Math.random() * colors.length)] // colors[i % colors.length]; // Cycles through the colors
+    html += "<b><span style='color:" + color + "'>" + text[i] + "</span></b>";
+  }
+  lobbyLink.innerHTML = html;
+
+  if (numero_love==1){
+    love.style = "display: inline-block;background-color: smoke;border: 2px solid black;padding: 20px;font-size: 40px;position: absolute;top: 50%;left: 35%"
+  }
+
+  function new_message(){
+    audio.play()
+    video.play()
+    video.style = "position: absolute;right: 0%;top: 20%;height:60%;display: inline-block"
+    video2.play()
+    video2.style = "position: absolute;left: 0%;top: 20%;height:60%;display: inline-block"
+    mensagem_erro.textContent ="202"
+    mensagem_texto.textContent ="love found"
+    love.style.display = "none";
+  }
+
+</script>
 </html>
