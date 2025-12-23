@@ -27,11 +27,14 @@
 
   <div style="border: 3px solid rgba(255,0,221); border-radius: 25px; background-color: rgba(0, 0, 0, 0.9); color: rgba(255,0,221); display: flex; justify-content: center; align-items: center; width: 70%;margin: auto; padding: 10px; flex-direction: column; position: relative;">
       <h1>GENERATOR</h1>
+      <h2>---------------------- IN PROGRESS ----------------------</h2>
+      
+      <!-- CANVAS 1 / CANVAS DE CORES
       <br>
       <canvas id="canvas1" width="28" height="28"></canvas>
       <b id="texto_cores">0 black(0%) , 0 branco(0%)</b>
       <br><br><br>
-      <button onclick="canvas1()">GENERATE</button>
+      <button onclick="canvas1()">GENERATE</button>-->
 
 
       <br><br><br><br>
@@ -53,7 +56,7 @@
       <div style="display: flex;justify-content: center;align-items: center;">
         <canvas id="rica" width="8" height="8"></canvas>
         
-        <b id="texto_match" style="padding: 0px 15px;"> - 0% MATCH - </b>
+        <b id="texto_match" style="padding: 0px 15px;"> = 00.00% MATCH = </b>
 
         <canvas id="canvas3" width="8" height="8"></canvas>
       </div>
@@ -118,7 +121,7 @@
     //canvas2()
     //canvas3()
     
-    function canvas1(){
+    function canvas1(){ // canvas das varias cores
 
         var canvas = document.getElementById('canvas1');
         var ctx = canvas.getContext('2d');
@@ -145,7 +148,7 @@
         ctx.putImageData(imageData, 0, 0);
     }
 
-    function canvas2(){
+    function canvas2(){ // canvas preto e branc
 
         var texto_pb = document.getElementById("texto_pb");
         var canvas = document.getElementById('canvas2');
@@ -184,7 +187,7 @@
         texto_pb.textContent = preto+" preto ("+ron+"%) , "+branco+" branco ("+ron2+"%)"
     }
 
-    function canvas3(){
+    function canvas3(){ // canvas RICADINHO
 
         var canvas = document.getElementById('canvas3');
         var ctx = canvas.getContext('2d');
@@ -238,8 +241,11 @@
       const totalPixels = imageData.data.length / 4;
       var match = matches/totalPixels * 100
       var ron = Math.round(match * 100) / 100
-      texto_match.textContent = "- "+ron+"% MATCH - "//matches+"/"+totalPixels+" MATCH"
-  
+      if (ron <10){
+        texto_match.textContent = "= 0"+ron+"% MATCH = "
+      }else{
+        texto_match.textContent = "= "+ron+"% MATCH = "
+      }
     }
   </script>
 </html>

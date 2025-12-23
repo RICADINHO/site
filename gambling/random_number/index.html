@@ -57,49 +57,63 @@
 
             <center><h1>RANDOM NUMBER</h1></center>
             <span id="login" style="position: absolute;right: 0%;top: 0%;">LOGIN PLEASE</span>
-            <center>Guess the random number to WIN! <br> <br> <br> 
+            <center>Generate a random number and try to get the same value to WIN! <br> <br> <br> 
             
 
             <button id="botao_fast_mode" onclick="fastmode()" style="position: absolute;top: 2%;left: 1%;">Fast mode</button>
             
+            <div style="position: absolute;left: 30%;">
+                <div class="popup" ><b id="num_a_adivinhar100">num100</b> 
+                    <span class="popuptext" id="popup100">POPUUUUUUUUUUUUUUUUUUP</span>
+                </div>
 
-            <div class="popup" ><b id="num_a_adivinhar100">num</b> 
-                <span class="popuptext" id="popup100">POPUUUUUUUUUUUUUUUUUUP</span>
+                <h4 id="num_random100">Generate</h4>
+                <button id="botao_gerar100" onclick="numero100()">GENERATE ME</button>
             </div>
-
-            <h4 id="num_random100">Gera o numero</h4>
-            <button id="botao_gerar100" onclick="numero100()">CLICA</button></center>
+            </center>
 
             
 
-            <center><div class="popup" ><b id="num_a_adivinhar1000">num</b> 
-                <span class="popuptext" id="popup1000">POPUUUUUUUUUUUUUUUUUUP</span>
+            <center>
+            <div style="position: absolute;right: 30%;bottom: 42%;">
+                <div class="popup" ><b id="num_a_adivinhar1000">num1000</b> 
+                    <span class="popuptext" id="popup1000">POPUUUUUUUUUUUUUUUUUUP</span>
+                </div>
+
+                <h4 id="num_random1000">Generate</h4>
+                <button id="botao_gerar1000" onclick="numero1000()">GENERATE ME</button>
             </div>
-
-            <h4 id="num_random1000">Gera o numero</h4>
-            <button id="botao_gerar1000" onclick="numero1000()">CLICA</button></center>
-
-            <br><br><br><br>
-
-            <center><div class="popup" ><b id="num_a_adivinhar10000">num</b> 
-                <span class="popuptext" id="popup10000">POPUUUUUUUUUUUUUUUUUUP</span>
-            </div>
-
-            <h4 id="num_random10000">Gera o numero</h4>
-            <button id="botao_gerar10000" onclick="numero10000()">CLICA</button></center>
-
-
-            <button onclick="gera_tudo()" style="position: absolute;top: 50%;left: 1%;">GERA TUDO</button>
-
-            <br><br><br><br><br><br>
-
-            <center><div class="popup" ><b id="num_a_adivinharM">num</b> 
-                <span class="popuptext" id="popupM">POPUUUUUUUUUUUUUUUUUUP</span>
-            </div>
-
-            <h4 id="num_randomM">Gera o numero</h4>
-            <button id="botao_gerarM" onclick="numeroM()" style="margin-bottom: 55px;">HOLY GRAIL</button></center>
+            </center>
             
+            <br style="margin-bottom: 150px;">
+
+            <center>
+            <div style="position: absolute;left: 30%;bottom: 22%;">
+                <div class="popup" ><b id="num_a_adivinhar10000">num10000</b> 
+                    <span class="popuptext" id="popup10000">POPUUUUUUUUUUUUUUUUUUP</span>
+                </div>
+
+                <h4 id="num_random10000">Generate</h4>
+                <button id="botao_gerar10000" onclick="numero10000()">GENERATE ME</button>
+            </div>
+            </center>
+
+
+            <button onclick="gera_tudo()" style="position: absolute;top: 50%;left: 1%;">GENERATE ALL</button>
+
+
+            <center>
+            <div style="position: absolute;right: 30%;bottom: 0%;">
+                <div class="popup" ><b id="num_a_adivinharM">numHOLY</b> 
+                    <span class="popuptext" id="popupM">POPUUUUUUUUUUUUUUUUUUP</span>
+                </div>
+
+                <h4 id="num_randomM">GOOD LUCK</h4>
+                <button id="botao_gerarM" onclick="numeroM()" style="margin-bottom: 55px;">HOLY GRAIL!!!!</button>
+            </div>
+            </center>
+            
+            <br style="margin-bottom: 350px;">
 
         </div>
 
@@ -264,9 +278,9 @@
             lock_musica=1
         }
 
-        lock_geral[2] = false
-        botao10000.disabled = true;
-        num_random10000.textContent = Math.floor(Math.random() * 10001);
+        lock_geral[2] = false // lock do botao geral
+        botao10000.disabled = true; // desativa o botao enquanto faz os calculos da comparacao com o numero gerado e o numero random
+        num_random10000.textContent = Math.floor(Math.random() * 10001); // primeiro numero random para acertar
 
         if(num_random10000.textContent == num_a_adivinhar10000.textContent){ // ACERTOU
             console.log("acertou numero a adivinhar: "+num_a_adivinhar10000.textContent+"__ numero gerado: "+num_random10000.textContent)
@@ -314,14 +328,14 @@
             popup10000.classList.add("show");
 
             setTimeout(() => this.reset_num(2), 2000);
-        }else if(flipInt(num_random10000.textContent) == "1987"){ // 1987
+        }else if(num_random10000.textContent == "1987"){ // 1987
             popup10000.textContent = "THE BITE OF 87'?"
 
             popup10000.classList.remove("hide");
             popup10000.classList.add("show");
 
             setTimeout(() => this.reset_num(2), 6000);
-        }else if(flipInt(num_random10000.textContent) == "1983"){ // 1983
+        }else if(num_random10000.textContent == "1983"){ // 1983
             popup10000.textContent = "THE BITE OF 83'?"
 
             popup10000.classList.remove("hide");
@@ -450,7 +464,7 @@
 
 
 
-    function gera_tudo(){
+    function gera_tudo(){ // botao que gera todos os numeros
         if (lock_musica==0 & modo==0){ // tocar musica de fundo se clicar no botao e fast mode nao estiver ativado
             musica_normal.play()
             lock_musica=1
@@ -464,7 +478,7 @@
         }
     }
 
-    function flipInt(n){
+    function flipInt(n){ // calcula o numero invertido
         var digit, result = 0
         while( n ){
             digit = n % 10  //  Get right-most digit. Ex. 123/10 → 12.3 → 3
@@ -474,7 +488,7 @@
         return result
     }
 
-    function fastmode(){
+    function fastmode(){ //toggle do fastmode
         if(modo==1){
             speed = 500
             modo = 0
@@ -492,32 +506,32 @@
         }
     }
 
-    function reset_num(num){
+    function reset_num(num){// mostra o popup e depois remove e gera o novo numero random
         if(num==0){
             popup100.classList.remove("show");
             popup100.classList.add("hide");
-            num_random100.textContent = "Gera o numero"
+            num_random100.textContent = "Generate"
             num_a_adivinhar100.textContent = Math.floor(Math.random() * 101)
             botao100.disabled = false;
             lock_geral[0] = true
         }else if(num==1){
             popup1000.classList.remove("show");
             popup1000.classList.add("hide");
-            num_random1000.textContent = "Gera o numero"
+            num_random1000.textContent = "Generate"
             num_a_adivinhar1000.textContent = Math.floor(Math.random() * 1001)
             botao1000.disabled = false;
             lock_geral[1] = true
         }else if(num==2){
             popup10000.classList.remove("show");
             popup10000.classList.add("hide");
-            num_random10000.textContent = "Gera o numero"
+            num_random10000.textContent = "Generate"
             num_a_adivinhar10000.textContent = Math.floor(Math.random() * 10001)
             botao10000.disabled = false;
             lock_geral[2] = true
         }else if(num==3){
             popupM.classList.remove("show");
             popupM.classList.add("hide");
-            num_randomM.textContent = "Gera o numero"
+            num_randomM.textContent = "GOOD LUCK"
             num_a_adivinharM.textContent = Math.floor(Math.random() * 1000000001)
             botaoM.disabled = false;
             lock_geral[3] = true
