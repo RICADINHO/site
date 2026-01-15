@@ -1,10 +1,10 @@
 # 1
 
 - Meter site em react
-- fazer mailing list
 
 ## 2
 
+- meter um popud tipo o martinho.pt da musica com as musicas da minha playlist
 - pagina de hub de anuncios (tipo pagina de achievements, quando te aparece um anuncio desbloqiueias na pagina de hub, os que ainda n descobriste ficam a preto, usar login para isto)
 - meter o site com features mais caoticas
 - meter um popup random cada vez que alguem entra num jogo do gambling a fazer perguntas ridiculas (maior de 999? Gostas do RICADINHO? Rating do website. CLICK ME!) para começar a musica de fundo. Muitas só com uma resposta e no canto meter RICADINHO is not responsible for ... para cada um
@@ -14,7 +14,7 @@
 - pagina da coisa mais sortuda que me aconteceu (cmsqma) (esta pagina pode ir pro hub de gambling)
 - easter egg de paginas mal escritas (/singup /cockbook)
 - pagina de reviews
-
+- fazer mailing list
 
 ## Anuncios
 
